@@ -1,5 +1,3 @@
-{{indexmenu_n>0}}
-
 {{indexmenu_n>3}}
 
 ### UWAF SSL客户端验证如何开启

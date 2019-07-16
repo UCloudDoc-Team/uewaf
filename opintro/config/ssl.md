@@ -2,7 +2,7 @@
 
 # 证书管理
 
-![](/images/opintro/config/ssl.png)
+![](../../images/opintro/config/ssl.png)
 
 证书管理支持用户上传自身的业务证书到WAF进行统一管理
 

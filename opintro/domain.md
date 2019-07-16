@@ -2,9 +2,9 @@
 
 # 域名管理
 
-![waf43.png](/images/opintro/waf43.png)
+![waf43.png](../images/opintro/waf43.png)
 
-## 添加域名
+### 添加域名
 
 参数说明
 
@@ -16,7 +16,7 @@
   - SSL证书：需要上传
   - HTTPS强制跳转：是否开启HTTP转HTTPS的强制跳转
 
-## 域名列表
+### 域名列表
 
 参数说明
 

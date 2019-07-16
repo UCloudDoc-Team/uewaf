@@ -2,7 +2,7 @@
 
 # 安全报表
 
-# 概览
+#### 概览
 
 概览中支持查看：
 
@@ -13,13 +13,13 @@
   - 上行流量
   - 下行流量
 
-![](/images/opintro/waf44.png)
-![waf45.png](/images/opintro/waf45.png)
+![](../images/opintro/waf44.png)
+![waf45.png](../images/opintro/waf45.png)
 
 ### 攻击分析
 
-![waf46.png](/images/opintro/waf46.png)
-![waf47.png](/images/opintro/waf47.png)
+![waf46.png](../images/opintro/waf46.png)
+![waf47.png](../images/opintro/waf47.png)
 
 前提：选择“域名”，“时间范围”。则攻击分析报表中根据选中的域名和时间范围显示统计分析的结果。 参数说明
 
@@ -31,7 +31,7 @@
 
 ### 攻击详情
 
-![waf48.png](/images/opintro/waf48.png)
+![waf48.png](../images/opintro/waf48.png)
 
 参数说明
 
@@ -48,9 +48,9 @@
 
 ### 误报详情
 
-![waf49.png](/images/opintro/waf49.png)
+![waf49.png](../images/opintro/waf49.png)
 
-<WRAP center round tip 100%> 注意：
+==注意：==
 
 点击【误报】后将发生：
 

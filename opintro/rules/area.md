@@ -4,7 +4,7 @@
 
 该功能⽤户可以指定当前域名对来源请求的地域IP，进行的后续动作处理工作，主要分为海外和海内两类，可具体到国际及城市。
 
-![waf55.png](/images/opintro/waf55.png)
+![waf55.png](../../images/opintro/waf55.png)
 
 添加规则参数说明：
 

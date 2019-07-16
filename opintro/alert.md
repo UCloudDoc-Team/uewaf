@@ -2,7 +2,7 @@
 
 # 告警设置
 
-![waf67.png](/images/opintro/waf67.png)
+![](../images/opintro/waf67.png)
 
 ### 告警总有三种类型：
 

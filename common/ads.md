@@ -6,7 +6,7 @@ UCloud高防服务和企业应用防火墙（UWAF）是完全兼容的。
 
 部署架构
 
-![](/images/common/网站高防.jpg)
+![](../images/common/gaofang1.jpg)
 
 ## 1.进入UWAF界面
 
@@ -20,24 +20,24 @@ UCloud高防服务和企业应用防火墙（UWAF）是完全兼容的。
 
 如果防护的是https站点，需要同时上传站点的HTTPS证书。
 
-![waf32.png](/images/common/waf32.png)
+![](../images/common/waf32.png)
 
 ## 3.ping CNAME获取IP
 
 ping cname域名得到分配的UWAF的IP
 
-![](/images/common/ping.png)
+![](../images/common/ping.png)
 
 ## 4.修改高防源站IP
 
 配置高防，源站IP填写刚才得到的UWAF的IP。
 
-![](/images/common/修改高防源站ip.png)
+![](../images/common/gaofang4.png)
 
 点击确认生成一条高防的cname记录。
 
-![](/images/common/高防cname.png)
+![](../images/common/gaofang5.png)
 
 配置DNS将需要防护的域名解析到高防cname，即可完成配置。
 
-![](/images/common/高防dns.png)
+![](../images/common/gaofang6.png)
