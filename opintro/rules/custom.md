@@ -2,7 +2,7 @@
 
 # WAF 防护规则
 
-![waf50.png](../../images/opintro/waf50.png)
+![waf50.png](/images/opintro/waf50.png)
 
 **工作模式：**包含3种工作模式，阻断模式，告警模式和放行模式。
 
