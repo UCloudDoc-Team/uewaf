@@ -6,7 +6,7 @@
 
 部署架构：
 
-![](/images/common/cdn.png)
+![](../images/common/cdn.png)
 
 ### 1.进入UWAF界面
 
