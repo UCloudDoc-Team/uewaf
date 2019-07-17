@@ -14,12 +14,12 @@
   - 下行流量
 
 ![](../images/opintro/waf44.png)
-![waf45.png](../images/opintro/waf45.png)
+![](../images/opintro/waf45.png)
 
 ### 攻击分析
 
-![waf46.png](../images/opintro/waf46.png)
-![waf47.png](../images/opintro/waf47.png)
+![](../images/opintro/waf46.png)
+![](../images/opintro/waf47.png)
 
 前提：选择“域名”，“时间范围”。则攻击分析报表中根据选中的域名和时间范围显示统计分析的结果。 参数说明
 
@@ -31,7 +31,7 @@
 
 ### 攻击详情
 
-![waf48.png](../images/opintro/waf48.png)
+![](../images/opintro/waf48.png)
 
 参数说明
 
@@ -48,7 +48,7 @@
 
 ### 误报详情
 
-![waf49.png](../images/opintro/waf49.png)
+![](../images/opintro/waf49.png)
 
 ==注意：==
 
@@ -56,4 +56,6 @@
 
 1、 未来类似的攻击不再显示，即不再判断为攻击。（此处是根据攻击特征进行的放行，如果是常用的IP，请添加白名单进行放行）
 
-2、 我们的安全工程师将定期统计和分析误报的情况，不断更新和完善规则系统。 </WRAP>
+2、 我们的安全工程师将定期统计和分析误报的情况，不断更新和完善规则系统。
+
+

@@ -3,13 +3,11 @@
 # 接入UWAF
 
 UWAF用于为网站提供防护，抵御包括SQL注入，XSS攻击，漏洞攻击，恶意扫描等类型的攻击行为。
-![](../images/waf1.png)
+![接入前](../images/waf1.png)
 
 接入UWAF前后对比：
 
-
-
-![](../images/waf2.png)
+![接入后](../images/waf2.png)
 
 WAF是部署在web服务器前，通过转发代理的方式提供保护的一款产品。
 
@@ -18,7 +16,7 @@ WAF是部署在web服务器前，通过转发代理的方式提供保护的一�
 
 登陆UCloud控制台-U盾-企业应用防火墙UWAF（如未开通请先开通该服务）
 
-![waf24.png](../images/common/waf24.png)
+![购买UWAF](../images/common/waf24.png)
 
 参数说明：
 
@@ -35,14 +33,14 @@ WAF是部署在web服务器前，通过转发代理的方式提供保护的一�
 点击【域名管理】-【添加域名】
 在弹窗中填写站点域名和对应的用户域名源站地址，域名可以是泛域名或者完整的子域名。点击【确定】后，在界面上获取生成的cname信息。
 
-![waf25.png](../images/common/waf25.png)
-![waf26.png](../images/common/waf26.png)
+![添加域名](../images/common/waf25.png)
+![查询列表](../images/common/waf26.png)
 
 `注意：域名必须是已经备案的，未备案的域名将无法添加。`
 
 如果防护的是https站点，需要同时上传站点的HTTPS证书。
 
-![waf27.png](../images/common/waf27.png)
+![添加域名](../images/common/waf27.png)
 
 参数说明
 
@@ -55,7 +53,7 @@ WAF是部署在web服务器前，通过转发代理的方式提供保护的一�
 
 ### 3. 本地测试
 
-![](../images/common/waf28.png)
+![连通性检测](../images/common/waf28.png)
 
 使用ping命令获取cname对应的IP地址。
 
@@ -70,13 +68,13 @@ MAC用户HOSTS文件在/private/etc/
 打开hosts文件，编辑里面域名后面的IP地址，请替换为cname对应的IP地址。
 ```
 
-![](../images/common/waf29.png)
+![修改HOST](../images/common/waf29.png)
 
 ### 4.修改DNS记录
 
 如下图所示，拿到各记录的CNAME值后，需要到DNS服务商处添加CNAME记录，将站点的域名解析指向UEWAF提供的CNAME。
 
-![](../images/common/waf30.png)
+![解析记录](../images/common/waf30.png)
 
 ### 5.测试配置是否正确
 
@@ -90,4 +88,6 @@ MAC用户HOSTS文件在/private/etc/
 
 3、查询CNAME。如果回显的域名是配置的CNAME，则表示配置成功。
 
-![waf31.png](../images/common/waf31.png)
+![结果验证](../images/common/waf31.png)
+
+

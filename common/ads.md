@@ -8,11 +8,11 @@ UCloud高防服务和企业应用防火墙（UWAF）是完全兼容的。
 
 ![](../images/common/gaofang1.jpg)
 
-## 1.进入UWAF界面
+### 1.进入UWAF界面
 
 登陆UCloud控制台-U盾-企业应用防火墙UWAF（如未开通请先开通该服务）
 
-## 2.添加域名
+### 2.添加域名
 
 在UWAF中点击【添加域名】。在弹窗中填写站点域名，域名可以是泛域名或者完整的子域名。点击【确定】后，在界面上获取生成的cname信息。
 
@@ -22,13 +22,13 @@ UCloud高防服务和企业应用防火墙（UWAF）是完全兼容的。
 
 ![](../images/common/waf32.png)
 
-## 3.ping CNAME获取IP
+### 3.ping CNAME获取IP
 
 ping cname域名得到分配的UWAF的IP
 
 ![](../images/common/ping.png)
 
-## 4.修改高防源站IP
+### 4.修改高防源站IP
 
 配置高防，源站IP填写刚才得到的UWAF的IP。
 
@@ -41,3 +41,5 @@ ping cname域名得到分配的UWAF的IP
 配置DNS将需要防护的域名解析到高防cname，即可完成配置。
 
 ![](../images/common/gaofang6.png)
+
+
