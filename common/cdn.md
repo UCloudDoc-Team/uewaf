@@ -6,7 +6,7 @@
 
 部署架构：
 
-![](/images/common/cdn.png)
+![](../images/common/cdn.png)
 
 ### 1.进入UWAF界面
 
@@ -16,7 +16,7 @@
 
 在UWAF中点击【添加域名】。在弹窗中填写站点域名，源站IP等信息，域名可以是泛域名或者完整的子域名。点击【确定】后，在界面上获取生成的cname信息。
 
-![](/images/common/waf32.png)
+![](../images/common/waf32.png)
 
 ### 3.修改CDN回源域名
 
@@ -32,4 +32,4 @@
 
 3、 如果CDN不是从XFF传递的真实客户IP,就有可能导致用户的CDN建邻IP会被误封
 
-![](/images/common/cdn3.png)
+![](../images/common/cdn3.png)
