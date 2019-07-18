@@ -83,7 +83,6 @@ MAC用户HOSTS文件在/private/etc/
 1、在Windows操作系统中，选择“开始 \> 运行”，在弹出框中输入“cmd”，按“Enter”。
 
 2、执行以下命令
-
 `nslookup （空格） -qt=cname（空格） 域名`
 
 3、查询CNAME。如果回显的域名是配置的CNAME，则表示配置成功。

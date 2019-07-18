@@ -9,6 +9,8 @@ WAF支持PEM格式的证书（可通过UCloud USSL证书购买，下载PEM格式
 
 2、上传的文件是否重复；
 
-3、可以通过第三方工具验证证书是否正确（推荐使用https://myssl.com/match\_key.html）
+3、可以通过第三方工具验证证书是否正确（推荐使用https://myssl.com/match_key.html）
 
 ![](../../images/faq/waf21.png)
+
+
