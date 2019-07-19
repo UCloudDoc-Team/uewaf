@@ -60,7 +60,6 @@ WAF是部署在web服务器前，通过转发代理的方式提供保护的一�
 修改本地电脑的hosts记录，将站点域名指向ping对应cname得到的IP地址，这样可以在本地测试流量是否经过UEWAF。
 
 ``` 
-
 windows xp/2003/vista/2008/7/8用户HOSTS文件是在“c:\windows\system32\drivers\etc”
 
 MAC用户HOSTS文件在/private/etc/
