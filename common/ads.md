@@ -26,7 +26,7 @@ UCloud高防服务和企业应用防火墙（UWAF）是完全兼容的。
 
 ping cname域名得到分配的UWAF的IP
 
-![](../images/common/ping.png)
+![](../images/common/ping1.png)
 
 ### 4.修改高防源站IP
 

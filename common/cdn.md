@@ -6,7 +6,7 @@
 
 部署架构：
 
-![](../images/common/cdn.png)
+![](../images/common/cdn1.png)
 
 ### 1.进入UWAF界面
 
@@ -33,5 +33,7 @@
 3、 如果CDN不是从XFF传递的真实客户IP,就有可能导致用户的CDN建邻IP会被误封
 
 ![](../images/common/cdn3.png)
+
+
 
 
