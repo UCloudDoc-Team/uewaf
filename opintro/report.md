@@ -13,6 +13,8 @@
   - 上行流量
   - 下行流量
 
+  备注：如果QPS 及 流量超出版本限制，用户会接收到系统的告警短信或邮件。
+
 ![](../images/opintro/waf44.png)
 ![](../images/opintro/waf45.png)
 
