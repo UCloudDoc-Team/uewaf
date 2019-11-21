@@ -29,7 +29,7 @@
             * [日志查询下载](security/uewaf/3_opintro/34_func/341_srlogs)
             * [网页防篡改](security/uewaf/3_opintro/34_func/342_tamper)
             * [证书管理](security/uewaf/3_opintro/34_func/343_cert)
-        * [机器行为检测)](security/uewaf/3_opintro/35_bot)
+        * [机器行为检测](security/uewaf/3_opintro/35_bot)
         * [告警设置](security/uewaf/3_opintro/36_alert)
     * [使用注意事项](security/uewaf/4_warning)
     * 常见问题答疑
