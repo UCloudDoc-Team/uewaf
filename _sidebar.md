@@ -19,7 +19,7 @@
     * [域名管理](/uewaf/3_opintro/31_domain)
     * [安全报表](/uewaf/3_opintro/32_report)
     * 规则设置
-        * [WAF 防护规则](/uewaf/3_opintro/33_rules/330_wrule)
+        * [UWAF 规则](/uewaf/3_opintro/33_rules/330_wrule)
         * [CC 防护规则](/uewaf/3_opintro/33_rules/331_ccrule)
         * [恶意 IP 封禁](/uewaf/3_opintro/33_rules/332_auto)
         * [区域 IP 封禁](/uewaf/3_opintro/33_rules/333_area)
