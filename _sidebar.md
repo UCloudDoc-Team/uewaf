@@ -13,7 +13,7 @@
 * 快速上手
     * [接入UWAF](/uewaf/2_common/20_fst)
     * [CDN结合UWAF](/uewaf/2_common/21_cdn)
-    * [高防服务结合UWAF](/uewaf/2_common/22_ads)
+    * [高防结合UWAF](/uewaf/2_common/22_ads)
 * 操作指南
     * [概览](/uewaf/3_opintro/30_info)
     * [域名管理](/uewaf/3_opintro/31_domain)
