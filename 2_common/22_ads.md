@@ -4,7 +4,7 @@
 
 UCloud高防服务和企业应用防火墙（UWAF）是完全兼容的。
 
-#####部署架构
+##### 部署架构
 ![](../images/common/gaofang1.jpg)
 
 ### 1.进入UWAF界面
@@ -31,6 +31,7 @@ ping CNAME域名得到分配的UWAF的IP
 
 配置高防，源站IP填写刚才得到的UWAF的IP。
 ![](../images/common/gaofang4.png) 
+
 点击确定后，会生成高防的CNAME地址.
 ![](../images/common/gaofang5.png)
 

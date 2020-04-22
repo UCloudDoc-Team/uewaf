@@ -32,10 +32,10 @@
         * [证书管理](/uewaf/3_opintro/34_func/343_cert)
     * [机器行为检测](/uewaf/3_opintro/35_bot)
     * [告警设置](/uewaf/3_opintro/36_alert)
-* [使用注意事项](/uewaf/4_warning)
 * 常见问题答疑
     * [基础问题汇总](/uewaf/5_faq/50_ques)
     * 证书问题汇总
         * [UWAF的证书配置](/uewaf/5_faq/51_ssl/510_ssl)
         * [安卓用户访问异常](/uewaf/5_faq/51_ssl/511_ssl)
         * [SSL客户端校验开启](/uewaf/5_faq/51_ssl/512_ssl)
+* [使用注意事项](/uewaf/4_warning)
