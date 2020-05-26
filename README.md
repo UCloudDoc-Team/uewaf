@@ -41,11 +41,11 @@ UWAF帮助保护您的 Web 应用程序免受常见 Web漏洞的攻击，这些�
     * [告警设置](/uewaf/3_opintro/36_alert)
 * 注意事项
     * 常见问题
-        * [UWAF获取真实IP](/uewaf/4_pronlem/40_ques)
-        * [UWAF的证书配置](/uewaf/4_pronlem/41_ssl/410_ssl)
-        * [安卓用户访问异常](/uewaf/4_pronlem/41_ssl/411_ssl)
-        * [SSL客户端校验开启](/uewaf/4_pronlem/41_ssl/412_ssl)
-    * [FAQ](/uewaf/4_pronlem/43_warning)
+        * [UWAF获取真实IP](/uewaf/4_problem/40_ques)
+        * [UWAF的证书配置](/uewaf/4_problem/41_ssl/410_ssl)
+        * [安卓用户访问异常](/uewaf/4_problem/41_ssl/411_ssl)
+        * [SSL客户端校验开启](/uewaf/4_problem/41_ssl/412_ssl)
+    * [FAQ](/uewaf/4_problem/43_warning)
    
    
     
