@@ -20,9 +20,10 @@ UCloud高防服务和企业应用防火墙（UWAF）是完全兼容的。
 如果防护的是https站点，需要同时上传站点的HTTPS证书。
 ![](../images/15904822497197.jpg)
 
-### 3.ping CNAME获取IP
+### 3.PING CNAME获取IP
 
 PING CNAME域名得到分配的UWAF的IP
+
 ![](../images/15904822727980.jpg)
 
 ### 4.修改高防源站IP
