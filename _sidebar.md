@@ -1,9 +1,7 @@
 <div class="sidebar_title icon__uewaf"> Web应用防火墙 UWAF</div>
 
 * [概览](/uewaf/README)
-* 产品简介
-    * [产品概述](/uewaf/0_concepts/00_overview)
-    * [名词解释](/uewaf/0_concepts/01_name)
+* [产品简介](/uewaf/0_concepts/00_overview)
 * 购买指导
     * [功能描述](/uewaf/1_product/10_funtion)
     * [产品选型](/uewaf/1_product/11_choose)
@@ -18,7 +16,7 @@
     * [概览](/uewaf/3_opintro/30_info)
     * [域名管理](/uewaf/3_opintro/31_domain)
     * [安全报表](/uewaf/3_opintro/32_report)
-    * 规则设置
+    * 防护设置
         * [UWAF 规则](/uewaf/3_opintro/33_rules/330_wrule)
         * [CC 防护规则](/uewaf/3_opintro/33_rules/331_ccrule)
         * [恶意 IP 封禁](/uewaf/3_opintro/33_rules/332_auto)
