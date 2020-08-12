@@ -18,16 +18,17 @@
     * [安全报表](/uewaf/3_opintro/32_report)
     * 防护设置
         * [UWAF 规则](/uewaf/3_opintro/33_rules/330_wrule)
-        * [CC 防护规则](/uewaf/3_opintro/33_rules/331_ccrule)
+        * [CC 规则](/uewaf/3_opintro/33_rules/331_ccrule)
         * [恶意 IP 封禁](/uewaf/3_opintro/33_rules/332_auto)
         * [区域 IP 封禁](/uewaf/3_opintro/33_rules/333_area)
         * [信息安全防护](/uewaf/3_opintro/33_rules/334_smsg)
         * [规则同步功能](/uewaf/3_opintro/33_rules/335_synrule)
     * 功能设置
         * [黑白名单](/uewaf/3_opintro/34_func/340_bwlist)
-        * [日志查询下载](/uewaf/3_opintro/34_func/341_srlogs)
-        * [网页防篡改](/uewaf/3_opintro/34_func/342_tamper)
+        * [日志服务](/uewaf/3_opintro/34_func/341_srlogs)
         * [证书管理](/uewaf/3_opintro/34_func/343_cert)
+        * [拦截页面](/uewaf/3_opintro/34_func/344_page)
+        * [网页防篡改](/uewaf/3_opintro/34_func/342_tamper)
     * [机器行为检测](/uewaf/3_opintro/35_bot)
     * [告警设置](/uewaf/3_opintro/36_alert)
 * 注意事项
@@ -39,8 +40,3 @@
     * [FAQ](/uewaf/4_problem/43_warning)
 
 
-
-
-
-
-    
