@@ -21,6 +21,7 @@ UWAF帮助保护您的 Web 应用程序免受常见 Web漏洞的攻击，这些�
     * [高防结合UWAF](/uewaf/2_common/22_ads)
 * 操作指南
     * [概览](/uewaf/3_opintro/30_info)
+       * [IPV6](/uewaf/3_opintro/30_info/310_ipv6)
     * [域名管理](/uewaf/3_opintro/31_domain)
        * [监控与回源设置](/uewaf/3_opintro/31_domain/311_monitor)
     * [安全报表](/uewaf/3_opintro/32_report)
