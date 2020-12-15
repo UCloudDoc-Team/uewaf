@@ -1,4 +1,3 @@
-<div class="sidebar_title icon__uewaf"> Web应用防火墙 UWAF</div>
 
 * [导航](/uewaf/README)
 * [产品简介](/uewaf/0_concepts/00_overview)
