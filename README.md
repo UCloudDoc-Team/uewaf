@@ -9,23 +9,25 @@ UWAF帮助保护您的 Web 应用程序免受常见 Web漏洞的攻击，这些�
 
 基本功能：主流Web漏洞检测和拦截、最新高危漏洞防护、虚拟补丁、防SQL注入、防CC，区域IP封禁，恶意IP封禁，日志查询，机器行为检测的等。支持灵活的自定义防护策略。
 
-* [概览](/uewaf/README)
+* [导航](/uewaf/README)
 * [产品简介](/uewaf/0_concepts/00_overview)
-* 购买指导
+* 购买引导
     * [功能描述](/uewaf/1_product/10_funtion)
     * [产品选型](/uewaf/1_product/11_choose)
     * [价格说明](/uewaf/1_product/12_price)
     * [产品优势](/uewaf/1_product/13_battle)
     * [过期回收](/uewaf/1_product/14_expire)
 * 快速上手
-    * [接入UWAF](/uewaf/2_common/20_fst)
-    * [CDN结合UWAF](/uewaf/2_common/21_cdn)
-    * [高防结合UWAF](/uewaf/2_common/22_ads)
+    * [接入 UWAF](/uewaf/2_common/20_fst)
+    * [CDN 结合 UWAF](/uewaf/2_common/21_cdn)
+    * [高防 结合 UWAF](/uewaf/2_common/22_ads)
 * 操作指南
-    * [概览](/uewaf/3_opintro/30_info)
-       * [IPV6](/uewaf/3_opintro/30_info/301_ipv6)
-    * [域名管理](/uewaf/3_opintro/31_domain)
-       * [监控与回源设置](/uewaf/3_opintro/31_domain/311_monitor)
+    * 展示
+        * [UWAF 概览](/uewaf/3_opintro/30_info)
+        * [IPV6 设置](/uewaf/3_opintro/30_info/301_ipv6)
+    * 域名
+        * [域名管理](/uewaf/3_opintro/31_domain)
+        * [监控与回源设置](/uewaf/3_opintro/31_domain/311_monitor)
     * [安全报表](/uewaf/3_opintro/32_report)
     * 防护设置
         * [UWAF 规则](/uewaf/3_opintro/33_rules/330_wrule)
