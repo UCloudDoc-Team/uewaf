@@ -41,9 +41,9 @@
         * [拦截页面](/uewaf/features/expand/Intercept_page)
         * [网页防篡改](/uewaf/features/expand/Prevent_tampering)
     * [全局告警设置](/uewaf/message/Alert)
-   * 常见问题
-        * [注意事项&FAQ](/uewaf/problem/FAQ)
-        * [客户端获取真实IP](/uewaf/problem/Get_realip)
-        * [UWAF的证书配置](/uewaf/problem/SSL_cert_set)
-        * [安卓用户访问异常](/uewaf/problem/SSL_Android)
-        * [SSL客户端校验开启](/uewaf/problem/SSL_Client)
+* 常见问题
+    * [注意事项&FAQ](/uewaf/problem/FAQ)
+    * [客户端获取真实IP](/uewaf/problem/Get_realip)
+    * [UWAF的证书配置](/uewaf/problem/SSL_cert_set)
+    * [安卓用户访问异常](/uewaf/problem/SSL_Android)
+    * [SSL客户端校验开启](/uewaf/problem/SSL_Client)
