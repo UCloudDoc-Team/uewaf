@@ -1,5 +1,5 @@
 * [导航](/uewaf/README)
-* [产品简介](/uewaf/products/Illustrate)
+* [产品简介](/uewaf/prdfucts/Illustrate)
 * 购买引导
     * [功能描述](/uewaf/steer/Introduction)
     * [版本选择](/uewaf/steer/Version_selection)
@@ -14,7 +14,7 @@
     * 概览
         * [基础概览](/uewaf/features/info/Info)
         * [配额管理](/uewaf/features/info/Quota_management)
-        * [IPV6设置](/uewaf/features/info/ipv6)
+        * [IPV6设置](/uewaf/features/info/IPv6)
     * 域名管理
         * [域名管理](/uewaf/features/domain/Domain_set)
         * [监控与回源设置](/uewaf/features/domain/Monitor_set)
@@ -40,7 +40,7 @@
         * [证书管理](/uewaf/features/expand/Certificate_management)
         * [拦截页面](/uewaf/features/expand/Intercept_page)
         * [网页防篡改](/uewaf/features/expand/Prevent_tampering)
-    * [全局告警设置](/uewaf/message/Alert)
+    * [全局告警](/uewaf/message/Alert)
 * 常见问题
     * [注意事项&FAQ](/uewaf/problem/FAQ)
     * [客户端获取真实IP](/uewaf/problem/Get_realip)
