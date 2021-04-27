@@ -3,8 +3,8 @@ UCloud Web应用防火墙（UCloud WAF）是基于云的一款分布式反向代
 
 UWAF可帮助保护您的 Web 应用程序免受常见 Web 漏洞的攻击，这些攻击会影响应用程序的可用性、损害安全性或消耗过多的资源。不同于传统应用防火墙的地方在于您可以按需付费，随用随开，简单便捷。此外您可以将UWAF作为网络攻击解决方案的一部分与高防服务结合，获得更全面的安全解决方案。
 
-适合用户：所有需要Web应用防护的客户。（应用可以不在UCloud上面）
-接入方式：通过CNAME解析部署，域名通过CNAME解析将流量引入UWAF分配的CNAME别名即可。
+**适合用户：**所有需要Web应用防护的客户。（应用可以不在UCloud上面）
+**接入方式：**通过CNAME解析部署，域名通过CNAME解析将流量引入UWAF分配的CNAME别名即可。
 
 基本功能：主流web漏洞检测和拦截、最新高危漏洞防护、虚拟补丁、防SQL注入、防CC等。支持灵活的自定义防护策略。
 
@@ -47,7 +47,7 @@ UWAF可帮助保护您的 Web 应用程序免受常见 Web 漏洞的攻击，这
             * [白名单](/uewaf/features/expand/White_list)
             * [黑名单](/uewaf/features/expand/Black_list)
         * [日志服务](/uewaf/features/expand/Logs)
-            * [日志格式](/uewaf/features/expand/Logs_format)
+            * [日志格式](/uewaf/features/expand/logs_format)
         * [证书管理](/uewaf/features/expand/Certificate_management)
         * [拦截页面](/uewaf/features/expand/Intercept_page)
         * [网页防篡改](/uewaf/features/expand/Prevent_tampering)

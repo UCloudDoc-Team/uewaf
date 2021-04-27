@@ -37,7 +37,7 @@
             * [白名单](/uewaf/features/expand/White_list)
             * [黑名单](/uewaf/features/expand/Black_list)
         * [日志服务](/uewaf/features/expand/Logs)
-            * [日志格式](/uewaf/features/expand/Logs_format)
+            * [日志格式](/uewaf/features/expand/logs_format)
         * [证书管理](/uewaf/features/expand/Certificate_management)
         * [拦截页面](/uewaf/features/expand/Intercept_page)
         * [网页防篡改](/uewaf/features/expand/Prevent_tampering)
