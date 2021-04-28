@@ -12,7 +12,7 @@ UCloud高防服务和企业应用防火墙（UWAF）是完全兼容的。
 ![](/images/15971346067433.jpg)
 
 ?> 注意：域名必须是已经备案的，未备案的域名将无法添加。  
-?> 如果防护的是https站点，需要同时上传站点的HTTPS证书。
+如果防护的是https站点，需要同时上传站点的HTTPS证书。
 
 ### 3.PING CNAME获取IP
 PING CNAME域名得到分配的UWAF的IP

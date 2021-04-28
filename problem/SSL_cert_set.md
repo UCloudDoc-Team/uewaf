@@ -6,6 +6,6 @@ UWAF支持PEM格式的证书（可通过UCloud USSL证书购买，下载PEM格�
 2. 上传的文件是否重复；·。
 3. 可以通过第三方工具验证证书是否正确，推荐使用 ``https://myssl.com/match_key.html``
 
-如用户是在USSL购买的证书，UWAF支持域名证书的自动补全功能。
+如用户是在USSL购买的证书，UWAF支持域名证书的自动同步功能。
 
 
