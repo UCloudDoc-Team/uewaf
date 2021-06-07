@@ -24,7 +24,7 @@ UWAF可帮助保护您的 Web 应用程序免受常见 Web 漏洞的攻击，这
     * 概览
         * [基础概览](/uewaf/features/info/Info)
         * [配额管理](/uewaf/features/info/Quota_management)
-        * [IPV6设置](/uewaf/features/info/Ipv6)
+        * [IPV6设置](/uewaf/features/info/IPv6)
     * 域名管理
         * [域名管理](/uewaf/features/domain/Domain_set)
         * [监控与回源设置](/uewaf/features/domain/Monitor_set)
