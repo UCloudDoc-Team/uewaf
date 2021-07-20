@@ -9,7 +9,7 @@ UWAF可帮助保护您的 Web 应用程序免受常见 Web 漏洞的攻击，这
 基本功能：主流web漏洞检测和拦截、最新高危漏洞防护、虚拟补丁、防SQL注入、防CC等。支持灵活的自定义防护策略。
 
 * [导航](/uewaf/README)
-* [产品简介](/uewaf/prdfucts/Illustrate)
+* [产品简介](/uewaf/products/Illustrate)
 * 购买引导
     * [功能描述](/uewaf/steer/Introduction)
     * [版本选择](/uewaf/steer/Version_selection)

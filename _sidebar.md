@@ -1,5 +1,5 @@
 * [导航](/uewaf/README)
-* [产品简介](/uewaf/prdfucts/Illustrate)
+* [产品简介](/uewaf/products/Illustrate)
 * 购买引导
     * [功能描述](/uewaf/steer/Introduction)
     * [版本选择](/uewaf/steer/Version_selection)
