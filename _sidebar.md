@@ -20,7 +20,7 @@
         * [监控与回源设置](/uewaf/features/domain/Monitor_set)
     * 安全报表
         * [系统概览](/uewaf/features/report/Website_overview)
-        * [攻击分析](/uewaf/features/report/Attack_analysis)
+        * [攻击概览](/uewaf/features/report/Attack_analysis)
         * [攻击详情](/uewaf/features/report/Attack_details)
         * [误报详情](/uewaf/features/report/False_positive)
     * 防护设置
