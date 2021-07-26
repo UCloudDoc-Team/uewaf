@@ -9,7 +9,7 @@
 * 快速上手
     * [接入 UWAF](/uewaf/use/Access_UWAF)
     * [CDN 结合 UWAF](/uewaf/use/CDN_with_UWAF)
-    * [DDos 结合 UWAF](/uewaf/use/DDOS_with_UWAF)
+    * [DDoS 结合 UWAF](/uewaf/use/DDOS_with_UWAF)
 * 操作指南
     * 概览
         * [基础概览](/uewaf/features/info/Info)
@@ -44,7 +44,7 @@
     * [全局告警](/uewaf/message/Alert)
 * 常见问题
     * [注意事项&FAQ](/uewaf/problem/FAQ)
-    * [客户端获取真实IP](/uewaf/problem/Get_realip)
+    * [获取客户端真实IP及端口](/uewaf/problem/Get_realip)
     * [UWAF的证书配置](/uewaf/problem/SSL_cert_set)
     * [安卓用户访问异常](/uewaf/problem/SSL_Android)
     * [SSL客户端校验开启](/uewaf/problem/SSL_Client)
