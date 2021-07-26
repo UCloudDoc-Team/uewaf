@@ -60,7 +60,7 @@ UWAF可保护您的Web应用程序免受常见Web漏洞的攻击，这些攻击�
 
 * 常见问题
     * [注意事项&FAQ](/uewaf/problem/FAQ)
-    * [获取客户端真实IP及端口](/uewaf/problem/Get_realip)
+    * [客户端真实IP及端口](/uewaf/problem/Get_realip)
     * [UWAF的证书配置](/uewaf/problem/SSL_cert_set)
     * [安卓用户访问异常](/uewaf/problem/SSL_Android)
     * [SSL客户端校验开启](/uewaf/problem/SSL_Client)
