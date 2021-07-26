@@ -41,7 +41,7 @@ CC规则列出了用户所有的自定义CC规则。
 
 此处可以看到触发了CC规则的IP列表，包含封禁或者触发验证码的IP。「刷新CC黑名单」会将所有IP取消封禁或验证码验证，而操作一栏的「解封该IP」可以将单个IP取消封禁或验证码验证。
 
-![cc-rule-img-1](/images/cc-rule-img-1.png)
+![cc-rule-img-2](/images/cc-rule-img-2.png)
 
 ## CC规则应用示例
 
