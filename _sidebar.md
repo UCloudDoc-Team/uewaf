@@ -41,7 +41,10 @@
         * [证书管理](/uewaf/features/expand/Certificate_management)
         * [拦截页面](/uewaf/features/expand/Intercept_page)
         * [网页防篡改](/uewaf/features/expand/Prevent_tampering)
-    * [全局告警](/uewaf/message/Alert)
+    * [全局告警设置](/uewaf/message/Alert)
+        * [攻击告警监控](/uewaf/message/Attack_Alert.md)
+        * [源站状态监控](/uewaf/message/Status_Alert.md)
+        * [异常状态码监控](/uewaf/message/Exception_Alert.md)
 * 常见问题
     * [注意事项&FAQ](/uewaf/problem/FAQ)
     * [获取客户端真实IP及端口](/uewaf/problem/Get_realip)
