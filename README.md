@@ -19,6 +19,7 @@ UWAF可保护您的Web应用程序免受常见Web漏洞的攻击，这些攻击�
     * [回收策略](/uewaf/steer/Recycling_strategy)
 * 快速上手
     * [接入 UWAF](/uewaf/use/Access_UWAF)
+    * [ULB 结合 UWAF](/uewaf/use/ULB_with_UWAF)
     * [CDN 结合 UWAF](/uewaf/use/CDN_with_UWAF)
     * [DDoS 结合 UWAF](/uewaf/use/DDOS_with_UWAF)
 * 操作指南

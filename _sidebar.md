@@ -8,6 +8,7 @@
     * [回收策略](/uewaf/steer/Recycling_strategy)
 * 快速上手
     * [接入 UWAF](/uewaf/use/Access_UWAF)
+    * [ULB 结合 UWAF](/uewaf/use/ULB_with_UWAF)
     * [CDN 结合 UWAF](/uewaf/use/CDN_with_UWAF)
     * [DDoS 结合 UWAF](/uewaf/use/DDOS_with_UWAF)
 * 操作指南
