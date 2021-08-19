@@ -8,12 +8,12 @@ ULB版UWAF在ULB提供的七层转发能力上提供Web安全防护能力，与�
 - [购买UWAF时绑定ULB资源](/uewaf/use/ULB_with_UWAF?id=购买UWAF时绑定ULB资源)  
 - [ULB绑定Web应用防火墙](/uewaf/use/ULB_with_UWAF?id=ULB绑定Web应用防火墙)
 
-购买成功并把域名接入UWAF后，日常使用与非ULB版WAF大体一致，但转发面功能如带宽、端口等需到ULB控制台进行调整。
+购买成功并把域名接入UWAF后，日常使用与非ULB版WAF大体一致，但转发面功能如带宽、端口等需到基础网络 UNet控制台或负载均衡 ULB控制台进行调整。
 
 ### 注意事项
 
 1. ULB版UWAF目前仅仅支持**广州**区域，其他区域正在逐步支持。  
-2. ULB版UWAF的域名、源站、带宽、端口、SSL证书、HTTP2.0、IPv6配置在UWAF控制台无法调整，如需调整，请到ULB控制台。
+2. ULB版UWAF的域名、源站、带宽、端口、SSL证书、HTTP2.0、IPv6配置在UWAF控制台无法调整，如需调整，带宽和IPv6配置请到基础网络 UNet控制台，其他配置请到负载均衡 ULB控制台。
 3. ULB版UWAF的QPS指标参见ULB的[性能指标](https://docs.ucloud.cn/ulb/intro/performance)。
 
 
@@ -46,12 +46,12 @@ ULB专区版UWAF默认提供20个域名配额，一个域名扩展包可以增�
 2. 在「VServer管理」页面选择「服务节点」，点击「添加节点」，将左侧可选资源列出的主机根据业务需要添加到右侧，点击「确定」既可，详细说明参见ULB文档：[添加服务节点](https://docs.ucloud.cn/ulb/guide/realserver/addrealserver)
 ![ulb_with_uwaf_12](/images/ulb_with_uwaf_12.png)
 ![ulb_with_uwaf_13](/images/ulb_with_uwaf_13.png)
-3. 在「VServer管理」页面选择「内容转发」，点击「添加规则」，根据业务需求填写域名（**UWAF不支持PCRE正则表达式**），将左侧列出的可选节点中的资源根据业务需要添加到右侧的转发节点中，点击「确定」既可，详细说明参见ULB文档：[添加内容转发规则](https://docs.ucloud.cn/ulb/guide/forwardpolicy/addrule)
+3. 在「VServer管理」页面选择「内容转发」，点击「添加规则」，根据业务需求填写域名（**UWAF不支持PCRE正则表达式，请填写非正则域名**），将左侧列出的可选节点中的资源根据业务需要添加到右侧的转发节点中，点击「确定」既可，详细说明参见ULB文档：[添加内容转发规则](https://docs.ucloud.cn/ulb/guide/forwardpolicy/addrule)
 ![ulb_with_uwaf_14](/images/ulb_with_uwaf_14.png)
 ![ulb_with_uwaf_15](/images/ulb_with_uwaf_15.png)
 
 !> 注意：  
-因ULB没有防恶意解析，默认所有请求都会转发到源站，考虑到您的Web应用安全，我们强烈建议您参考以下步骤关闭ULB的默认全部转发功能。  
+因ULB没有防恶意解析，默认所有请求都会转发到源站，可能会对您的正常业务产生影响，同时考虑到您的Web应用安全，我们强烈建议您参考以下步骤关闭ULB的默认全部转发功能。  
 (1) 在「VServer」界面选择「内容转发」，再选择「Default」转发规则，点击「管理」  
 (2) 选择右侧的转发节点，点击中间的向左按钮删除该节点  
 (3) 重复(2)直到删除所有节点，最后点击「确定」即可关闭ULB的默认全部转发功能  
@@ -65,6 +65,10 @@ ULB专区版UWAF默认提供20个域名配额，一个域名扩展包可以增�
 
 ![ulb_with_uwaf_18](/images/ulb_with_uwaf_18.png)
 ![ulb_with_uwaf_19](/images/ulb_with_uwaf_19.png)
+
+### 修改DNS解析
+
+到您域名的DNS服务商处添加对应域名的A记录，IP为ULB所绑定的基础网络的IP地址。
 
 ## 解绑和删除
 
