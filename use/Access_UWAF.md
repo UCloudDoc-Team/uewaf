@@ -14,7 +14,8 @@ UWAF是部署在Web服务器前，通过转发代理的方式为业务提供保�
 
 
 
-### 参数说明：
+### 参数说明
+
 |参数|说明|
 |-|-|
 |类型|UWAF部署的区域类型，包含中国内地，港澳台，海外区域以及ULB专区|
@@ -46,6 +47,7 @@ UWAF是部署在Web服务器前，通过转发代理的方式为业务提供保�
 ![](/images/16062908633019.jpg)
 
 ### 参数说明
+
 |参数|说明|
 |-|-|
 |域名|需要防护的域名|
@@ -60,13 +62,13 @@ UWAF是部署在Web服务器前，通过转发代理的方式为业务提供保�
 |HTTP2转发|开启HTTP/2业务的转发与安全防护，**开启此项需同时开启HTTPS跳转**|
 
 
-## 3. 本地测试
+## 3.本地测试
 1. 使用ping命令获取CANME对应的IP地址。
 ![](/images/16062912982683.jpg)
-2. 修改客户端的hosts记录，将站点域名指向ping对应CNAME得到的IP地址，这样可以在本地测试流量是否经过UWAF。
+2. 修改客户端的hosts记录，将站点域名指向ping对应CNAME域名所得到的IP地址，这样可以在本地测试流量是否经过UWAF。
 ```
-WINDOWS（xp/2003/vista/2008/7/8）用户HOSTS文件是在“c:\windows\system32\drivers\etc”
-MAC用户HOSTS文件在”/private/etc/“
+WINDOWS（xp/2003/vista/2008/7/8）用户HOSTS文件是在 "c:\windows\system32\drivers\etc" 目录
+MAC用户HOSTS文件在 "/private/etc/" 目录
 打开hosts文件，编辑里面域名前面的IP地址，请替换为cname对应的IP地址。
 ```
 ![-w501](/images/16062913664718.jpg)
