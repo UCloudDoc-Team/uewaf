@@ -71,7 +71,7 @@ WINDOWS（xp/2003/vista/2008/7/8）用户HOSTS文件是在 "c:\windows\system32\
 MAC用户HOSTS文件在 "/private/etc/" 目录
 打开hosts文件，编辑里面域名前面的IP地址，请替换为cname对应的IP地址。
 ```
-![-w501](/images/16062913664718.jpg)
+![](/images/16062913664718.jpg)
 
 ## 4.修改DNS记录
 拿到对应域名的CNAME值后，需要到DNS服务商处添加CNAME记录，将站点的域名正确解析至UWAF提供的CNAME，如您使用 DNSPod 提供的解析服务，则可以到 DNSPod 控制台添加CNAME记录，如下图所示。

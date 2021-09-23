@@ -1,7 +1,7 @@
 # ULB结合UWAF
 用户在使用[ULB（请求代理型）](https://docs.ucloud.cn/ulb/intro/architecture?id=%e5%a4%96%e7%bd%91ulb7)服务后，在提高了业务可用性和资源利用率的同时还可以绑定Web应用防火墙（UWAF）得到七层业务的安全防护。
 
-ULB版UWAF在ULB提供的七层转发能力上提供Web安全防护能力，与非ULB版的UWAF相比没有**泛域名、云外源站、查看CC封堵IP、拦截页面、网页防篡改**功能，具体信息请参考[版本选择-功能对比](/uewaf/steer/Version_selection?id=功能说明)，其他功能依靠ULB和UWAF均已实现。
+ULB版UWAF在ULB提供的七层转发能力上提供Web安全防护能力，与非ULB版的UWAF相比没有**云外源站、查看CC封堵IP、拦截页面、网页防篡改**功能，具体信息请参考[版本选择-功能对比](/uewaf/steer/Version_selection?id=功能说明)，其他功能依靠ULB和UWAF均已实现。
 
 
 有两种方式可以购买ULB版WAF：  
