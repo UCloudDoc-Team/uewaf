@@ -4,7 +4,7 @@
 ULB版UWAF在ULB提供的七层转发能力上提供Web安全防护能力，与非ULB版的UWAF相比没有**云外源站、查看CC封堵IP、拦截页面、网页防篡改**功能，其他功能可参照UWAF企业版，具体信息请参考[版本选择-功能对比](/uewaf/steer/Version_selection?id=功能说明)。
 
   
-可以在[购买UWAF时绑定ULB资源](/uewaf/use/ULB_with_UWAF?id=购买UWAF时绑定ULB资源)，至少需要绑定1个ULB，绑定多个ULB采取累积计费，版本限额也会累积。例如绑定2个ULB，则需7300元/月，共支持40个域名，其他限额也会翻倍。
+可以在[购买UWAF时绑定ULB资源](/uewaf/use/ULB_with_UWAF?id=购买UWAF时绑定ULB资源)，至少需要绑定1个ULB，绑定多个ULB采取累积计费，版本配额也会累积。例如绑定2个ULB，则需7300元/月，共支持40个域名，其他配额也会翻倍。
 
 购买成功并把域名接入UWAF后，日常使用与非ULB版WAF大体一致，但转发面功能如带宽、端口等需到基础网络 UNet控制台或负载均衡 ULB控制台进行调整。
 
