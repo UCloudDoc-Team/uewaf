@@ -8,11 +8,11 @@ ULB版UWAF在ULB提供的七层转发能力上提供Web安全防护能力，与�
 
 购买成功并把域名接入UWAF后，日常使用与非ULB版WAF大体一致，但转发面功能如带宽、端口等需到基础网络 UNet控制台或负载均衡 ULB控制台进行调整。
 
-若是ULB已存在且已接入业务，即为已存在的ULB增加WAF防护能力，可从[此步开始](/uewaf/use/ULB_with_UWAF?id=anchor)。
+若是**ULB已存在且已接入业务**，即为已有的请求代理型负载均衡增加WAF防护能力，[可从此步开始](/uewaf/use/ULB_with_UWAF?id=anchor)。
 
 ### 注意事项
 
-1. ULB版UWAF目前仅仅支持**广州**区域，其他区域正在逐步支持。  
+1. ULB版UWAF支持的区域：广州、上海二、香港，其他区域正在逐步支持。  
 2. ULB版UWAF的域名、源站、带宽、端口、SSL证书、HTTP2.0、IPv6配置在UWAF控制台无法调整，如需调整，带宽和IPv6配置请到基础网络 UNet控制台，其他配置请到负载均衡 ULB控制台。
 3. ULB版UWAF的QPS指标参见ULB的[性能指标](https://docs.ucloud.cn/ulb/intro/performance)。
 
