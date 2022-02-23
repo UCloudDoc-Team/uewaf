@@ -8,6 +8,8 @@ ULB版UWAF在ULB提供的七层转发能力上提供Web安全防护能力，与�
 
 购买成功并把域名接入UWAF后，日常使用与非ULB版WAF大体一致，但转发面功能如带宽、端口等需到基础网络 UNet控制台或负载均衡 ULB控制台进行调整。
 
+若是ULB已存在且已接入业务，即为已存在的ULB增加WAF防护能力，可从[此步开始](/uewaf/use/ULB_with_UWAF?id=anchor)。
+
 ### 注意事项
 
 1. ULB版UWAF目前仅仅支持**广州**区域，其他区域正在逐步支持。  
@@ -40,6 +42,7 @@ ULB专区版UWAF默认提供20个域名配额，一个域名扩展包可以增�
 2. 在「VServer管理」页面选择「服务节点」，点击「添加节点」，将左侧可选资源列出的主机根据业务需要添加到右侧，点击「确定」既可，详细说明参见ULB文档：[添加服务节点](https://docs.ucloud.cn/ulb/guide/realserver/addrealserver)
 ![ulb_with_uwaf_12](/images/ulb_with_uwaf_12.png)
 ![ulb_with_uwaf_13](/images/ulb_with_uwaf_13.png)
+<div id='anchor'></div>
 3. 在「VServer管理」页面选择「内容转发」，点击「添加规则」，转发规则选择「域名」，并从右侧下拉框中选择「泛解析」，再填写需要防护的域名（**UWAF不支持PCRE正则表达式，请务必选择「泛解析」**），将左侧列出的可选节点中的资源根据业务需要添加到右侧的转发节点中，点击「确定」既可，详细说明参见ULB文档：[添加内容转发规则](https://docs.ucloud.cn/ulb/guide/forwardpolicy/addrule)
 ![ulb_with_uwaf_14](/images/ulb_with_uwaf_14.png)
 ![ulb_with_uwaf_15](/images/ulb_with_uwaf_15.png)
