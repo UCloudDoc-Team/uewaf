@@ -8,7 +8,7 @@ ULB版UWAF在ULB提供的七层转发能力上提供Web安全防护能力，与�
 
 购买成功并把域名接入UWAF后，日常使用与非ULB版WAF大体一致，但转发面功能如带宽、端口等需到基础网络 UNet控制台或负载均衡 ULB控制台进行调整。
 
-若是**ULB已存在且已接入业务**，即为已有的请求代理型负载均衡增加WAF防护能力，[可从此步开始](/uewaf/use/ULB_with_UWAF?id=anchor)。
+若**ULB已存在且已接入业务**，即为已有的请求代理型负载均衡增加WAF防护能力，[可从此步开始](/uewaf/use/ULB_with_UWAF?id=anchor)。
 
 ### 注意事项
 
