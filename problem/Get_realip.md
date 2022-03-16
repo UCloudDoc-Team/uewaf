@@ -33,21 +33,23 @@ UWAF会在回源请求头中添加 X-Real-Port 字段来传递来访用户的真
 
 #### Nginx
 
-对于Nginx服务器，可以使用 `$http_x_real_ip` 取得 X-Real-IP 字段的值，使用 `$http_x_real_port` 取得 X-Real-Port 字段的值。
+对于Nginx服务器，可以使用 `$http_x_real_ip` 取得 X-Real-IP 字段的值，使用 `$http_x_real_port` 取得 X-Real-Port 字段的值。利用Nginx的 `http_realip_module` 模块可以让 `$remote_addr` 显示为客户端的真实IP，添加的配置如下：
 
+```nginx
+set_real_ip_from 回源IP段; # 回源IP段可在控制台 概览 页的 基本信息 处查看，多个IP段需多条指令。
+real_ip_header X-Forwarded-For;
+real_ip_recursive on; # 若WAF前有CDN等代理，需要此指令，否则不用。
+```
 
-若Nginx作为代理服务器，可在配置中添加以下内容使得后端应用能够获取的客户端真实IP
+若源站的Nginx作为代理服务器，可在配置中添加以下内容使得后端应用也能通过 X-Real-IP 或 X-Forwarded-For 获取的客户端真实IP：
 
 ```nginx
 # ...
 location / {
   # ...
-
   proxy_set_header Host $host;
   proxy_set_header X-Real-IP $remote_addr;
   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-
-  # ...
 }
 # ...
 ```
@@ -69,5 +71,4 @@ $_SERVER["X-Real-IP"]
 ```
 
 ?> 注意：  
-如果上层链路为CDN等第三方代理，有可能无法获取真实IP。  
-需要提前在域名设置中开启「WAF前是否具有代理」选项并指定客户端真实IP字段。
+如果上层链路为CDN等第三方代理，有可能无法获取真实IP。此种情况需要提前在域名设置中开启「WAF前是否具有代理」选项并指定客户端真实IP字段。
