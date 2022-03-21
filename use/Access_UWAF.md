@@ -68,10 +68,10 @@ UWAF是部署在Web服务器前，通过转发代理的方式为业务提供保�
 2. 打开hosts文件，修改客户端的hosts记录，将站点域名指向第1步中所得到的IP地址。
 ![](/images/16062913664718.jpeg)
 
-?> 说明  
-Windows用户hosts文件在 "c:\windows\system32\drivers\etc" 目录  
-macOS用户hosts文件在 "/private/etc" 目录  
-Linux用户hosts文件在 "/etc" 目录  
+?> 说明：  
+Windows用户hosts文件在 "c:\windows\system32\drivers\etc" 目录；  
+macOS用户hosts文件在 "/private/etc" 目录；  
+Linux用户hosts文件在 "/etc" 目录。  
 
 ## 4.修改DNS记录
 拿到对应域名的CNAME值后，需要到DNS服务商处添加CNAME记录，将站点的域名正确解析至UWAF提供的CNAME，如您使用 DNSPod 提供的解析服务，则可以到 DNSPod 控制台添加CNAME记录，如下图所示。
