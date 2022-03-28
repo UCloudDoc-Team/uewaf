@@ -48,10 +48,10 @@ UWAF本身包含多种类型（协议违规、注入攻击、跨站脚本、漏�
 
 |匹配内容类型|示例用法|说明|
 |-|-|-|
-|特定键的值|``{"pattern": "string", "specific": "specific-key"}``|匹配键值结构中的某一特定键 `specific-key` 的值。例如：自定义请求头，则匹配请求中的 `specific-key` 字段的值；URL查询参数，若其为 `?specific-key=xxx` ，则匹配内容为 `xxx`|
-|全部键名|``{"pattern": "string", "keys": true}``|遍历匹配键值结构的全部键名。例如：URL查询参数，若其为 `?a=1&b=2` ，会分别匹配 `a` 和 `b` 中是否包含 `string`|
-|全部值|``{"pattern": "string", "values": true}``|遍历匹配键值结构的全部值。例如：URL查询参数，若其为 `?a=1&b=2` ，会分别匹配 `1` 和 `2` 中是否包含 `string`|
-|全部键名、值|``{"pattern": "string", "all": true}``|遍历匹配键值结构的全部值名和值。例如：URL查询参数，若其为 `?a=1&b=2` ，会分别匹配 `a`, `b`, `1` 和 `2` 中是否包含 `string`|
+|特定键的值|``{"pattern": "string", "specific": "specific-key"}``|匹配键值结构中的某一特定键 `specific-key` 的值。例如：自定义请求头，则检测请求中的 `specific-key` 字段的值是否匹配 `string` ；URL查询参数，若其为 `?specific-key=xxx` ，则检测 `xxx` 是否匹配 `string`|
+|全部键名|``{"pattern": "string", "keys": true}``|遍历匹配键值结构的全部键名。例如：URL查询参数，若其为 `?a=1&b=2` ，会分别检测 `a` 和 `b` 是否匹配 `string`|
+|全部值|``{"pattern": "string", "values": true}``|遍历匹配键值结构的全部值。例如：URL查询参数，若其为 `?a=1&b=2` ，会分别检测 `1` 和 `2` 是否匹配 `string`|
+|全部键名、值|``{"pattern": "string", "all": true}``|遍历匹配键值结构的全部值名和值。例如：URL查询参数，若其为 `?a=1&b=2` ，会分别检测 `a`, `b`, `1` 和 `2` 是否匹配 `string`|
 |全部键名、值|``string``|会被当成 ``{"pattern": "string", "all": true}`` 解析|
 
 ### 参数解码说明
@@ -60,10 +60,12 @@ UWAF本身包含多种类型（协议违规、注入攻击、跨站脚本、漏�
  - URL解码
  - HTML解码
  - BASE64解码
- - 去除注释
+ - 去除注释  
    去除匹配内容中 `/*` 和 `*/` 以及它们之间的字符
- - 空格压缩
+ - 空格压缩  
    将多个空白字符（包括空格）压缩成单个空格字符
+
+来源IP不能进行参数解码，若选择了则会被忽略。
 
 ## 规则示例
 1. 如 `example.com` 域名有2条UWAF规则：
