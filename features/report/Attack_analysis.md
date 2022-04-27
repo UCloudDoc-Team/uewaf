@@ -3,7 +3,7 @@
 
 ![](/images/16195097230492.jpg)
 
-![attack-analysis-img-2](/images/attack-analysis-img-2.png)
+![attack-analysis-img-2](/images/attack_analysis_img_2.png)
 
 ## 数据展示
 - 总请求次数

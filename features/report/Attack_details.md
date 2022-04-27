@@ -2,7 +2,7 @@
 
 攻击详情里可以查看详细的攻击行为，包括攻击时间、源目IP地址、路径等，还可以进一步查看攻击行为的详细信息或将某些攻击行为标记为“误报”。
 
-![attack-details-img-1](/images/attack-details-img-1.png)
+![attack-details-img-1](/images/attack_details_img_1.png)
   
 搜索设置展开后，可根据攻击类型、工作模式、匹配工作、风险等级对攻击详情列表进行过滤，填写IP地址后可以模糊搜索某些IP的攻击行为。
 

@@ -20,5 +20,5 @@ UWAF会对用户添加的域名源站使用HEAD方法作探测访问请求。如
 
 如您确认源站正常且没有拦截UWAF的探测请求，并且此时您的业务受到影响，您可以在「域名管理」选择相应域名条目后点击的「更多」选项，选择「回源设置」，并点击「业务回源」，如下图所示，同时您还可以联系技术支持获取帮助。
 
-![status-alert-img-1](/images/status-alert-img-1.png)
+![status-alert-img-1](/images/status_alert_img_1.png)
 
