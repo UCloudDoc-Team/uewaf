@@ -15,7 +15,7 @@
     * 概览
         * [基础概览](/uewaf/features/info/Info)
         * [配额管理](/uewaf/features/info/Quota_management)
-        * [IPv6设置](/uewaf/features/info/IPv6)
+        <!--* [IPv6设置](/uewaf/features/info/IPv6)-->
     * 域名管理
         * [域名管理](/uewaf/features/domain/Domain_set)
         * [监控与回源设置](/uewaf/features/domain/Monitor_set)
