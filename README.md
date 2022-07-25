@@ -18,15 +18,15 @@ UWAF可保护您的Web应用程序免受常见Web漏洞的攻击，这些攻击�
     * [产品优势](/uewaf/steer/Advantage)
     * [回收策略](/uewaf/steer/Recycling_strategy)
 * 快速上手
-    * [接入 UWAF](/uewaf/use/Access_UWAF)
-    * [ULB 结合 UWAF](/uewaf/use/ULB_with_UWAF)
-    * [CDN 结合 UWAF](/uewaf/use/CDN_with_UWAF)
-    * [DDoS 结合 UWAF](/uewaf/use/DDOS_with_UWAF)
+    * [接入SaaS版UWAF](/uewaf/use/Access_UWAF)
+    * [接入ULB版UWAF](/uewaf/use/ULB_with_UWAF)
+    * [CDN结合UWAF](/uewaf/use/CDN_with_UWAF)
+    * [DDoS结合UWAF](/uewaf/use/DDOS_with_UWAF)
 * 操作指南
     * 概览
         * [基础概览](/uewaf/features/info/Info)
         * [配额管理](/uewaf/features/info/Quota_management)
-        * [IPV6设置](/uewaf/features/info/IPv6)
+        <!--* [IPv6设置](/uewaf/features/info/IPv6)-->
     * 域名管理
         * [域名管理](/uewaf/features/domain/Domain_set)
         * [监控与回源设置](/uewaf/features/domain/Monitor_set)
