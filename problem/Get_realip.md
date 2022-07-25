@@ -70,5 +70,5 @@ request.getHeader("X-Real-IP")
 $_SERVER["X-Real-IP"]
 ```
 
-?> 注意：  
-如果上层链路为CDN等第三方代理，有可能无法获取真实IP。此种情况需要提前在域名设置中开启「WAF前是否具有代理」选项并指定客户端真实IP字段。
+?> 说明：  
+如果上层链路为CDN等第三方代理，有可能无法获取真实IP。此种情况需要参照前文[WAF获取通过CDN等代理访问的客户端真实IP](/uewaf/problem/Get_realip?id=WAF获取通过CDN等代理访问的客户端真实IP)提前在域名设置中开启「WAF前是否具有代理」选项并指定客户端真实IP字段。

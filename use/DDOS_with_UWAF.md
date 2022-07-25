@@ -1,4 +1,8 @@
 # 高防服务结合UWAF
+
+?> 说明：  
+基于SaaS版UWAF。
+
 UCloud高防服务和Web应用防火墙（UWAF）是完全兼容的。
 
 ## 部署架构
