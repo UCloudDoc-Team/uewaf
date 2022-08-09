@@ -1,73 +1,77 @@
 # UWAF 日志格式
-UWAF 流量日志与攻击日志日志格式
 
-## 流量日志结构说明
-```
-{
-  "request_head": "HEAD / HTTP/1.1",  //请求方法、请求协议、路径
-  "cookies": "",                      //cookies
-  "upstream_status": "302",           //源站返回的响应码
-  "@timestamp": "2020-04-21T00:06:27+08:00",    //请求时间
-  "uri": "/",                           //被处理的URI
-  "request_time": 0.048,                //完成请求的时间
-  "remote_port": 40920,                 //转发到的源站监听的端口
-  "hostname": "gd-waf-2",               //主机名
-  "request_method": "HEAD",             //请求方法
-  "server_port": 80,                    //请求的端口
-  "forward": "",                        //XFF 字段
-  "scheme": "http",                     //请求方法
-  "status": "302",                      //WAF返回的响应状态码
-  "request_length": 77,                 //请求的长度
-  "upstream_response_length": "0",      //源站响应的长度
-  "time": 1587398787.0,                 //请求的unix时间
-  "host": "www.dns.dog",                //域名
-  "referer": "",                        //Referer
-  "content_type": "",                   //Content-type
-  "request_uri": "/",                   //原始URI
-  "remote_addr": "106.75.151.54",       //请求的IP
-  "bytes_sent": 469,                    //请求的长度
-  "top_id": 50146955,                   //公司ID
-  "@source": "106.75.139.229",          //防御EIP
-  "user_agent": "UWAF Domain State Monitor",     //UA内容
-  "upstream_response_time": 0.048,          //源站响应时间
-  "upstream_addr": "152.32.170.130:80"      //源站IP及端口
-}
-```
+UWAF的访问日志与攻击日志均为JSON格式。攻击日志下载后可以指定字段提取相应的信息进行日志分析或接入专用的日志服务。
 
-## 攻击日志结构说明
-```
-{
-    "hostname": "bj-waf-3",             //主机名
-    "protocol": "http",                 //请求协议
-    "servername": "test.com",           //域名
-    "destip": "106.75.118.14",          //目标IP
-    "id": "220.181.108.181-6bc4d18e",   //资源ID号
-    "port": "80",                       //请求端口
-    "alerts": [{"description": "XSS",   //拦截规则名
-                "match": {"11": "s",    //命中规则的逻辑链
-                         ......
-                          "9": "a"},
-                "id": 32006.0}],        //规则ID
-    "client_ipinfo": {"iddcode": "86",  //攻击者IP信息
-                     ......                      
-                     "regionname": "\u5317\u4eac"},
-    "request_headers": {"accept-language": "zh-cn,zh-tw",//请求头
-                       ......
-                       "fetchergroup": "TELECOM"},
-    "attack": "xss",             //攻击类型
-    "method": "GET",             //请求方法
-    "falsepositive": false,      //标记误报
-    "oid": 50100119.0,           //公司ID
-    "timestamp": 1587317107,     //攻击时间
-    "riskrank": "high",          //攻击风险
-    "host": "shop.51ykb.com",    //域名
-    "referer": "NULL",           //Referer
-    "count": 1,                  //短时间内攻击次数
-    "region": "cn-bj",           //地域
-    "uri": "/javascript:history.back()",   //请求路径
-    "client": "220.181.108.181",           //客户端IP
-    "mode": "ACTIVE",                      //工作模式
-    "action": "DENY",                      //触发动作
-    "ua": "Mozilla/5.0 (compatible;        //请求头(Ua)
-}
-```
+## 访问日志字段说明
+
+|字段|说明|
+|-------------------------|---|
+|@timestamp               | 请求的时间，UTC时间  |
+|bytes_sent               | 响应内容的大小，单位：字节  |
+|content_type             | 响应内容的类型  |
+|cookies                  | 请求的Cookie字段  |
+|forward                  | 请求的X-Forwared-For字段  |
+|host                     | 请求的Host字段，即域名  |
+|hostname                 | UWAF主机名  |
+|organization_id          | 项目ID  |
+|referer                  | 请求的Referer字段  |
+|region                   | UWAF部署地域  |
+|remote_addr              | 来源IP  |
+|remote_port              | 来源端口  |
+|request_id               | 请求唯一的ID  |
+|request_length           | 请求内容的大小，单位：字节  |
+|request_method           | 请求方法  |
+|request_time             | 响应时间，单位：秒  |
+|request_uri              | 请求的URI  |
+|scheme                   | 请求的协议  |
+|server_addr              | 防护域名的IP地址  |
+|server_name              | 防护域名  |
+|server_port              | 防护域名的端口  |
+|server_protocol          | 请求的HTTP协议版本  |
+|status                   | 响应状态码  |
+|time_local               | 请求的时间，本地时间  |
+|top_organization_id      | 客户ID  |
+|upstream_addr            | 源站服务器地址  |
+|upstream_bytes_received  | 从源站接送的内容大小，类型：数组，单位：字节  |
+|upstream_bytes_sent      | 传输给源站的内容大小，类型：数组，单位：字节  |
+|upstream_response_length | 源站响应的内容大小，类型：数组，单位：字节  |
+|upstream_response_time   | 源站响应的时间，类型：数组，单位：秒  |
+|upstream_status          | 源站的响应状态码  |
+|uri                      | 请求实际被处理的URI  |
+|user_agent               | 请求的User-Agent字段  |
+|x_real_ip                | 请求的X-Real-IP字段  |
+
+
+## 攻击日志字段说明
+
+|字段|说明|
+|--------------|---|
+|AccessId      | 攻击日志唯一的ID  |
+|Action        | 规则的匹配动作，并非实际动作  |
+|Alerts        | 触发的规则信息，类型：键值对数组  |
+|Args          | 请求的URI中参数部分  |
+|Attack        | 攻击类型  |
+|Client        | 来源IP  |
+|ClientIPInfo  | 来源IP的地理信息，类型：对象  |
+|ClientPort    | 来源端口  |
+|Count         | 攻击次数  |
+|DestIp        | 防护域名的IP地址  |
+|FalsePositive | 是否误报  |
+|Host          | 攻击请求的Host字段，即域名  |
+|Id            | 攻击日志唯一的ID  |
+|Method        | 攻击请求的请求方法  |
+|Mode          | UWAF防护模式  |
+|Port          | 防护域名的端口  |
+|Protocol      | 攻击请求的HTTP版本  |
+|Referer       | 攻击请求的Referer字段  |
+|Region        | UWAF部署区域  |
+|RequestBody   | 攻击请求的Body内容，截取512字节  |
+|RequestHeaders| 攻击请求的所有请求字段，类型：键值对数组  |
+|RequestID     | 请求唯一的ID  |
+|RiskRank      | 风险等级  |
+|ServerName    | 防护域名  |
+|TimeStamp     | 攻击发生的时间，秒级时间戳  |
+|TopId         | 客户ID  |
+|UA            | 攻击请求的User-Agent字段  |
+|Uri           | 攻击请求的URI  |
+
