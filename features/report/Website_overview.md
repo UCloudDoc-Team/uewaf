@@ -12,7 +12,7 @@
 
 ![website-overview-img-3](/images/website_overview_img_3.png)
 
-「Top 10请求IP」中的IP可以点击次数后的「忽略」可从Top 10中欧功能排除该IP，最多可排除10个IP，排除的IP会显示在该部分的上方，用户可以点击对应IP后的 × 取消忽略，如下图所示
+【Top 10请求IP】中的IP可以点击次数后的【忽略】可从Top 10中欧功能排除该IP，最多可排除10个IP，排除的IP会显示在该部分的上方，用户可以点击对应IP后的 × 取消忽略，如下图所示
 
 ![website-overview-img-4](/images/website_overview_img_4.png)
 
