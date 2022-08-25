@@ -24,7 +24,7 @@ UWAF支持PEM格式的证书（可通过UCloud USSL证书购买，下载PEM格�
 2. 上传的文件是否重复。
 3. 可以通过第三方工具验证证书是否正确（推荐使用 ``https://myssl.com/match_key.html``）。
 
-如果SSL证书是从USSL购买或托管于其，UWAF支持自动同步此类证书。
+如果SSL证书是从[USSL](/ussl/operate/buy)购买或托管在[USSL](/ussl/operate/upload)，UWAF支持自动同步此类证书。
 
 ## SSL客户端验证
 UWAF支持HTTPS域名配置客户端验证，如果您有这方面需求，请联系UCloud技术支持。并请准备好验证根证书，CRT证书。
