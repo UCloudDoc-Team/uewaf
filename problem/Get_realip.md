@@ -1,17 +1,17 @@
 # 客户端真实IP及端口
 
-## WAF获取通过CDN等代理访问的客户端真实IP
+## UWAF获取通过CDN等代理服务器访问的客户端真实IP
 
 一般CDN会通过 XFF(X-Forwarded-For) 或 X-Real-IP 来传递来访用户的真实IP，但是不排除用户构造该字段伪造请求IP的情况出现。
 
 以UCDN举例，如果想在WAF端获取到来访用户的真实的IP，需要做如下操作
 
-1. 打开WEB应用防火墙控制台的「域名管理」，选中需要设置的域名，点击「编辑」
-2. 打开后，开启「WAF前是否具有代理」选项，并在「真实IP字段设置」处填入 X-Real-IP 字段（该字段为UCDN传递用户真实IP的字段，如选择其他第三方代理，请与供应商确认真实IP字段）
+1. 打开WEB应用防火墙控制台的【域名管理】，选中需要设置的域名，点击【编辑】
+2. 打开后，开启【WAF前是否具有代理】选项，并在【真实IP字段设置】处填入 X-Real-IP 字段（该字段为UCDN传递用户真实IP的字段，如选择其他第三方代理，请与供应商确认真实IP字段）
 
 ![](/images/16195047202447.jpg)
 
-3. 配置完成后，点击「确定」，即可在WAF端获取到用户真实IP
+3. 配置完成后，点击【确定】，即可让UWAF获取到客户到客户端真实IP。
 
 
 ## 源站获取客户端真实IP
@@ -25,7 +25,7 @@ UWAF会在回源请求头中添加 X-Real-IP 和 X-Forwarded-For 两个字段来
 
 ## 源站获取客户端真实端口
 
-UWAF会在回源请求头中添加 X-Real-Port 字段来传递来访用户的真实端口，源站可通过这个头部字段获取用户客户端真实的端口。
+UWAF会在回源请求头中添加 X-Real-Port 字段来传递来访用户的真实端口，源站可通过取这个头部字段的值获取用户客户端真实的端口。
 
 ## 示例配置
 
@@ -37,11 +37,11 @@ UWAF会在回源请求头中添加 X-Real-Port 字段来传递来访用户的真
 
 ```nginx
 set_real_ip_from 回源IP段; # 回源IP段可在控制台 概览 页的 基本信息 处查看，多个IP段需多条指令。
-real_ip_header X-Forwarded-For;
-real_ip_recursive on; # 若WAF前有CDN等代理，需要此指令，否则不用。
+real_ip_header X-Forwarded-For; # 也可以使用 X-Real-IP
+real_ip_recursive on; # 若WAF前有CDN等代理，需要此指令设为 on，否则不用。
 ```
 
-若源站的Nginx作为代理服务器，可在配置中添加以下内容使得后端应用也能通过 X-Real-IP 或 X-Forwarded-For 获取的客户端真实IP：
+若源站的Nginx作为代理服务器，在前文配置的基础上还可在配置中添加以下内容使得后端应用也能通过 X-Real-IP 或 X-Forwarded-For 获取的客户端真实IP：
 
 ```nginx
 # ...
@@ -71,4 +71,4 @@ $_SERVER["X-Real-IP"]
 ```
 
 ?> 说明：  
-如果上层链路为CDN等第三方代理，有可能无法获取真实IP。此种情况需要参照前文[WAF获取通过CDN等代理访问的客户端真实IP](/uewaf/problem/Get_realip?id=WAF获取通过CDN等代理访问的客户端真实IP)提前在域名设置中开启「WAF前是否具有代理」选项并指定客户端真实IP字段。
+如果上层链路为CDN等第三方代理服务器，有可能无法获取真实IP。此种情况需要参照前文[WAF获取通过CDN等代理服务器访问的客户端真实IP](/uewaf/problem/Get_realip?id=WAF获取通过CDN等代理访问的客户端真实IP)提前在域名设置中开启【WAF前是否具有代理】选项并指定客户端真实IP字段。
