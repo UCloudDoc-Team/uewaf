@@ -1,14 +1,14 @@
 # 概览
 
-概览可以查看用户UWAF产品的一些相关的动态信息，其中包括信息通告、产品基本信息、攻击态势感知图、24小时内的攻击情况。可以查看版本的配额信息，若某个配额不够，可通过[配额管理](./Quota_management)购买相对应的扩展包。
+概览可以查看用户UWAF产品的一些相关的动态信息，其中包括信息通告、产品基本信息、攻击态势感知图、24小时内的攻击情况。可以查看版本的配额信息，若某个配额不够，可通过[配额管理](/uewaf/features/info/Quota_management)购买相对应的扩展包。
 
-- A - [产品操作](/uewaf/features/info/info?id=产品操作)
-- B - [信息通告](/uewaf/features/info/info?id=信息通告)
-- C - [基本信息](/uewaf/features/info/info?id=基本信息)
-- D - [配额信息](/uewaf/features/info/info?id=配额信息)
-- E - [安全态势感知](/uewaf/features/info/info?id=安全态势感知)
-- F - [攻击请求信息](/uewaf/features/info/info?id=攻击请求信息)
-- G - [请求与攻击数](/uewaf/features/info/info?id=请求与攻击数)
+- A - [产品操作](/uewaf/features/info/Info?id=产品操作)
+- B - [信息通告](/uewaf/features/info/Info?id=信息通告)
+- C - [基本信息](/uewaf/features/info/Info?id=基本信息)
+- D - [配额信息](/uewaf/features/info/Info?id=配额信息)
+- E - [安全态势感知](/uewaf/features/info/Info?id=安全态势感知)
+- F - [攻击请求信息](/uewaf/features/info/Info?id=攻击请求信息)
+- G - [请求与攻击数](/uewaf/features/info/Info?id=请求与攻击数)
 
 ![info_img_1](/images/info_img_1.png)
 

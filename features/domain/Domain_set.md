@@ -16,6 +16,7 @@
 若同一端口有多个源站，UWAF将采用轮询的方式进行回源。
 
 <div id="parameter-1"></div>
+
 ### 参数说明
 
 |参数|说明|
@@ -49,7 +50,7 @@
 |业务可用性|提示HTTP和HTTPS的连通性，显示的是 ``探测客户端 -> UWAF -> 源站`` 这一链路的状态|
 |解析状态|当前UWAF分配的CNAME记录的DNS解析的状态。正常代表的是解析到UWAF的防御IP上；已回源代表的是解析到源站，多源站取第一个。|
 |部署区域|防火域名的部署区域，多部署区域CNAME防护域名会解析出多个IP|
-|[工作模式](/uewaf/rule/Mode)|域名UWAF规则的工作模式|
+|[工作模式](/uewaf/features/rule/Mode)|域名UWAF规则的工作模式|
 |今日攻击数|统计今天发生的攻击总数，即当天的攻击日志数|
 |功能状态|显示是CC防护引擎和网页防篡改功能是开启还是关闭的状态|
 |操作|[安全报表](/uewaf/features/report/Website_overview)：跳转至安全报表页面<br>[防护设置](/uewaf/features/rule/Mode)：跳转至防护设置页面<br>[功能设置](/uewaf/features/expand/IP_query)：跳转至功能设置页面<br>编辑：弹出域名编辑框<br>删除：从UWAF中删除该域名，请务必先确认业务流量已切回源站<br>更多：包含回源设置和监控设置<br>● [回源设置](/uewaf/features/domain/Monitor_set?id=回源设置)：业务回源会将CNAME防护域名解析到源站；解除回源回将CNAME防护域名解析回UWAF上<br>● [监控设置](/uewaf/features/domain/Monitor_set?id=监控设置)：可以启用或关闭域名的攻击告警监控、异常状态码监控、源站状态监控及业务异常自动回源，还可以自定义源站状态监控地址(URL)|
