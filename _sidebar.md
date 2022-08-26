@@ -18,7 +18,7 @@
         <!--* [IPv6设置](/uewaf/features/info/IPv6)-->
     * 域名管理
         * [域名管理](/uewaf/features/domain/Domain_set)
-        * [监控与回源设置](/uewaf/features/domain/Monitor_set)
+        * [回源与监控设置](/uewaf/features/domain/Monitor_set)
     * 安全报表
         * [系统概览](/uewaf/features/report/Website_overview)
         * [攻击概览](/uewaf/features/report/Attack_analysis)
@@ -44,9 +44,9 @@
         * [网页防篡改](/uewaf/features/expand/Prevent_tampering)
     * 全局告警设置
         * [全局告警设置](/uewaf/message/Alert)
-        * [攻击告警监控](/uewaf/message/Attack_Alert.md)
-        * [源站状态监控](/uewaf/message/Status_Alert.md)
-        * [异常状态码监控](/uewaf/message/Exception_Alert.md)
+        * [攻击告警监控](/uewaf/message/Attack_Alert)
+        * [源站状态监控](/uewaf/message/Status_Alert)
+        * [异常状态码监控](/uewaf/message/Exception_Alert)
 * 常见问题
     * [注意事项&FAQ](/uewaf/problem/FAQ)
     * [客户端真实IP及端口](/uewaf/problem/Get_realip)
