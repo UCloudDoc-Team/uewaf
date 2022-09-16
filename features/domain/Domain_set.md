@@ -25,7 +25,7 @@
 |源站IP|域名的源站地址，需选择协议类型，填写相应的端口|
 |部署区域|域名配置生成的工作区域|
 |[工作模式](/uewaf/rule/Mode)|域名UWAF规则的工作模式<br>● 阻断模式：将根据默认UWAF规则与用户自定义UWAF规则进行拦截和放行，并生成安全日志<br>● 告警模式：将根据默认UWAF规则与用户自定义UWAF规则生成安全日志，但是不会拦截<br>● 放行模式：仅作为流量转发服务器，记录访问日志，所有的访问都将被放行，不会产生任何攻击日志信息|
-|<div id="exclusive-ip"></div>独享防御IP|消耗一个独享IP点数，为该域名分配一个独享的防御IP，此项**仅在添加域名时可开启**<br>开启独享IP的域名相比共享防御IP的域名具有更好的并发性能，在共享防御IP遭受4层DDoS攻击时不会受到影响|
+|<div id="exclusive-ip"></div>独享 防护IP |消耗一个独享IP点数，为该域名分配一个独享的 防护IP ，此项**仅在添加域名时可开启**<br>开启独享IP的域名相比共享 防护IP 的域名具有更好的并发性能，在共享 防护IP 遭受4层DDoS攻击时不会受到影响|
 |WAF前是否具有代理|在UWAF前面使用第三方代理（高防，CDN，PATHX等服务），请求经过代理转发后而导致UWAF获取不到真实的客户端IP地址时开启。<br>开启该功能并填写可以准确获取客户端真实IP的字段，即可让UWAF获取到真实的客户端IP地址|
 |SSL证书|使用HTTPS协议的端口时需要上传相应的证书，若有可匹配的证书则会列出。若是从[USSL](/ussl/operate/buy)购买的证书或者证书托管在[USSL](/ussl/operate/upload)，则在添加HTTPS站点时会自动拉取相应域名的证书。|
 |HTTP回源|开启后，来自HTTPS 443端口的请求会回源至源站HTTP 80端口。**此项不支持非443端口的HTTP回源，或回源到非80端口**，|
@@ -47,13 +47,13 @@
 |参数|说明|
 |-|-|
 |域名|已添加的防护域名|
-|CNAME|UWAF分配的CNAME防护域名，成功添加域名成功后，需把原域名解析到此CNAME防护域名将流量引入UWAF，参见[接入SaaS版UWAF](/uewaf/use/Access_UWAF)|
+|CNAME|UWAF分配的 CNAME防护域名 ，成功添加域名成功后，需把原域名解析到此 CNAME防护域名 将流量引入UWAF，参见[接入SaaS版UWAF](/uewaf/use/Access_UWAF)|
 |业务可用性|提示HTTP和HTTPS的连通性，显示的是 ``探测客户端 -> UWAF -> 源站`` 这一链路的状态|
-|解析状态|当前UWAF分配的CNAME记录的DNS解析的状态。正常代表的是解析到UWAF的防御IP上；已回源代表的是解析到源站，多源站取第一个。|
-|部署区域|防火域名的部署区域，多部署区域CNAME防护域名会解析出多个IP|
+|解析状态|当前UWAF分配的CNAME记录的DNS解析的状态。正常代表的是解析到UWAF的 防护IP 上；已回源代表的是解析到源站，多源站取第一个。|
+|部署区域|防火域名的部署区域，多部署区域 CNAME防护域名 会解析出多个IP|
 |[工作模式](/uewaf/features/rule/Mode)|域名UWAF规则的工作模式|
 |今日攻击数|统计今天发生的攻击总数，即当天的攻击日志数|
 |功能状态|显示是CC防护引擎和网页防篡改功能是开启还是关闭的状态|
-|操作|[安全报表](/uewaf/features/report/Website_overview)：跳转至安全报表页面<br>[防护设置](/uewaf/features/rule/Mode)：跳转至防护设置页面<br>[功能设置](/uewaf/features/expand/IP_query)：跳转至功能设置页面<br>编辑：弹出域名编辑框<br>删除：从UWAF中删除该域名，请务必先确认业务流量已切回源站<br>更多：包含回源设置和监控设置<br>● [回源设置](/uewaf/features/domain/Monitor_set?id=回源设置)：业务回源会将CNAME防护域名解析到源站；解除回源回将CNAME防护域名解析回UWAF上<br>● [监控设置](/uewaf/features/domain/Monitor_set?id=监控设置)：可以启用或关闭域名的攻击告警监控、异常状态码监控、源站状态监控及业务异常自动回源，还可以自定义源站状态监控地址(URL)|
+|操作|[安全报表](/uewaf/features/report/Website_overview)：跳转至安全报表页面<br>[防护设置](/uewaf/features/rule/Mode)：跳转至防护设置页面<br>[功能设置](/uewaf/features/expand/IP_query)：跳转至功能设置页面<br>编辑：弹出域名编辑框<br>删除：从UWAF中删除该域名，请务必先确认业务流量已切回源站<br>更多：包含回源设置和监控设置<br>● [回源设置](/uewaf/features/domain/Monitor_set?id=回源设置)：业务回源会将 CNAME防护域名 解析到源站；解除回源回将 CNAME防护域名 解析回UWAF上<br>● [监控设置](/uewaf/features/domain/Monitor_set?id=监控设置)：可以启用或关闭域名的攻击告警监控、异常状态码监控、源站状态监控及业务异常自动回源，还可以自定义源站状态监控地址(URL)|
 
 
