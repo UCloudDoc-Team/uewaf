@@ -27,15 +27,15 @@ UWAF系统对漏洞攻击的阻断称为“虚拟补丁”，意味着并非是�
 
 ### 如果源站是ULB负载均衡网关，是直接填写网关的IP还是填写子网主机IP？
 
-如果有外网ULB，则填写ULB网关的IP即可，不需要填写子网主机IP。
+如果有外网ULB，则填写ULB网关的IP即可，不需要填写子网主机IP。对于请求代理型ULB，推荐使用[ULB版UWAF](/uewaf/use/ULB_with_UWAF)，可用区域见[价格说明-ULB版UWAF](/uewaf/steer/Price?id=ULB版UWAF)。
 
 ### UWAF上的域名开启【HTTP2转发】需要注意什么？
 
-开启【HTTP2转发】后，同一防御IP下所有的域名的HTTPS端口都会支持HTTPS，若只希望个别域名开启HTTP2.0，建议此类域名使用独享IP。HTTP端口不支持HTTP2.0。 
+开启【HTTP2转发】后，同一 防护IP 下所有的域名的HTTPS端口都会支持HTTPS，若只希望个别域名开启HTTP2.0，建议此类域名使用独享IP。对于HTTPS 443端口，建议同步开启【HTTPS跳转】。HTTP端口不支持HTTP2.0。 
 
 ### UWAF上的各种规则如黑白名单、CC规则、UWAF规则的优先级顺序是什么？
 
-参见[规则优先级](/features/domain/rule/Mode?id=规则优先级)。
+参见[规则优先级](/uewaf/features/domain/rule/Mode?id=规则优先级)。
 
 ### 被UWAF拦截的请求的响应状态码是什么？
 
