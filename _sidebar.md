@@ -47,6 +47,7 @@
         * [攻击告警监控](/uewaf/message/Attack_Alert)
         * [源站状态监控](/uewaf/message/Status_Alert)
         * [异常状态码监控](/uewaf/message/Exception_Alert)
+* [名词解释](/uewaf/_glossary)
 * 常见问题
     * [注意事项&FAQ](/uewaf/problem/FAQ)
     * [客户端真实IP及端口](/uewaf/problem/Get_realip)
