@@ -25,7 +25,7 @@ UCloud 高防服务和 Web 应用防火墙（UWAF）是完全兼容的。
 
 ## 3.PING CNAME 获取 IP
 
-PING CNAME防护域名 得到分配的 UWAF 的 IP
+PING CNAME 防护域名 得到分配的 UWAF 的 IP
 ![](/images/15971346815387.jpg)
 
 ## 4.修改高防源站 IP
