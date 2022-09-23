@@ -10,7 +10,7 @@ UWAF 可拦截大部分的 Web 攻击从而保护您的 Web 应用程序，这�
 
 ## 接入方式
 
-- [SaaS 版 UWAF](/uewaf/use/Access_UWAF)：通过 CNAME 解析部署，域名通过 CNAME 解析将流量引入 UWAF 分配的 CNAME防护域名 即可。
+- [SaaS 版 UWAF](/uewaf/use/Access_UWAF)：通过 CNAME 解析部署，域名通过 CNAME 解析将流量引入 UWAF 分配的 CNAME 防护域名 即可。
 - [ULB 版 UWAF](/uewaf/use/ULB_with_UWAF)：购买后在 ULB 侧添加转发规则，再在 UWAF 上添加域名，无需更改原有网络链路即可对流量进行 Web 安全检测。
 
 ## 产品基本功能
