@@ -45,8 +45,7 @@
   - 全局设置
     - [全局黑名单](/uewaf/global/black_list)
     - [全局白名单](/uewaf/global/white_list)
-    - 告警设置
-      - [告警设置](/uewaf/global/message/alert)
+    - [告警设置](/uewaf/global/message/alert)
       - [攻击告警监控](/uewaf/global/message/attack_alert)
       - [源站状态监控](/uewaf/global/message/status_alert)
       - [异常状态码监控](/uewaf/global/message/exception_alert)
