@@ -49,7 +49,7 @@
       - [告警设置](/uewaf/global/message/alert)
       - [攻击告警监控](/uewaf/global/message/attack_alert)
       - [源站状态监控](/uewaf/global/message/status_alert)
-      - [异常状态码监控](/uewaf/global/message/Exception_Alert)
+      - [异常状态码监控](/uewaf/global/message/exception_alert)
     - [证书管理](/uewaf/global/certificate_management)
 - [名词解释](/uewaf/_glossary)
 - 常见问题
