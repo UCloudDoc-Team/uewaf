@@ -23,7 +23,7 @@ SaaS 版 UWAF 是部署在 Web 服务器前，通过转发代理的方式为业�
 | 版本类型                                                         | 不同版本 UWAF，详细的版本差异，功能、性能对比，请在[版本选择](/uewaf/steer/Version_selection)查看       |
 | 扩展带宽                                                         | 当版本提供的带宽额度不满足业务需求时，可提供额外的带宽扩展                                              |
 | 域名扩展包                                                       | 当版本提供的域名数不满足业务需求时，可提供额外的域名扩展                                                |
-| [独享 IP](/uewaf/features/domain/Domain_set?id=exclusive-ip)点数 | 该 IP 点数可为用户域名分配一个独享的 防护 IP ，在版本配额外可提供额外的点数                             |
+| [独享 IP](/uewaf/features/domain/Domain_set?id=exclusive-ip)点数 | 该 IP 点数可为用户域名分配一个独享的 防护IP ，在版本配额外可提供额外的点数                             |
 | 日志扩展包                                                       | 提供 180 天的日志存储与下载服务，满足等保要求，旗舰版及以上赠送日志扩展包                               |
 | 高级功能                                                         | 除基本 Web 防护功能外的高级功能，具体说明请在[功能说明](/uewaf/steer/Version_selection?id=功能说明)查看 |
 | 定制化需求                                                       | 可以按需要调整部分无法在控制台调整的功能，详情请咨询技术支持                                            |
@@ -50,7 +50,7 @@ SaaS 版 UWAF 是部署在 Web 服务器前，通过转发代理的方式为业�
 
 ## 3.本地测试
 
-1). 使用 ping 命令获取 CNAME 防护域名 对应的 IP 地址  
+1). 使用 ping 命令获取 CNAME防护域名 对应的 IP 地址  
 ![](/images/16062912982683.jpeg)
 2). 打开 hosts 文件，修改客户端的 hosts 记录，将站点域名指向第 1)步中所得到的 IP 地址  
 ![](/images/16062913664718.jpeg)
@@ -62,7 +62,7 @@ Linux 系统 hosts 文件路径：`/etc/hosts`
 
 ## 4.修改 DNS 记录
 
-拿到对应域名的 CNAME 值后，需要到 DNS 服务商处添加 CNAME 记录，将站点的域名正确解析至 UWAF 提供的 CNAME 防护域名 ，如您使用 DNSPod 提供的解析服务，则可以到 DNSPod 控制台添加 CNAME 记录，如下图所示。
+拿到对应域名的 CNAME 值后，需要到 DNS 服务商处添加 CNAME 记录，将站点的域名正确解析至 UWAF 提供的 CNAME防护域名 ，如您使用 DNSPod 提供的解析服务，则可以到 DNSPod 控制台添加 CNAME 记录，如下图所示。
 ![](/images/16062914733087.jpg)
 
 ## 5.测试配置是否正确
@@ -71,7 +71,7 @@ Linux 系统 hosts 文件路径：`/etc/hosts`
 
 1). 在 Windows 操作系统中，使用快捷键 `WIN + R`，在弹出框中输入 `cmd` 并回车；在 Linux 或 macOS 中打开任意终端  
 2). 执行命令 `nslookup -querytype=cname xxxxxx.uewaf.com`  
-3). 如果命令执行结果显示了配置的 CNAME 防护域名 或者由 CNAME 防护域名 解析得到的 IP，则表示配置成功  
+3). 如果命令执行结果显示了配置的 CNAME防护域名 或者由 CNAME防护域名 解析得到的 IP，则表示配置成功  
 ![](/images/15970493399116.jpg)
 
 ## 6.模式选择
