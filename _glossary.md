@@ -2,15 +2,13 @@
 
 ## CNAME 防护域名
 
-<!-- prettier-ignore -->
 添加域名后，UWAF分配给客户的CNAME域名，一级域名为uewaf.com，子域名为随机的8个字符。
 
 ## 防护 IP
 
-<!-- prettier-ignore -->
 UWAF分配给域名的CNAME防护域名在没有开启业务回源的情况下直接解析到的IP，默认情况下相同一级域名及其子域名共享一个IP。
 
 ## 独享 IP
 
-<!-- prettier-ignore -->
 单独为某域名分配一个防护IP，相比于共享防护IP的域名，该域名能在共享防护IP的域名被DDoS攻击时不受影响，同时拥有更好的并发性能。
+
