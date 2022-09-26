@@ -1,9 +1,13 @@
 # 白名单
 
+此白名单为域名白名单，不同于[全局白名单](/global/white_list)，域名白名单仅对当前域名生效。
+
 白名单可以放行指定 IP 地址段内的地址的访问请求，不进行任何规则检测。  
 白名单受黑白名单状态控制，仅当黑白名单状态为开启时生效。
 
 ![whitelist_img_1](/images/whitelist_img_1.png)
+
+> 各类规则的优先级参见[规则优先级](/uewaf/features/domain/rule/Mode?id=规则优先级)。
 
 ## 页面布局参数说明
 

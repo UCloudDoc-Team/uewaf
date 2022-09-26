@@ -5,6 +5,8 @@
 
 ![region_ip_img_1](/images/region_ip_img_1.png)
 
+> 各类规则的优先级参见[规则优先级](/uewaf/features/domain/rule/Mode?id=规则优先级)。
+
 !> 注意：  
 区域 IP 封禁依赖于 IP 地理信息数据库的精确度，部分地理信息存在误差是正常现象，我们会努力提高精度。
 

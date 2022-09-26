@@ -1,9 +1,13 @@
 # 黑名单
 
+此黑名单为域名黑名单，不同于[全局黑名单](/global/black_list)，域名黑名单仅对当前域名生效。
+
 黑名单可以拦截指定 IP 地址段内的地址的访问请求，被黑名单拦截的请求，UWAF 会记录 HTTP 444 状态码。  
 黑名单受黑白名单状态控制，仅当黑白名单状态为开启时生效。
 
 ![blacklist_img_1](/images/blacklist_img_1.png)
+
+> 各类规则的优先级参见[规则优先级](/uewaf/features/domain/rule/Mode?id=规则优先级)。
 
 ## 页面布局参数说明
 
