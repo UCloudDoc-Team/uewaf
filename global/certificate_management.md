@@ -4,12 +4,14 @@
 
 如果证书是在 USSL 购买的，UWAF 支持自动同步 USSL 的证书，用户在添加域名的时候，可以不用上传证书，UWAF 会自动拉取相关域名的证书。
 
-![](/images/15971452268273.jpg)
+![](/images/certificate_management-get_certificate.png)
 
 ## TLS 配置
 
 可以全局设置 TLS 协议版本和加密套件，默认设置的 TLS 协议为 1.0, 1.1, 1.2 ，协议版本选择 1.3
 必须同时选择 1.2，**无法单独选择 1.3**。加密套件预设强和中两个等级，也可以自定义加密套件，自定义选择的**加密套件需要和协议版本匹配**，可以使用 `openssl` 命令查询某个协议版本对应的加密套件，如 ` openssl ciphers -tls1_1 -s` 查询 TLS 1.1 所支持的所有加密套件。
+
+![](/images/certificate_management-set_tls.png)
 
 ## 上传证书
 
