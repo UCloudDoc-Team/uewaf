@@ -58,6 +58,6 @@ UWAF 可拦截大部分的 Web 攻击从而保护您的 Web 应用程序，这�
     - [证书管理](/uewaf/global/certificate_management)
 - [名词解释](/uewaf/_glossary)
 - 常见问题
-  - [注意事项&faq](/uewaf/problem/faq)
+  - [注意事项&FAQ](/uewaf/problem/faq)
   - [客户端真实 IP 及端口](/uewaf/problem/get_real_ip)
   - [HTTPS/证书相关问题](/uewaf/problem/https_and_ssl)
