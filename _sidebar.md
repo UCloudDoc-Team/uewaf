@@ -30,7 +30,7 @@
     - [UWAF 规则](/uewaf/features/rule/uwaf_rule)
     - [CC 规则](/uewaf/features/rule/cc_rule)
     - [恶意 IP 封禁](/uewaf/features/rule/malicious_ip)
-    - [区域 IP 封禁](/uewaf/features/rule/Regional_ban)
+    - [区域 IP 封禁](/uewaf/features/rule/regional_ban)
     - [信息安全防护](/uewaf/features/rule/information_security)
     - [规则同步](/uewaf/features/rule/rule_sync)
   - 功能设置
