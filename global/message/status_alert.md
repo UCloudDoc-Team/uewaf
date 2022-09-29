@@ -17,6 +17,6 @@ UWAF 会对用户添加的域名源站使用 HEAD 方法作探测访问请求。
 
 4. 检查源站黑白名单，是否有将 UWAF 回源地址加入白名单
 
-5. 检查区域 IP 封禁或其他的规则是否误封 UWAF 探测 IP
+5. 检查区域 IP 封禁或其它的规则是否误封 UWAF 探测 IP
 
 如您确认源站正常且没有拦截 UWAF 的探测请求，并且此时您的业务受到影响，您可以在【域名管理】选择相应域名条目后点击的【更多】选项，选择【[回源设置](/uewaf/features/domain/monitor_set.md?id=回源设置)】，并点击【[业务回源](/uewaf/features/domain/monitor_set.md?id=业务回源)】，或咨询技术支持获取帮助。
