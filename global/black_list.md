@@ -8,4 +8,4 @@
 
 ![](/images/white_list-get_global_rule.png)
 
-> 各类规则的优先级参见[规则优先级](/uewaf/features/domain/rule/mode?id=规则优先级)。
+> 各类规则的优先级参见[规则优先级](/uewaf/features/rule/mode?id=规则优先级)。

@@ -6,10 +6,10 @@
 
 ![](/images/malicious_ip-get_rule.png)
 
-> 各类规则的优先级参见[规则优先级](/uewaf/features/domain/rule/mode?id=规则优先级)。
+> 各类规则的优先级参见[规则优先级](/uewaf/features/rule/mode?id=规则优先级)。
 
 !> 注意：  
-恶意 IP 功能依赖于[域名黑名单](/uewaf/feature/expand/black_list)规则，原理是 UWAF 统计某 IP 的攻击请求后自动生成黑名单规则，规则生效可能存在延时，以实际生效时间为准。可以在【功能设置】->【IP 管理】->【[黑名单](/uewaf/features/expand/black_list)】当中查看被恶意 IP 封堵规则封堵的 IP，触发恶意 IP 封禁规则而被加入黑名单的 IP 的加入方式为“自动拦截规则”。
+恶意 IP 功能依赖于[域名黑名单](/uewaf/features/expand/black_list)规则，原理是 UWAF 统计某 IP 的攻击请求后自动生成黑名单规则，规则生效可能存在延时，以实际生效时间为准。可以在【功能设置】->【IP 管理】->【[黑名单](/uewaf/features/expand/black_list)】当中查看被恶意 IP 封堵规则封堵的 IP，触发恶意 IP 封禁规则而被加入黑名单的 IP 的加入方式为“自动拦截规则”。
 
 ## 添加规则
 

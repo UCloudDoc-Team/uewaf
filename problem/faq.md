@@ -36,7 +36,7 @@ UWAF 系统对漏洞攻击的阻断称为“虚拟补丁”，意味着并非是
 
 ### UWAF 上的各种规则如黑白名单、CC 规则、UWAF 规则的优先级顺序是什么？
 
-参见[规则优先级](/uewaf/features/domain/rule/mode?id=规则优先级)。
+参见[规则优先级](/uewaf/features/rule/mode?id=规则优先级)。
 
 ### 被 UWAF 拦截的请求的响应状态码是什么？
 

@@ -2,7 +2,7 @@
 
 CC 规则可以对请求进行限流，防止出现大量请求直接回源到源站造成源站网络拥堵或 CPU 使用率飙升的情况。
 
-> 各类规则的优先级参见[规则优先级](/uewaf/features/domain/rule/mode?id=规则优先级)。
+> 各类规则的优先级参见[规则优先级](/uewaf/features/rule/mode?id=规则优先级)。
 
 ## CC 防护模式和状态
 
