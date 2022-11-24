@@ -19,7 +19,7 @@
 | URL      | 需要保护的静态网页文件地址，需要填写 html 或者 htm 的**静态文件**的完整链接 |
 | 状态     | 单独控制某一条放篡改规则的状态，可以【开启防护】或者【关闭防护】            |
 
-例如：要针对 `http://example.com/some_activities.html` 这个 URL 的静态网页文件开启网页放篡改，如下图所示添加规则：
+例如：要针对 `https://example.com/some_activities.html` 这个 URL 的静态网页文件开启网页放篡改，如下图所示添加规则：
 
 ![](/images/prevent_tampering-add_rule.png)
 
