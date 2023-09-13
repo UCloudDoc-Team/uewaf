@@ -19,7 +19,7 @@
     <!--* [IPv6设置](/uewaf/features/info/ipv6)-->
   - 域名管理
     - [域名管理](/uewaf/features/domain/domain_set)
-    - [回源与监控设置](/uewaf/features/domain/monitor_set)
+    - [解析与监控设置](/uewaf/features/domain/monitor_set)
   - 安全报表
     - [连接数](/uewaf/features/report/concurrent_conn)
     - [系统概览](/uewaf/features/report/website_overview)
