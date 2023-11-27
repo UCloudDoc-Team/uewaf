@@ -67,7 +67,7 @@ request.getHeader("X-Real-IP")
 #### PHP
 
 ```php
-$_SERVER["X-Real-IP"]
+$_SERVER["HTTP_X_FORWARDED_FOR"]
 ```
 
 ?> 说明：  
