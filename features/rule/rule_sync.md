@@ -1,12 +1,12 @@
-## 规则同步
+## Rule Synchronization
 
-UWAF 各种类型的自定义规则均有规则同步功能，【规则同步】按钮在【添加规则】按钮右侧。
+UWAF supports rule synchronization for all types of custom rules. The "Rule Synchronization" button is located to the right of the "Add Rule" button.
 
-规则同步有两种方式：
+There are two methods for rule synchronization:
 
-- 追加方式：将当前域名下的规则追加复制到其它目标域名，目标域名的原有规则不会受影响；
-- 覆盖方式：将其它目标域名下的规则先删除，再将当前域名下的规则覆盖复制到目标域名，目标域名原有规则会被清除。
+- Append mode: The rules under the current domain name are copied and appended to other target domain names without affecting the original rules of the target domain names;
+- Overwrite mode: The rules under the target domain names are first deleted, and then the rules under the current domain name are copied and overwritten to the target domain names. The original rules of the target domain names will be cleared.
 
-规则同步到其它域名时，追加方式将规则增量添加到对应域名，覆盖方式将会**用新规则覆盖原来的旧规则**，请谨慎使用！在规则数较多或已选域名较多的情况下，请分批同步，否则可能出现超时。
+When synchronizing rules to other domain names, the append mode will incrementally add rules to the corresponding domain names, while the overwrite mode will **replace the old rules with new rules**, please use it with caution! In cases where there are many rules or many selected domain names, please synchronize in batches, otherwise, a timeout may occur.
 
 ![](/images/rule_sync-sync_rule.png)

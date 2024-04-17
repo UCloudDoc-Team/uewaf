@@ -1,52 +1,53 @@
 <div id="白名单"></div>
 
-# 白名单（域名）
+# Whitelist (Domain)
 
-此白名单为域名白名单，不同于[全局白名单](/uewaf/global/white_list)，域名白名单仅对当前域名生效。
+This whitelist is a domain whitelist, different from the [Global Whitelist](/uewaf/global/white_list), the domain whitelist only takes effect for the current domain.
 
-域名白名单可以放行指定 IP 地址或地址段内的地址的访问请求，不进行任何规则判断。域名白名单受黑白名单状态开关控制，仅当黑白名单状态为开启时生效。
+The domain whitelist can allow access requests from specified IP addresses or addresses within the range, without any rule judgment. The domain whitelist is controlled by the blacklist and whitelist status switch, and only takes effect when the blacklist and whitelist status is turned on.
 
 ![](/images/white_list-get_domain_rule.png)
 
-> 各类规则的优先级参见[规则优先级](/uewaf/features/rule/mode?id=规则优先级)。
+> For the priority of various rules, please refer to [Rule Priority](/uewaf/features/rule/mode?id=Rule Priority).
 
-## 规则列表
+## Rule List
 
-规则列表展示了域名下所有的黑名单规则，可以根据备注查询规则，也可以对规则进行修改或删除。
+The rule list shows all the blacklist rules under the domain. You can query rules based on remarks, or you can modify or delete rules.
 
-| 参数     | 说明                                                   |
-| -------- | ------------------------------------------------------ |
-| 规则名称 | 白名单规则的名称，可以为任意中英文字符                 |
-| IP 内容  | 规则所包含的具体 IP 地址，可以是 IP 地址段或 CIDR 网段 |
-| IP 类型  | 规则中的 IP 地址的类型                                 |
-| 动作     | 放行，不进行任何规则判断                               |
-| 加入时间 | 规则生成的时间                                         |
-| 操作     | 编辑或删除，可以修改或删除规则                         |
+| Parameter  | Description                                                  |
+| ---------- | ------------------------------------------------------------ |
+| Rule Name  | The name of the whitelist rule, can be any character         |
+| IP Content | The specific IP address contained in the rule, can be an IP range or CIDR block |
+| IP Type    | The type of IP address in the rule                           |
+| Action     | Allow, without any rule judgment                             |
+| Join Time  | The time the rule was generated                              |
+| Operation  | Edit or delete, you can modify or delete the rule            |
 
-## 添加白名单
+## Add Whitelist
 
-自定义添加域名白名单规则
+Customize and add domain whitelist rules
 
 ![](/images/white_list-add_domain_rule.png)
 
-### 规则参数说明
+### Rule Parameter Description
 
-| 参数    | 说明                                                   |
-| ------- | ------------------------------------------------------ |
-| IP 类型 | 规则中的 IP 地址的类型                                 |
-| IP 内容 | 规则所包含的具体 IP 地址，可以是 IP 地址段或 CIDR 网段 |
-| 动作    | 放行，不进行任何规则判断                               |
-| 备注    | 标注规则，可在规则较多的情况快速搜索规则               |
+| Parameter  | Description                                                  |
+| ---------- | ------------------------------------------------------------ |
+| IP Type    | The type of IP address in the rule                           |
+| IP Content | The specific IP address contained in the rule, can be an IP range or CIDR block |
+| Action     | Allow, without any rule judgment                             |
+| Remark     | Mark the rule, can quickly search for rules when there are many rules |
 
-!> 注意：  
-1 添加域名黑白名单前请先选择需要添加的域名；
-2 添加的白名单是 IP 地址，若黑名单添加的 IP 段包含了白名单的 IP 地址，则仅对白名单中的指定 IP 地址进行放行，其余同网段 IP 仍然会拦截。
+!> Note:  
+1 Please select the domain you need to add before adding the domain blacklist and whitelist;
+2 The whitelist added is an IP address. If the IP range added to the blacklist contains the IP address of the whitelist, only the specified IP address in the whitelist will be allowed, and the same network segment IP will still be blocked.
 
-## 白名单说明
+## Whitelist Description
 
-1. 每个域名的自定义白名单最大数目参考[性能及配额对比](/uewaf/steer/version_selection?id=性能及配额对比)，每一条条目内可包含 200 个 IP 或 IP 段；
-2. 域名白名单优先级低于全局白名单，高于全局白名单及域名白名单。
+1. The maximum number of custom whitelists for each domain refers to [Performance and Quota Comparison](/uewaf/steer/version_selection?id=Performance and Quota Comparison), each entry can contain 200 IPs or IP segments;
+2. The priority of the domain whitelist is lower than the global whitelist and higher than the global blacklist and domain whitelist.
 
 <!--
-3. 机器行为检测添加至黑名单的条数最大为 1 万条。不进行合并处理。
--->
+
+3. The maximum number of machine behavior detections added to the blacklist is 10,000. No merging is performed.
+   -->

@@ -1,40 +1,40 @@
-# 信息安全防护
+# Information Security Protection
 
-UWAF 规则是 UWAF 在收到请求后对请求进行判断，信息安全防护规则是对 UWAF 把请求发送到源站后接收到源站的响应进行判断。信息安全防护规则受工作模式控制，仅在**阻断模式**下生效。信息安全防护规则可以过滤掉响应中的敏感信息、对异常状态码进行伪装并响应自定义内容、阻断特定的内容。
+UWAF rules are judgments made by UWAF after receiving requests, and information security protection rules are judgments made on the response received from the origin server after UWAF sends the request. Information security protection rules are controlled by the working mode and only take effect in **blocking mode**. Information security protection rules can filter out sensitive information in the response, disguise abnormal status codes and respond with custom content, and block specific content.
 
-> 各类规则的优先级参见[规则优先级](/uewaf/features/rule/mode?id=规则优先级)。
+> For the priority of various rules, please refer to [Rule Priority](/uewaf/features/rule/mode?id=Rule Priority).
 
-!> 注意：  
-信息安全防护功能，目前仅支持 `text/plain` 与 `text/html` 两种内容类型的响应数据的判断。即源站响应头的 `Content-Type` 字段的值为 `text/plain` 或 `text/html` ，不支持其他内容类型。
+!> Note:  
+The information security protection function currently only supports the judgment of response data of `text/plain` and `text/html` content types. That is, the value of the `Content-Type` field in the origin server response header is `text/plain` or `text/html`, and other content types are not supported.
 
-### 规则参数说明
+### Rule Parameter Description
 
-| 参数     | 说明                                                                                                                                                                                                                                                                |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 规则名称 | 自定义规则的名称，可以为任意中英文字符                                                                                                                                                                                                                              |
-| 防护类型 | 信息安全防护规则的类型，包含[敏感信息过滤](/uewaf/features/rule/information_security?id=敏感信息过滤)、[响应码安全控制](/uewaf/features/rule/information_security?id=响应码安全控制)、[自定义内容控制](/uewaf/features/rule/information_security?id=自定义内容控制) |
-| 信息内容 | 可勾选特定的敏感信息、源站响应状态码、自定义的敏感内容                                                                                                                                                                                                              |
-| 匹配动作 | 信息脱敏、阻断响应或信息伪装、阻断响应                                                                                                                                                                                                                              |
-| 内容     | 自定义响应的内容，仅在匹配动作为信息伪装时生效，支持 txt 纯文本和 HTML 代码                                                                                                                                                                                         |
+| Parameter           | Description                                                  |
+| ------------------- | ------------------------------------------------------------ |
+| Rule Name           | The name of the custom rule, which can be any Chinese or English character |
+| Protection Type     | The type of information security protection rule, including [Sensitive Information Filtering](/uewaf/features/rule/information_security?id=Sensitive Information Filtering), [Response Code Security Control](/uewaf/features/rule/information_security?id=Response Code Security Control), [Custom Content Control](/uewaf/features/rule/information_security?id=Custom Content Control) |
+| Information Content | You can select specific sensitive information, origin server response status code, and custom sensitive content |
+| Match Action        | Information desensitization, response blocking or information disguise, response blocking |
+| Content             | The content of the custom response, only effective when the match action is information disguise, supports txt plain text and HTML code |
 
-?> 说明：  
-阻断响应指的是触发规则的响应内容会被阻断掉，并断开触发该规则的请求的连接，请求客户端无法获得被阻断的响应内容。  
-信息伪装指的是用自定义的内容（txt 纯文本或 HTML 代码）替换掉源站的响应内容。
+?> Explanation:  
+Blocking response means that the response content that triggers the rule will be blocked, and the connection of the request that triggers this rule will be disconnected, and the requesting client cannot obtain the blocked response content.  
+Information disguise refers to replacing the response content of the origin server with custom content (txt plain text or HTML code).
 
-## 敏感信息过滤
+## Sensitive Information Filtering
 
-对源站的响应内容进行敏感信息过滤处理，如果响应的内容中能匹配规则的信息内容（身份证号、手机号、邮箱、银行卡号），则会用 `*` 替换这些内容。
+Perform sensitive information filtering on the response content of the origin server. If the content of the response can match the information content of the rule (ID number, mobile phone number, email, bank card number), these contents will be replaced with `*`.
 
 ![](/images/information_security-add_sensitive_rule.png)
 
-## 响应码安全控制
+## Response Code Security Control
 
-对源站的响应码进行判断，如果响应码能匹配规则的信息内容（设置的 400 - 599 之间的状态码），则会根据匹配动作，阻断响应或者替换掉源站的响应从而实现信息伪装。
+Judge the response code of the origin server. If the response code can match the information content of the rule (the set status code between 400 - 599), the response will be blocked or the response of the origin server will be replaced to achieve information disguise according to the match action.
 
 ![](/images/information_security-add_status_rule.png)
 
-## 自定义内容控制
+## Custom Content Control
 
-对源站的响应内容进行判断，如果响应的内容中能匹配规则的信息内容，则会阻断响应。
+Judge the response content of the origin server. If the content of the response can match the information content of the rule, the response will be blocked.
 
 ![](/images/information_security-add_custom_rule.png)

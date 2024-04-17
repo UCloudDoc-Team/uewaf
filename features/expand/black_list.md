@@ -1,62 +1,63 @@
 <div id="黑名单"></div>
 
-# 黑名单（域名）
+# Blacklist (Domain)
 
-此黑名单为域名黑名单，不同于[全局黑名单](/uewaf/global/black_list)，域名黑名单仅对当前域名生效。
+This blacklist is a domain blacklist, which is different from the [global blacklist](/uewaf/global/black_list). The domain blacklist only takes effect for the current domain.
 
-域名黑名单可以拦截指定 IP 地址或地址段内的地址的访问请求，被黑名单拦截的请求，UWAF 会记录 HTTP 444 状态码。域名黑名单受黑白名单状态开关控制，仅当黑白名单状态为开启时生效。
+The domain blacklist can block access requests from specified IP addresses or addresses within the address segment. For requests blocked by the blacklist, UWAF will record the HTTP 444 status code. The domain blacklist is controlled by the blacklist and whitelist status switch, and only takes effect when the blacklist and whitelist status is turned on.
 
 ![](/images/black_list-get_domain_rule.png)
 
-> 各类规则的优先级参见[规则优先级](/uewaf/features/rule/mode?id=规则优先级)。
+> For the priority of various rules, please refer to [Rule Priority](/uewaf/features/rule/mode?id=Rule Priority).
 
-## 规则列表
+## Rule List
 
-规则列表展示了域名下所有的黑名单规则，可以根据备注查询规则，也可以对规则进行修改或删除。
+The rule list displays all the blacklist rules under the domain. You can search for rules based on remarks, and you can also modify or delete rules.
 
-| 参数     | 说明                                                   |
-| -------- | ------------------------------------------------------ |
-| 规则名称 | 黑名单规则的名称，可以为任意中英文字符                 |
-| IP 内容  | 规则所包含的具体 IP 地址，可以是 IP 地址段或 CIDR 网段 |
-| IP 类型  | 规则中的 IP 地址的类型                                 |
-| 动作     | 拦截或者验证码                                         |
-| 加入方式 | 自定义加入或者由恶意 IP 封禁规则自动加入               |
-| 加入时间 | 规则生成的时间                                         |
-| 过期时间 | 规则的过期时间，此时间后规则将失效                     |
-| 状态     | 生效中或已过期，只有生效中的规则才有防护效果           |
-| 操作     | 编辑或删除，可以修改或删除规则                         |
+| Parameter       | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| Rule Name       | The name of the blacklist rule, which can be any Chinese or English character |
+| IP Content      | The specific IP address contained in the rule, which can be an IP address segment or CIDR network segment |
+| IP Type         | The type of IP address in the rule                           |
+| Action          | Intercept or Verification Code                               |
+| Addition Method | Custom addition or automatically added by malicious IP blocking rules |
+| Addition Time   | The time when the rule was generated                         |
+| Expiration Time | The expiration time of the rule, the rule will be invalid after this time |
+| Status          | In effect or expired, only rules in effect have protective effects |
+| Operation       | Edit or delete, you can modify or delete rules               |
 
-## 添加黑名单
+## Add to Blacklist
 
-自定义添加域名黑名单规则
+Customize the addition of domain blacklist rules
 
 ![](/images/black_list-add_domain_rule.png)
 
-### 规则参数说明
+### Explanation of Rule Parameters
 
-<!--| 规则名称 | 黑名单规则的名称，可以为任意中英文字符 |-->
+<!--| Rule Name | The name of the blacklist rule, which can be any Chinese or English character |-->
 
-| 参数     | 说明                                                                                                                                                                                         |
-| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| IP 类型  | 规则中的 IP 地址的类型                                                                                                                                                                       |
-| IP 内容  | 规则所包含的具体 IP 地址，可以是 IP 地址段或 CIDR 网段                                                                                                                                       |
-| 动作     | 拦截或验证码<br>● 拦截：阻止匹配的请求访问域名下的所有路径<br>● 验证码：当发现匹配的请求，则响应验证码校验页面，如果验证不通过，会被拦截。如果验证通过，则 10 分钟内不会再响应验证码校验页面 |
-| 有效时间 | 可以设置规则的生效时间或者永不失效                                                                                                                                                           |
-| 备注     | 标注规则，可在规则较多的情况快速搜索规则                                                                                                                                                     |
+| Parameter  | Description                                                  |
+| ---------- | ------------------------------------------------------------ |
+| IP Type    | The type of IP address in the rule                           |
+| IP Content | The specific IP address included in the rule, which can be an IP address segment or CIDR network segment |
+| Action     | Intercept or captcha<br>● Intercept: Prevent matched requests from accessing all paths under the domain<br>● Captcha: When a matched request is found, a captcha verification page is responded. If the verification fails, it will be intercepted. If the verification passes, the captcha verification page will not be responded to within 10 minutes |
+| Valid Time | You can set the effective time of the rule or never expire   |
+| Note       | Mark the rule, you can quickly search for rules when there are many rules |
 
-!> 注意：  
-1 添加域名黑白名单前请先选择需要添加的域名；
-2 添加的白名单是 IP 地址，若黑名单添加的 IP 段包含了白名单的 IP 地址，则仅对白名单中的指定 IP 地址进行放行，其余同网段 IP 仍然会拦截。
+!> Note:  
+1 Please select the domain you need to add before adding the domain whitelist and blacklist;
+2 The whitelist added is an IP address. If the IP segment added to the blacklist contains the IP address of the whitelist, only the specified IP address in the whitelist will be released, and the remaining IP in the same network segment will still be intercepted.
 
-### 删除黑名单
+### Delete Blacklist
 
-删除黑名单的记录后，则不再对拦截或返回验证码界面给改规则中的的 IP 或 IP 段。
+After deleting the record of the blacklist, it will no longer intercept or return the captcha interface to the IP or IP segment in this rule.
 
-## 黑名单说明
+## Blacklist Explanation
 
-1. 每个域名的自定义黑名单最大数目参考[性能及配额对比](/uewaf/steer/version_selection?id=性能及配额对比)，每一条条目内可包含 200 个 IP 或 IP 段；
-2. 恶意 IP 封堵添加至黑名单的条数最大为 1 万条，1 分钟内，触发规则的相同恶意 IP 会合并后添加到黑名单。
+1. The maximum number of custom blacklists for each domain refers to [Performance and Quota Comparison](/uewaf/steer/version_selection?id=Performance and Quota Comparison), and each entry can contain 200 IPs or IP segments;
+2. The maximum number of malicious IPs blocked and added to the blacklist is 10,000. Within 1 minute, the same malicious IPs that trigger the rule will be merged and added to the blacklist.
 
 <!--
-3. 机器行为检测添加至黑名单的条数最大为 1 万条。不进行合并处理。
--->
+
+3. The maximum number of machine behavior detections added to the blacklist is 10,000. No merging process is performed.
+   -->

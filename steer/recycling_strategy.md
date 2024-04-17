@@ -1,24 +1,24 @@
-# 过期回收
+# Expiration and Recovery
 
-## 告警
+## Alerts
 
-计费系统会向客户发送告警通知。
+The billing system will send alert notifications to customers.
 
-客户经理手动提交回收的资源：会在 10 分钟内给客户发告警。
+For resources manually submitted for recovery by the account manager: An alert will be sent to the customer within 10 minutes.
 
-自动回收的资源：
+For resources automatically recovered:
 
-- 按月按年计费：第 1 天上午发一次告警，第 3 天一次，第 6 天一次；
-- 按小时计费：下一个 10 点告警一次。
+- For monthly and yearly billing: An alert will be sent on the 1st, 3rd, and 6th day in the morning.
+- For hourly billing: An alert will be sent at the next 10 o'clock.
 
-### 续费
+### Renewal
 
-如果在告警发出后的 7 天内续费，则可以正常继续使用，原配置保留。
+If you renew within 7 days after the alert is issued, you can continue to use it normally, and the original configuration will be retained.
 
-## 回收策略
+## Recovery Strategy
 
-如果告警发出后一直未续费则将在发出第一次告警的 7 天后删除资源。
+If no renewal is made after the alert is issued, the resources will be deleted 7 days after the first alert is issued.
 
-## 用户删除
+## User Deletion
 
-用户在使用期间删除 WAF，则会收取当月已使用时间的折合费用，剩余费用则会返还至用户账户。
+If the user deletes the WAF during the usage period, the equivalent cost of the time used in the current month will be charged, and the remaining cost will be returned to the user's account.

@@ -1,58 +1,53 @@
-# 概览
+# Overview
 
-概览可以查看用户 UWAF 产品的一些相关的动态信息，其中包括信息通告、产品基本信息、攻击态势感知图、24 小时内的攻击情况。可以查看版本的配额信息，若某个配额不够，可通过[配额管理](/uewaf/features/info/quota_management)购买相对应的扩展包。
+The overview provides dynamic information related to the user's UWAF product, including information announcements, basic product information, attack situation perception maps, and attacks within 24 hours. You can view the quota information of the version, and if a certain quota is not enough, you can purchase the corresponding expansion pack through [Quota Management](/uewaf/features/info/quota_management).
 
-- A - [产品操作](/uewaf/features/info/info?id=产品操作)
-- B - [信息通告](/uewaf/features/info/info?id=信息通告)
-- C - [基本信息](/uewaf/features/info/info?id=基本信息)
-- D - [配额信息](/uewaf/features/info/info?id=配额信息)
-- E - [安全态势感知](/uewaf/features/info/info?id=安全态势感知)
-- F - [攻击请求信息](/uewaf/features/info/info?id=攻击请求信息)
-- G - [请求与攻击数](/uewaf/features/info/info?id=请求与攻击数)
+- A - [Product Operation](/uewaf/features/info/info?id=Product Operation)
+- B - [Basic Information](/uewaf/features/info/info?id=Basic Information)
+- C - [Quota Information](/uewaf/features/info/info?id=Quota Information)
+- D - [Security Situation Awareness](/uewaf/features/info/info?id=Security Situation Awareness)
+- E - [Attack Request Information](/uewaf/features/info/info?id=Attack Request Information)
+- F - [Requests and Attacks](/uewaf/features/info/info?id=Requests and Attacks)
 
 ![](/images/info-get_info.png)
 
-## 产品操作
+## Product Operation
 
-产品操作包含四个按钮，各按钮功能如下：
+Product operation includes four buttons, each with the following functions:
 
-- 关闭 UWAF：删除 UWAF 资源，需要先在【[域名管理](/uewaf/features/domain/domain_set)】中删除所有域名
-- 变更版本：升级现有 UWAF 产品版本，升级后不支持降级
-- 续费：跳转到产品续费界面，可在该界面开启或关闭自动续费或变更计费方式
-- 文档中心：跳转至官网的[UWAF 产品文档](/uewaf/README)
+- Close UWAF: Delete UWAF resources, you need to delete all domains in [Domain Management](/uewaf/features/domain/domain_set) first
+- Change Version: Upgrade the existing UWAF product version, downgrade is not supported after upgrade
+- Renewal: Jump to the product renewal interface, where you can turn on or off automatic renewal or change the billing method
+- Documentation Center: Jump to the official [UWAF Product Documentation](/uewaf/README)
 
-## 信息通告
+## Basic Information
 
-信息通告包含 UWAF 产品更新、网络变更、漏洞预警、虚拟补丁发布等公告信息。
+Basic information includes the basic information of the product:
 
-## 基本信息
+- Resource ID: The unique identifier of the product resource
+- UWAF Version: Enterprise Edition, Flagship Edition, or Customized Edition
+- Expiration Time: The expiration time of the product resource. If it is not renewed after expiration, resources will be recycled according to the [Recycling Strategy](/uewaf/steer/recycling_strategy)
+- Billing Method: Monthly or yearly
+- <div id="back-ips"></div>Back to IP: Click the [View] button to view the back-to-source network segment of the product resource that has been opened
 
-基本信息包含了产品的基本信息：
+## Quota Information
 
-- 资源 ID：产品资源的唯一标识
-- UWAF 版本：企业版、旗舰版或专属定制版
-- 到期时间：产品资源的到期时间，到期后若没有续费则会按照[回收策略](/uewaf/steer/recycling_strategy)进行资源回收
-- 计费方式：月付或年付
-- <div id="back-ips"></div>回源IP：点击【查看】按钮可以查看产品资源已开通区域的回源网段
+This is only part of the quota information (for detailed quota information, see [Performance and Quota Comparison](/uewaf/steer/version_selection?id=Performance and Quota Comparison)). The progress bar above is the quota usage rate, and the starting value on the left below is fixed at 0, and the right is the actual quota of the product resource (including the purchased expansion pack). Click [Quota Management](/uewaf/features/info/quota_management) to purchase expansion packs.
 
-## 配额信息
+Quota information includes the following quota information and its usage:
 
-此处仅为部分配额信息（详细配额信息见[性能及配额对比](/uewaf/steer/version_selection?id=性能及配额对比)），进度条上方为配额使用率，下方左侧起始值固定为 0，右侧为产品资源的实际配额（包含了购买的扩展包）。点击【[配额管理](/uewaf/features/info/quota_management)】可以购买扩展包。
+- Domain usage: The number of domains added, regardless of the wildcard domain, the wildcard domain quota is: domain number configuration / 10
+- [Exclusive IP](/uewaf/features/domain/domain_set?id=exclusive-ip) usage: The number of exclusive IP points used
+- Bandwidth usage: The bandwidth usage of the product resource, the statistical granularity is the average value of five minutes, if the actual bandwidth used is too low, it will be displayed as 0.00%
 
-配额信息包含了如下配额信息及其使用情况：
+## Security Situation Awareness
 
-- 域名数使用情况：已添加的域名数，不区分泛域名，泛域名配额为：域名数配置 / 10
-- [独享 IP](/uewaf/features/domain/domain_set?id=exclusive-ip)使用情况：已使用的独享 IP 点数
-- 带宽使用情况：产品资源的带宽使用情况，统计粒度为五分钟的平均值，实际使用的带宽过低则显示为 0.00%
+Security situation awareness can view the attack source of all domains or specific domains. The deployment area will be marked with a purple positioning symbol, and the area with attack traffic will be marked on the global map, with a dynamic arrow effect from the attack source area to the deployment area indicating attacks initiated from a certain source area within 24 hours. Due to front-end performance considerations, the default display is the security situation awareness map of the last 24 hours or the first 1000 attack logs.
 
-## 安全态势感知
+## Attack Request Information
 
-安全态势感知可以查看全部域名或特定域名的攻击来源情况，部署区域会有紫色定位符号标识，存在攻击流量的区域将会标识在全球地图上，会有由攻击源区域起始至部署区域的动态箭头效果表示 24 小时内存在从某个源区域发起的攻击。因前端性能考虑，默认展示最近 24 小时或前 1000 条攻击日志的安全态势感知图。
+Attack request information shows some detailed information of the attack logs in the security situation awareness, including attack time, target domain of the attack, source IP, region of the source IP, and attack type, sorted in reverse chronological order.
 
-## 攻击请求信息
+## Requests and Attacks
 
-攻击请求信息展示了在安全态势感知中的攻击日志的部分详细信息，包含攻击时间、攻击目标域名、来源 IP、来源 IP 所属地域以及攻击类型，以时间顺序倒序排列。
-
-## 请求与攻击数
-
-请求与攻击数展示了最近 24 小时内的总请求次数和总攻击次数，能够对域名的访问和攻击情况有大概的了解。
+Requests and Attacks show the total number of requests and total number of attacks in the last 24 hours, allowing you to have a general understanding of the access and attack situation of the domain.

@@ -1,29 +1,31 @@
-# 恶意 IP 封禁
+# Malicious IP Blocking
 
-恶意 IP 封禁可以让 UWAF 在当前域名受到在一定的周期内统计到来自单 IP 的多次攻击时间内遭受到多少次攻击后，自动对攻击请求的来源 IP 施加惩罚措施，即将该 IP 加入到域名的黑名单中以进行封禁处理。如果前方有第三方代理，在未获取准确来源 IP 的情况下，可能造成误封操作。
+Malicious IP blocking allows UWAF to automatically impose penalties on the source IP of attack requests, i.e., adding the IP to the domain's blacklist for blocking, after the current domain has been attacked multiple times from a single IP within a certain period. If there is a third-party proxy in front, it may cause misblocking without obtaining the accurate source IP.
 
-恶意 IP 封禁受黑白名单状态控制，仅当黑白名单状态为开启时生效。
+Malicious IP blocking is controlled by the blacklist and whitelist status, and only takes effect when the blacklist and whitelist status is turned on.
 
 ![](/images/malicious_ip-get_rule.png)
 
-> 各类规则的优先级参见[规则优先级](/uewaf/features/rule/mode?id=规则优先级)。
+> For the priority of various rules, please refer to [Rule Priority](/uewaf/features/rule/mode?id=Rule Priority).
 
-!> 注意：  
-恶意 IP 功能依赖于[域名黑名单](/uewaf/features/expand/black_list)规则，原理是 UWAF 统计某 IP 的攻击请求后自动生成黑名单规则，规则生效可能存在延时，以实际生效时间为准。可以在【功能设置】->【IP 管理】->【[黑名单](/uewaf/features/expand/black_list)】当中查看被恶意 IP 封堵规则封堵的 IP，触发恶意 IP 封禁规则而被加入黑名单的 IP 的加入方式为“自动拦截规则”。
+!> Note:  
+The malicious IP function depends on the [Domain Blacklist](/uewaf/features/expand/black_list) rule. The principle is that UWAF counts the attack requests of a certain IP and automatically generates blacklist rules. The rules may take effect with a delay, and the actual effective time shall prevail. You can view the IPs blocked by the malicious IP blocking rule in [Function Settings] -> [IP Management] -> [[Blacklist](/uewaf/features/expand/black_list)]. The IPs added to the blacklist by triggering the malicious IP blocking rule are added by the "automatic interception rule".
 
-## 添加规则
+## Add Rule
 
-可以根据攻击类型和攻击频率添加规则，添加了攻击类型为“全部”的规则时，无法再添加其他攻击类型的封禁规则；添加了具体的攻击类型的规则时，无法再添加攻击类型为“全部”的封禁规则。
+You can add rules based on the attack type and attack frequency. When a rule with the attack type "all" is added, no other attack type blocking rules can be added; when a specific attack type rule is added, no "all" type blocking rules can be added.
 
 ![](/images/malicious_ip-add_rule.png)
 
-### 规则参数说明
+### Rule Parameter Description
 
-| 参数     | 说明                                                                                             |
-| -------- | ------------------------------------------------------------------------------------------------ |
-| 统计周期 | 统计攻击请求的周期                                                                               |
-| 攻击类型 | 统计哪些指定的攻击类型，默认为全部，只能设置一条全部类型的规则，不同攻击类型的规则也只能设置一条 |
-| 次数阈值 | 特定的攻击类型的攻击请求次数                                                                     |
-| 封禁时长 | 加入黑名单后，该黑名单的生效时间                                                                 |
+| Parameter         | Description                                                  |
+| ----------------- | ------------------------------------------------------------ |
+| Statistics Period | The period for counting attack requests                      |
+| Attack Type       | Counting which specified attack types, default is all, only one rule of all types can be set, and only one rule of different attack types can be set |
+| Threshold         | The number of attack requests of a specific attack type      |
+| Blocking Duration | After joining the blacklist, the effective time of the blacklist |
 
-> 攻击请求定义：触发默认 UWAF 规则及自定义 UWAF 规则（不包括⽤户自定义的放行规则）的请求及触发 CC 规则的请求（不包括后续的拦截请求）。
+> Attack request definition: Requests that trigger the default UWAF rules and custom UWAF rules (excluding user-defined pass rules) and requests that trigger CC rules (excluding subsequent interception requests).																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									
+
+​																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									

@@ -1,124 +1,118 @@
-# 解析与监控设置
+# Parsing and Monitoring Settings
 
-[解析设置](#解析设置)，根据功能配置，将服务请求解析到高防、WAF、源站。更加贴合用户的应用场景，增加WAF配置的灵活性及安全性。  
-[监控设置](#监控设置)，根据不同域名的应用场景，用户可单独配置对应域名的监控方式，以便于及时获取相关告警信息。
+[Parse Settings](#Parse Settings), according to the function configuration, parse the service request to high defense, WAF, source station. It fits the user's application scenario more closely, increasing the flexibility and security of WAF configuration.  
+[Monitoring Settings](#Monitoring Settings), according to the application scenarios of different domains, users can configure the monitoring method for the corresponding domain separately, in order to obtain relevant alarm information in time.
 
-!> 注意：  
-监控设置，除业务异常自动回源外，其他监控类型均受[全局告警设置](/uewaf/global/message/alert)中的开关控制，这里仅为域名级别的子开关，如果未开启全局告警设置的对应开关，则会无法收到短信或者邮件告警通知。
-当解析状态为“高防”时，自动回源模式不生效。
+!> Note:  
+For monitoring settings, except for automatic return to source in case of business exceptions, all other types of monitoring are controlled by the switch in the [Global Alert Settings](/uewaf/global/message/alert). Here is only the sub-switch at the domain level. If the corresponding switch in the global alert settings is not turned on, you will not be able to receive SMS or email alert notifications.
+When the parsing status is "high defense", the automatic return to source mode does not take effect.
 
-## 解析设置
+## Parse Settings
 
-创建域名成功后可在 列表页→更多→解析设置 配置域名解析，默认为WAF解析。  
+After successfully creating a domain name, you can configure the domain name parsing in List Page → More → Parse Settings, the default is WAF parsing.  
 
-解析状态:浮窗展示当前域名所有区域解析状态。  
+Parsing status: The pop-up window shows the parsing status of all regions of the current domain.  
 
-(1)高防：将域名解析到对应高防IP。  
+(1) High Defense: Parse the domain name to the corresponding high defense IP.  
 
-(2)正常：将域名解析到WAF。  
+(2) Normal: Parse the domain name to WAF.  
 
-(3)已回源：域名直接解析到源站IP。  
-![](/images/monitor_jxsz1.png)
+(3) Returned to Source: The domain name is directly parsed to the source IP.  
+![](/images/monitor_jxsz1.png)""".
 
+### WAF Parsing
 
-### WAF解析
+After successfully creating a domain name, you can go to List Page→More→Parsing Settings→Domain Name Parsing (default configuration).
 
-创建域名成功后可在 列表页→更多→解析设置→域名解析（默认配置）。  
-
-该模式下，UWAF会识别和阻止恶意请求，并根据对应的防护规则策略对域名进行防护。
+In this mode, UWAF will identify and block malicious requests, and protect the domain name according to the corresponding protection rule strategy.
 ![](/images/monitor_wafjx.png)
 
 
-### 源站解析
+### Source Station Parsing
 
-配置路径： 列表页→更多→解析设置→源站解析。   
+Configuration path: List Page→More→Parsing Settings→Source Station Parsing.
 
-该模式下，客户端将直接访问源站，源站将失去WAF的防护，请谨慎配置。
+In this mode, the client will directly access the source station, and the source station will lose the protection of WAF, please configure carefully.
 
 ![](/images/monitor_yzjx.png)
 
-### 高防解析
+### High Defense Parsing
 
-配置路径： 列表页→更多→解析设置→高防解析。
-该模式下，UWAF与UDDOS联动为源站提供DDOS防护及攻击防护。
+Configuration path: List Page→More→Parsing Settings→High Defense Parsing.
+In this mode, UWAF and UDDOS work together to provide DDOS protection and attack protection for the source station.
 
-!> 注意：   
-该模式需用户购买[UDDOS](/uantiddos/uantiddos)服务并完成相关配置才可实现。  
-仅开启高防解析功能的域名才可享受DDOS防护。
+!> Note:   
+This mode requires users to purchase [UDDOS](/uantiddos/uantiddos) service and complete related configurations to be implemented.  
+Only domain names that have enabled the high defense parsing function can enjoy DDOS protection.
 
 ![](/images/monitor_gfjx1.png)
 
-#### 高防设置
+#### High Defense Settings
 
-
-配置路径：域名列表→更多→高防设置。  
+Configuration path: Domain Name List→More→High Defense Settings.  
 
 ![](/images/monitor_gfjx2.png)
 
-#### 高防配置
+#### High Defense Configuration
 
-高防配置：点击【高防配置】按钮拉起配置弹窗，已在高防解析状态下不可配置。  
-模式：  
-①手动：用户手动切换到高防，将会把DNS解析指向高防IP，配置成功后通知用户。  
-②自动：当对应域名受到DDOS攻击时，自动解析到高防。自动配置成功后通知用户。自动切换条件未触发时不影响当前解析状态。 
-区域：可根据对应区域配置不同的高防解析IP，对应高防IP可在[UDDOS](/uantiddos/uantiddos)购买  
-高防IP：用户配置对应高防IP，可读取之前历史创建的高防IP也可手动填写。
-
+High Defense Configuration: Click the [High Defense Configuration] button to pull up the configuration pop-up window, which cannot be configured under the high defense parsing status.  
+Mode:  
+①Manual: Users manually switch to high defense, which will point DNS parsing to the high defense IP, and notify users after successful configuration.  
+②Automatic: When the corresponding domain name is under DDOS attack, it will automatically parse to high defense. Notify users after successful automatic configuration. It does not affect the current parsing status when the automatic switching condition is not triggered. 
+Region: Different high defense parsing IPs can be configured according to the corresponding region, and the corresponding high defense IP can be purchased at [UDDOS](/uantiddos/uantiddos)  
+High Defense IP: Users configure the corresponding high defense IP, which can read the previously created high defense IP or manually fill it in.
 
 ![](/images/monitor_gfjx3.png)
 
-#### 高防配置同步
+#### DDoS Configuration Synchronization
 
-高防配置同步：可将源域名配置批量复制到选中的域名。最多可批量复制50条。  
+DDoS Configuration Synchronization: You can bulk copy the source domain configuration to the selected domains. Up to 50 can be copied in bulk.
 
-!> 注意：   
-(1)已有配置的域名,新配置将覆盖旧配置。  
-(2)已在高防解析状态下不可配置。   
-(3)处在高防配置状态的域名不可配置。   
+!> Note:
+(1) For domains with existing configurations, the new configuration will overwrite the old one.
+(2) Configuration is not possible while in DDoS resolution status.
+(3) Domains in DDoS configuration status cannot be configured.
 
-
-高防切换确认：二次弹窗确认是否需要批量同步操作。  
-同步信息反馈：反馈同步结果包括，同步信息总数，成功数量、失败数量，失败原因。  
-
+DDoS Switch Confirmation: A second pop-up window confirms whether you need to perform bulk synchronization operations.
+Synchronization Feedback: Feedback on synchronization results includes total synchronization information, number of successes, number of failures, and reasons for failure.
 
 ![](/images/monitor_gfjx4.png)
 ![](/images/monitor_gfjx5.png)
 
+## Monitoring Settings
 
-## 监控设置
-
-此处的监控设置为域名级别的告警信息的接收与关闭。除业务异常自动回源设置外，均受全局告警设置开关控制，如果未开启全局告警设置的对应开关，则会无法收到短信或者邮件告警通知。
+The monitoring settings here are for receiving and closing alert information at the domain level. Except for the automatic return to source setting for business exceptions, all are controlled by the global alert setting switch. If the corresponding switch of the global alert setting is not turned on, you will not be able to receive SMS or email alert notifications.
 
 ![](/images/monitor_set-get_settings.png)
 
-以下开关均是开启或关闭**域名级别**的告警或监控。
+The following switches are to turn on or off alerts or monitoring at the **domain level**.
 
-### 攻击告警监控
+### Attack Alert Monitoring
 
-UWAF 监控域名的攻击态势，默认为 1 分钟之内，单 IP 触发同一攻击类型超过 500 次，则会向对应的消息订阅组用户发送告警邮件或者短信。
+UWAF monitors the attack situation of the domain name, by default, if a single IP triggers the same type of attack more than 500 times within 1 minute, an alert email or SMS will be sent to the corresponding message subscription group users.
 
-### 异常状态码监控
+### Abnormal Status Code Monitoring
 
-UWAF 监控域名业务的状态码，业务 QPS 平均值需要大于 10 以上，低于 10 则不会触发告警。如整体请求中 499 以上响应码比例大于 30%，则会向对应的消息订阅组用户发送告警邮件或者短信。频率为 5 分钟一次。
+UWAF monitors the status code of the domain name business. The average QPS of the business needs to be greater than 10, and if it is less than 10, an alert will not be triggered. If the proportion of response codes above 499 in the overall request is greater than 30%, an alert email or SMS will be sent to the corresponding message subscription group users. The frequency is once every 5 minutes.
 
-### 源站状态监控
+### Source Station Status Monitoring
 
-UWAF 默认会对添加的域名使用 HEAD 请求方法进行探测访问，探测路径为：`探测客户端 -> UWAF -> 源站` 或 `探测客户端 -> 源站`，HTTP 与 HTTPS 业务可用性表示的是前者的链路状态。请注意源站或域名是否具有安全策略，如有，请将 UWAF 监控 IP（回源 IP）需加入白名单。如果 5 分钟内，连续 3 次请求都是异常响应，则会向对应的消息订阅组用户发送告警邮件或者短信。频率为 5 分钟一次。
+By default, UWAF will use the HEAD request method to probe the added domain names. The probing path is: `Probing Client -> UWAF -> Source Station` or `Probing Client -> Source Station`. The availability of HTTP and HTTPS services represents the status of the former link. Please note whether the source station or domain name has a security policy. If so, the monitoring IP (return to source IP) of UWAF needs to be added to the whitelist. If there are 3 consecutive abnormal responses within 5 minutes, an alert email or SMS will be sent to the corresponding message subscription group users. The frequency is once every 5 minutes.
 
-?> 说明：  
-此功能关闭后，只是不再发送告警邮件或者短信，UWAF 探测客户端还是会继续探测源站。  
-UWAF 探测客户端会随机选择回源 IP 网段中地址作为源 IP 进行探测（极少情况下会使用域名 防护 IP 为源 IP）。若源站或域名有安全策略，需要源站放行 UWAF 的回源 IP 的 HEAD 请求，同时在 UWAF 控制台将回源 IP 添加到域名的白名单中。
+?> Note:  
+After this function is turned off, it will no longer send alert emails or SMS, but the UWAF probing client will continue to probe the source station.  
+The UWAF probing client will randomly select an address in the return source IP segment as the source IP for probing (in rare cases, the domain name protection IP will be used as the source IP). If the source station or domain name has a security policy, the source station needs to allow the HEAD request of UWAF's return source IP, and at the same time add the return source IP to the domain name whitelist in the UWAF console.
 
-同时用户可以自定义探测的请求路径，若在监控地址填写了完整的 URL，探测请求会将访问该 URL 的响应作为判断源站状态的依据。
+Users can also customize the probing request path. If a complete URL is filled in the monitoring address, the response of visiting this URL will be used as the basis for judging the status of the source station.
 
-### 配置示例
+### Configuration Example
 
-当我们自定义设置一个源站状态监控地址后，
+After we have custom set a source site status monitoring address,
 ![](/images/monitor_set-set_monitor_url.png)
 
-等待几分钟后，源站服务器收到的探测请求应当为自定义设置的文件路径。日志如下：
+Wait for a few minutes, the probe request received by the source server should be the custom set file path. The log is as follows:
 ![](/images/monitor_set-get_monitor_log.png)
 
-### 业务异常自动回源设置
+### Automatic Return to Source Setting for Business Exceptions
 
-开启业务异常自动回源设置后，UWAF 会对该域名的业务做可用性监控，请注意源站或域名是否具有安全策略，如有，请将 UWAF 监控 IP（回源 IP）需加入白名单，如连续 10 次，源站探测请求的响应码均大于 499 且业务的 QPS 大于 50，则会把该域名的 DNS 解析地址指向该域名的源站（多源站情况下，默认为第一个源站），此功能探测监控原理同[源站状态监控](#源站状态监控)，若自定义了监控地址，则会对该 URL 进行探测。同时也可以手动对域名的解析进行[业务回源](#业务回源)或者[解除回源](#解除回源)。
+After enabling the automatic return to source setting for business exceptions, UWAF will monitor the availability of the domain's business. Please note whether the source site or domain has a security policy. If so, the UWAF monitoring IP (return to source IP) needs to be added to the whitelist. If the response code of the source site probe request is greater than 499 for 10 consecutive times and the QPS of the business is greater than 50, then the DNS resolution address of the domain will be pointed to the source site of the domain (in the case of multiple source sites, the default is the first source site). The detection and monitoring principle of this function is the same as [source site status monitoring](#source site status monitoring). If a monitoring address has been customized, this URL will be probed. At the same time, you can manually perform [business return to source](#business return to source) or [release return to source](#release return to source) for the domain's resolution.

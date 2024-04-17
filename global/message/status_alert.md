@@ -1,22 +1,22 @@
-# 源站状态监控
+# Source Site Status Monitoring
 
-UWAF 会对用户添加的域名源站使用 HEAD 方法作探测访问请求。如果 5 分钟内，连续 3 次请求异常响应，则会向对应的消息订阅组用户发送告警邮件或者短信。频率为 5 分钟一次。
+UWAF will use the HEAD method to probe and send requests to the domain source sites added by users. If there are 3 consecutive abnormal responses within 5 minutes, an alert email or SMS will be sent to the corresponding message subscription group users. The frequency is once every 5 minutes.
 
-!> 注意：  
-如果源站对 UWAF 的探测 IP 有限制（如黑白名单），可能造成误告警。
+!> Note:  
+If there are restrictions on the probing IP of UWAF by the source site (such as a whitelist or blacklist), it may cause false alarms.
 
-## 源站状态告警情况处理
+## Handling of Source Site Status Alerts
 
-当收到源站状态告警的邮件或短信时，请遵循以下步骤进行检查：
+When you receive an email or SMS alert about the source site status, please follow the steps below to check:
 
-1. 确认监控地址正确配置，如未设置可以跳过此步
+1. Confirm that the monitoring address is correctly configured, if not set, you can skip this step
 
-2. 在【安全报表】的【系统概览】查看域名访问情况，看访问量是否突增导致源站压力过大
+2. Check the domain access situation in the 'System Overview' under 'Security Report' to see if a sudden increase in traffic has caused excessive pressure on the source site
 
-3. 检查源站服务器是否正常工作，主要是 CPU 使用率及带宽使用率是否过高
+3. Check whether the source site server is working normally, mainly whether the CPU usage rate and bandwidth usage rate are too high
 
-4. 检查源站黑白名单，是否有将 UWAF 回源地址加入白名单
+4. Check the whitelist and blacklist of the source site, and whether the back-to-source address of UWAF has been added to the whitelist
 
-5. 检查区域 IP 封禁或其它的规则是否误封 UWAF 探测 IP
+5. Check whether the regional IP blocking or other rules have mistakenly blocked the probing IP of UWAF
 
-如您确认源站正常且没有拦截 UWAF 的探测请求，并且此时您的业务受到影响，您可以在【域名管理】选择相应域名条目后点击的【更多】选项，选择【[回源设置](/uewaf/features/domain/monitor_set.md?id=回源设置)】，并点击【[业务回源](/uewaf/features/domain/monitor_set.md?id=业务回源)】，或咨询技术支持获取帮助。
+If you confirm that the source site is normal and has not intercepted the probing requests of UWAF, and your business is affected at this time, you can go to 'Domain Management', select the corresponding domain entry, click on 'More' option, select '[Back-to-source Settings](/uewaf/features/domain/monitor_set.md?id=back-to-source-settings)', and click on '[Business Back-to-source](/uewaf/features/domain/monitor_set.md?id=business-back-to-source)', or consult technical support for help.

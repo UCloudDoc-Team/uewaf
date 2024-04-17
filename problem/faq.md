@@ -1,45 +1,45 @@
-# 注意事项&FAQ
+# Precautions & FAQ
 
-## 注意事项
+## Precautions
 
-- 部署区域是国内的北上广区域时，域名必须是已备案的。
-- 域名解析服务(DNS)大概需要 10 分钟生效，具体以实际情况为准。
-- 支持续费、自动续费、变更计费方式、版本升级、关闭退费。
-- 支持添加非 UCloud 的域名，可以任选某可用区添加。目前支持多地域可用区使用 UWAF（相同版本在不同可用区无功能上或性能上的区别，仅仅是配置部署的机房位置不同）。
-- 不支持版本的降级操作；从【配额管理】处购买的扩展包，如需单独删除，需咨询技术支持。
+- When the deployment area is in the domestic Beijing, Shanghai, and Guangzhou regions, the domain name must be registered.
+- Domain Name System (DNS) service takes about 10 minutes to take effect, depending on the actual situation.
+- Supports renewal, automatic renewal, change of billing method, version upgrade, and refund upon closure.
+- Supports adding non-UCloud domain names, and you can choose any available zone to add. Currently, multiple regions are available for using UWAF (there is no difference in functionality or performance between the same versions in different available zones, only the configuration deployment data center locations are different).
+- Downgrading of versions is not supported; if you need to delete the expansion pack purchased from the "Quota Management", you need to consult technical support.
 
 ## FAQ
 
-### 如何防止攻击者绕过 UWAF？
+### How to prevent attackers from bypassing UWAF?
 
-**源站**可以配置黑白名单，仅放行 UWAF 回源网段以及一些可信 IP 地址网段，其他 IP 地址的连接一律拒绝。
+The **source station** can configure a whitelist and blacklist, only allowing the UWAF back-to-source network segment and some trusted IP address segments, and rejecting connections from other IP addresses.
 
-### UWAF 回源 IP 地址怎么看？
+### How to view the UWAF back-to-source IP address?
 
-UWAF 控制台[概览](/uewaf/features/info/info?id=概览页面说明)界面的【信息通告】一栏正下方有一栏【基本信息】，最后一行为【回源 IP】，点击【查看】即可获取相应的回源 IP 网段地址。
+In the UWAF console [overview](/uewaf/features/info/info?id=overview page description) interface, there is a column of "Basic Information" directly below the "Information Announcement" column. The last line is "Back-to-Source IP". Click "View" to get the corresponding back-to-source IP network segment address.
 
-### 最新的高危漏洞出现 UWAF 是否会支持防护？
+### Will UWAF support protection when the latest high-risk vulnerabilities appear?
 
-每当爆出最新漏洞的时候，我们的安全工程师会第一时间跟进，分析 POC 和漏洞原理，提取出相应的检测规则，及时部署新规则到 UWAF。
+Whenever the latest vulnerabilities burst out, our security engineers will follow up in real time, analyze the POC and vulnerability principles, extract the corresponding detection rules, and deploy new rules to UWAF in a timely manner.
 
-### UWAF 支持虚拟补丁，什么是虚拟补丁？
+### UWAF supports virtual patches, what is a virtual patch?
 
-UWAF 系统对漏洞攻击的阻断称为“虚拟补丁”，意味着并非是真正的打补丁行为，而是临时封堵攻击，为业务方更新补丁赢取时间。
+The UWAF system's blocking of vulnerability attacks is called a "virtual patch", which means it is not a real patching action, but a temporary blockage of attacks, buying time for the business side to update patches.
 
-### 如果源站是 ULB 负载均衡网关，是直接填写网关的 IP 还是填写子网主机 IP？
+### If the source station is a ULB load balancing gateway, should I directly fill in the gateway IP or the subnet host IP?
 
-如果有外网 ULB，则填写 ULB 网关的 IP 即可，不需要填写子网主机 IP。对于请求代理型 ULB，推荐使用[ULB 版 UWAF](/uewaf/use/ulb_with_uwaf)，可用区域见[价格说明-ULB 版 UWAF](/uewaf/steer/price?id=ULB版UWAF)。
+If there is an external ULB, you can fill in the IP of the ULB gateway, and there is no need to fill in the subnet host IP. For request proxy type ULB, it is recommended to use [ULB version UWAF](/uewaf/use/ulb_with_uwaf), for available areas see [Price Description-ULB version UWAF](/uewaf/steer/price?id=ULB version UWAF).
 
-### UWAF 上的域名开启【HTTP2 转发】需要注意什么？
+### What should I pay attention to when enabling 【HTTP2 forwarding】 on the domain name on UWAF?
 
-开启【HTTP2 转发】后，同一 防护 IP 下所有的域名的 HTTPS 端口都会支持 HTTPS，若只希望个别域名开启 HTTP2.0，建议此类域名使用独享 IP。对于 HTTPS 443 端口，建议同步开启【HTTPS 跳转】。HTTP 端口不支持 HTTP2.0。
+After enabling 【HTTP2 forwarding】, all domain names under the same protection IP will support HTTPS. If you only want to enable HTTP2.0 for individual domain names, it is recommended that such domain names use exclusive IP. For HTTPS 443 port, it is recommended to enable 【HTTPS redirection】 at the same time. HTTP port does not support HTTP2.0.
 
-### UWAF 上的各种规则如黑白名单、CC 规则、UWAF 规则的优先级顺序是什么？
+### What is the priority order of various rules on UWAF such as black and white lists, CC rules, and UWAF rules?
 
-参见[规则优先级](/uewaf/features/rule/mode?id=规则优先级)。
+Refer to [Rule Priority](/uewaf/features/rule/mode?id=Rule Priority).
 
-### 被 UWAF 拦截的请求的响应状态码是什么？
+### What is the response status code of the request intercepted by UWAF?
 
-对于触发 UWAF 规则而拦截的请求：响应 404 状态码和默认的拦截页面，旗舰版及专属定制版用户可以自定义拦截的响应状态码和拦截页面。  
-对于触发 CC 规则的 IP 的请求：若限制方式是 拦截此类请求，则拒绝连接并记录 444 状态码；若限制方式是 启用验证码，则响应 200 状态码和验证码页面；若限制方式是限制请求速率，则对超出速率的请求响应 429 状态码。  
-对于黑名单中 IP 的请求，若动作是拦截，则拒绝连接并记录 444 状态码；若动作是验证码，则响应 200 状态码和验证码页面。
+For requests that trigger UWAF rules and are intercepted: respond with a 404 status code and the default interception page, flagship and exclusive customized users can customize the response status code and interception page of the interception.  
+For requests from IPs that trigger CC rules: if the restriction method is to intercept such requests, refuse the connection and record a 444 status code; if the restriction method is to enable the captcha, respond with a 200 status code and the captcha page; if the restriction method is to limit the request rate, respond with a 429 status code for requests that exceed the rate.  
+For requests from IPs on the blacklist, if the action is to intercept, refuse the connection and record a 444 status code; if the action is a captcha, respond with a 200 status code and the captcha page.

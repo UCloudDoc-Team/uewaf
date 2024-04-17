@@ -1,21 +1,21 @@
-# 产品优势
+# Product Advantages
 
-## 低延迟更稳定
+## Low Latency and More Stable
 
-UWAF 基于 BGP 线路接入，质量稳定，毫秒级响应、延迟低，提供了多线路节点容灾与智能最优路径智能调动，业务低延迟的同时更加稳定可靠。
+UWAF is based on BGP line access, which is stable in quality, has millisecond-level response, low latency, and provides multi-line node disaster recovery and intelligent optimal path mobilization. It is more stable and reliable while having low latency for business.
 
-## 规则自完善系统
+## Self-Improving Rule System
 
-目前主流的 WAF 还是基于特征匹配，但面对日益复杂多样的攻击，基于特征匹配的规则系统往往无法很好的防护。而 UWAF 还可以基于机器学习，利用智能检测引擎优秀的泛化能力以及自动学习能力，能够同规则系统进行有机结合，为客户网站的安全提供更坚实的保障。
+The mainstream WAF is still based on feature matching, but in the face of increasingly complex and diverse attacks, the rule system based on feature matching often cannot provide good protection. However, UWAF can also be based on machine learning, using the excellent generalization ability and automatic learning ability of the intelligent detection engine, it can be organically combined with the rule system to provide more solid security for customer websites.
 
-## 自动化弹性扩展能力
+## Automated Elastic Expansion Capability
 
-面对业务的不确定性，UWAF 具备自动化弹性扩展能力，利用 UCloud 强大的公有云资源池作为支撑，在遭遇 CC 攻击或者业务突发情况时，能够进行自身服务的快速扩展，所以不会存在性能瓶颈问题。
+Facing the uncertainty of business, UWAF has the ability of automated elastic expansion, using UCloud's powerful public cloud resource pool as support. When encountering CC attacks or sudden business situations, it can quickly expand its own services, so there will be no performance bottleneck issues.
 
-## 强大的协同防护能力
+## Strong Collaborative Defense Capability
 
-UCloud 利用强大的云端情报收集能力，同时结合其他情报厂商的情报，在 UWAF 上利用情报库可以过滤海量的恶意访问请求。
+UCloud uses its powerful cloud-side intelligence collection capabilities, combined with the intelligence of other intelligence manufacturers, to filter a large number of malicious access requests using the intelligence library on UWAF.
 
-## 7x24 小时专家服务
+## 7x24 Hours Expert Service
 
-凡购买 UWAF 用户，均能够享受到 7x24 小时免费的专家服务。对于一些复杂的攻击，当机器或者算法无法进行精准的判断和阻挡时，UCloud 的安全专家可以介入协助，对攻击场景，根据黑客的攻击手法进行指导做做针对性的防护措施。
+All users who purchase UWAF can enjoy 7x24 hours of free expert service. For some complex attacks, when the machine or algorithm cannot make accurate judgments and blocks, UCloud's security experts can intervene to assist, guide the attack scenario according to the hacker's attack methods, and make targeted defensive measures.

@@ -1,60 +1,58 @@
-# 价格说明
+# Price Explanation
 
-## SaaS 版 UWAF
+## SaaS Version UWAF
 
-| 中国内地（支持节点） | 产品版本   | 价格（元/月） |
-| -------------------- | ---------- | ------------- |
-| 北京、上海、广州     | 企业版     | 4680          |
-| 北京、上海、广州     | 旗舰版     | 11700         |
-| 北京、上海、广州     | 专属定制版 | 29000         |
+| Mainland China (Supported Nodes) | Product Version | Price (CNY/Month) |
+| -------------------------------- | --------------- | ----------------- |
+| Beijing, Shanghai, Guangzhou     | Enterprise      | 4680              |
+| Beijing, Shanghai, Guangzhou     | Flagship        | 11700             |
+| Beijing, Shanghai, Guangzhou     | Customized      | 29000             |
 
-| 港澳台（支持节点） | 产品版本   | 价格（元/月） |
-| ------------------ | ---------- | ------------- |
-| 香港、台湾         | 企业版     | 4680          |
-| 香港、台湾         | 旗舰版     | 11700         |
-| 香港、台湾         | 专属定制版 | 29000         |
+| Hong Kong, Macau, Taiwan (Supported Nodes) | Product Version | Price (CNY/Month) |
+| ------------------------------------------ | --------------- | ----------------- |
+| Hong Kong, Taiwan                          | Enterprise      | 4680              |
+| Hong Kong, Taiwan                          | Flagship        | 11700             |
+| Hong Kong, Taiwan                          | Customized      | 29000             |
 
-## ULB 版 UWAF
+## ULB Version UWAF
 
-?> 说明：  
-ULB 专区版 WAF 至少需要绑定 1 个 ULB，绑定多个 ULB 采取累积计费，版本配额也会累积。  
-例如绑定 2 个 ULB，则需 7300 元/月，共支持 40 个域名，其他配额也会翻倍。
+?> Note:  
+The ULB Special Edition WAF needs to be bound to at least 1 ULB. If it is bound to multiple ULBs, it will be billed cumulatively, and the version quota will also accumulate.  
+For example, if 2 ULBs are bound, the cost will be 7300 yuan/month, and it will support 40 domain names, and other quotas will also double.
 
-| 中国内地（支持节点） | 产品版本   | 价格（元/月） |
-| -------------------- | ---------- | ------------- |
-| 广州、上海二         | ULB 专区版 | 3650          |
+| Mainland China (Supported Nodes) | Product Version     | Price (Yuan/Month) |
+| -------------------------------- | ------------------- | ------------------ |
+| Guangzhou, Shanghai II           | ULB Special Edition | 3650               |
 
-| 港澳台（支持节点） | 产品版本   | 价格（元/月） |
-| ------------------ | ---------- | ------------- |
-| 香港               | ULB 专区版 | 3650          |
+| Hong Kong, Macao and Taiwan (Supported Nodes) | Product Version     | Price (Yuan/Month) |
+| --------------------------------------------- | ------------------- | ------------------ |
+| Hong Kong                                     | ULB Special Edition | 3650               |
 
-| 海外版本（支持节点） | 产品版本   | 价格（元/月） |
-| -------------------- | ---------- | ------------- |
-| 新加坡、孟买         | ULB 专区版 | 3650          |
+| Overseas Version (Supported Nodes) | Product Version     | Price (Yuan/Month) |
+| ---------------------------------- | ------------------- | ------------------ |
+| Singapore, Mumbai                  | ULB Special Edition | 3650               |
 
-> 海外可用区将逐步上线 ULB 版 UWAF，详情请咨询技术支持。
+> The ULB version of UWAF will gradually go online in overseas available areas. For details, please consult technical support.
 
-## 定制托管版 - 大客户专区
+## Custom Hosting Edition - VIP Customer Area
 
-为满足大客户部分需求，增强业务稳定与安全可靠性。UWAF 支持独立部署与非标定制，与云租户进行业务隔离，如需该项服务，请咨询客户经理或技术支持。
+To meet some of the needs of large customers and enhance business stability and security reliability. UWAF supports independent deployment and non-standard customization, and business isolation with cloud tenants. If you need this service, please consult the account manager or technical support.
 
-<div id="扩展包功能"></div>
+## Extension Package Features and Prices
 
-## 扩展包功能与价格
-
-| 扩展功能补充包 | 说明                                                                                              | 每月价格                                                               |
-| -------------- | ------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| 带宽扩展       | 除版本配额的带宽外，额外增加的带宽流量                                                            | 中国内地 30 元/1Mbps<br>港澳台 100 元/1Mbps <br> 海外区域 100 元/1Mbps |
-| 域名扩展包     | 除版本配额的域名数量外，额外增加的域名数量。每个域名扩展包包含 10 个域名（其中可添加 1 个泛域名） | 600 元                                                                 |
-| 独享 IP 点数   | 额外的独享 IP 点数<br>用户可以指定域名为其分配独享的 防护 IP                                      | 200 元/5 点                                                            |
-| 日志扩展包     | 满足等保需求，用户可自行购买日志扩展包<br>扩展包最大提供 180 天的访问与攻击日志存储服务           | 500 元                                                                 |
-| IPv6     | 为IPv6应用提供安全保护                              | 850 元                                                                 |
+| Extension Supplement Package | Description                                                  | Monthly Price                                                |
+| ---------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Bandwidth Extension          | In addition to the bandwidth quota of the version, the extra added bandwidth traffic | Mainland China 30 RMB/1Mbps<br>Hong Kong, Macao and Taiwan 100 RMB/1Mbps <br> Overseas regions 100 RMB/1Mbps |
+| Domain Extension Package     | In addition to the number of domain names in the version quota, the extra added number of domain names. Each domain extension package contains 10 domain names (including 1 wildcard domain name) | 600 RMB                                                      |
+| Exclusive IP Points          | Extra exclusive IP points<br>Users can specify a domain name to be assigned an exclusive protection IP | 200 RMB/5 points                                             |
+| Log Extension Package        | To meet the requirements of equal protection, users can purchase the log extension package on their own<br>The extension package provides up to 180 days of access and attack log storage service | 500 RMB                                                      |
+| IPv6                         | Provides security protection for IPv6 applications           | 850 RMB                                                      |
 
 
 <!--
-|IPv6| 目前支持区域：IPV6-广东 <br>用户可以在购买界面 IPv6 一栏选择“IPV6-广东”。IPv6 开通后，在添加域名时可以选择对应 IPv6 节点，进行配置部署。 | 850 元 |
+|IPv6| Currently supported regions: IPV6-Guangdong <br>Users can select "IPV6-Guangdong" in the IPv6 column on the purchase interface. After IPv6 is opened, you can select the corresponding IPv6 node when adding a domain name for configuration and deployment. | 850 RMB |
  -->
 
-?> 说明：  
-体验版不支持扩展包的购买。  
-ULB 专区版仅支持购买域名扩展包和日志扩展包，带宽和 IPv6 扩展功能可以在基础网络 UNet 控制台或负载均衡 ULB 控制台进行操作。
+?> Note:  
+The trial version does not support the purchase of extension packages.  
+The ULB special zone version only supports the purchase of domain extension packages and log extension packages. Bandwidth and IPv6 extension functions can be operated in the basic network UNet console or the load balancing ULB console.

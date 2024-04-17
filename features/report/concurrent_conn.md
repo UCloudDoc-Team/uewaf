@@ -1,8 +1,8 @@
-# 连接数
+# Number of Connections
 
-连接数展示了 防护 IP 的并发连接数和新建连接数(CPS)情况，可以针对全部域名或单个域名选择所需的时段进行查询。
+The number of connections displays the concurrent connections and new connection rate (CPS) of the protected IP. You can select the required time period for all domains or a single domain.
 
 ![](/images/concurrent_conn-get_report.png)
 
-!> 注意：  
-连接数的报表是针对 IP 进行查询，当所使用的 IP 数过多时，查询速度会受到影响。选择全部域名是是查询所有 防护 IP 的连接数情况；选择具体域名时是查询这个域名所用的 防护 IP 的连接数情况。若重点关注某单个域名的连接数情况，请为该域名开启 独享 IP 选项 。
+!> Note:  
+The connection report is queried based on the IP. When the number of IPs used is too large, the query speed will be affected. Selecting all domains is to query the connection status of all protected IPs; selecting a specific domain is to query the connection status of the protected IP used by this domain. If you focus on the connection status of a single domain, please enable the exclusive IP option for this domain.

@@ -1,34 +1,33 @@
-# 证书管理
+# Certificate Management
 
-可以统一管理 UWAF 上的证书和 TLS 设置，包含了用户所有域名已上传的 SSL 证书，同时也支持配置 TLS 协议版本及加密套件（更改后**所有域名**的 TLS 版本和加密套件都会改变），也可以上传域名更新的证书替换掉将要到期的证书。
+You can centrally manage the certificates and TLS settings on UWAF, which includes all the SSL certificates uploaded for all user domains. It also supports the configuration of TLS protocol versions and encryption suites (changes will affect the TLS version and encryption suite of **all domains**). You can also upload updated domain certificates to replace those that are about to expire.
 
-如果证书是在 USSL 购买的，UWAF 支持自动同步 USSL 的证书，用户在添加域名的时候，可以不用上传证书，UWAF 会自动拉取相关域名的证书。
+If the certificate is purchased from USSL, UWAF supports automatic synchronization of USSL's certificates. When users add a domain, they do not need to upload a certificate, as UWAF will automatically pull the relevant domain's certificate.
 
 ![](/images/certificate_management-get_certificate.png)
 
-## TLS 配置
+## TLS Configuration
 
-可以全局设置 TLS 协议版本和加密套件，默认设置的 TLS 协议为 1.0, 1.1, 1.2 ，协议版本选择 1.3
-必须同时选择 1.2，**无法单独选择 1.3**。加密套件预设强和中两个等级，也可以自定义加密套件，自定义选择的**加密套件需要和协议版本匹配**，可以使用 `openssl` 命令查询某个协议版本对应的加密套件，如 ` openssl ciphers -tls1_1 -s` 查询 TLS 1.1 所支持的所有加密套件。
+You can globally set the TLS protocol version and encryption suite. The default TLS protocol is set to 1.0, 1.1, 1.2. If you choose protocol version 1.3, you must also choose 1.2, **you cannot choose 1.3 alone**. The encryption suite is preset to high and medium levels, but you can also customize the encryption suite. The **encryption suite you choose must match the protocol version**. You can use the `openssl` command to query the encryption suite corresponding to a certain protocol version, such as `openssl ciphers -tls1_1 -s` to query all encryption suites supported by TLS 1.1.
 
 ![](/images/certificate_management-set_tls.png)
 
-## 上传证书
+## Upload Certificate
 
-证书文件需是 PEM(Privacy Enhanced Mail) 格式，这种证书文件格式的特点是：  
-第一行以 `-----BEGIN ` 开头，最后一行以 `-----END ` 开头。若格式不正确会导致上传失败。
+The certificate file needs to be in PEM (Privacy Enhanced Mail) format. The characteristics of this certificate file format are: 
+The first line starts with `-----BEGIN `, and the last line starts with `-----END `. If the format is incorrect, the upload will fail.
 
-## 证书列表
+## Certificate List
 
-证书列表包含了所有上传到 UWAF 的 SSL/TLS 证书，同时也提供证书的绑定与删除操作。
+The certificate list contains all SSL/TLS certificates uploaded to UWAF, and also provides certificate binding and deletion operations.
 
-### 参数说明
+### Parameter Description
 
-| 参数     | 说明                                                                                                     |
-| -------- | -------------------------------------------------------------------------------------------------------- |
-| 证书名称 | 标识证书的名称，方便区分                                                                                 |
-| 所属域名 | 证书所属的域名                                                                                           |
-| 绑定域名 | 证书所绑定的域名                                                                                         |
-| 添加时间 | 证书上传到 UWAF 的时间                                                                                   |
-| 过期时间 | 证书的到期时间                                                                                           |
-| 操作     | 包含【绑定域名】和【删除】操作<br>● 绑定域名：可以将证书绑定到勾选的域名<br>● 删除：从 UWAF 上删除该证书 |
+| Parameter        | Description                                                  |
+| ---------------- | ------------------------------------------------------------ |
+| Certificate Name | The name identifying the certificate, for easy differentiation |
+| Domain Ownership | The domain to which the certificate belongs                  |
+| Bound Domain     | The domain to which the certificate is bound                 |
+| Addition Time    | The time when the certificate was uploaded to UWAF           |
+| Expiration Time  | The expiration time of the certificate                       |
+| Operation        | Includes "Bind Domain" and "Delete" operations<br>● Bind Domain: You can bind the certificate to the selected domain<br>● Delete: Delete the certificate from UWAF |

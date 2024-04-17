@@ -1,11 +1,11 @@
-<div id="白名单"></div>
+<div id="Whitelist"></div>
 
-# 白名单（全局）
+# Whitelist (Global)
 
-此白名单为全局白名单，不同于[域名白名单](/uewaf/features/expand/white_list)，全局白名单对所有域名生效。
+This whitelist is a global whitelist, different from the [Domain Whitelist](/uewaf/features/expand/white_list), the global whitelist applies to all domains.
 
-可以自定义添加需要加白的 IP 地址，支持单个 IP 地址、IP 地址段、IP 网段（CIDR 格式）。也可以快速的重置全局白名单，即将全局白名单内的规则全部删除。
+You can customize and add the IP addresses that need to be whitelisted, supporting individual IP addresses, IP address ranges, and IP subnets (CIDR format). You can also quickly reset the global whitelist, that is, delete all the rules in the global whitelist.
 
 ![](/images/white_list-get_global_rule.png)
 
-> 各类规则的优先级参见[规则优先级](/uewaf/features/rule/mode?id=规则优先级)。
+> For the priority of various rules, please refer to [Rule Priority](/uewaf/features/rule/mode?id=Rule Priority).

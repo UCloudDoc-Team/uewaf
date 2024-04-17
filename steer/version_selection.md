@@ -1,118 +1,117 @@
-# 版本选择
+# Version Selection
 
-如果您是企业用户，对容灾及流量有一定的要求，我们推荐您选择企业版 UWAF 服务。如业务流量大于 100Mbps，则推荐根据自身业务大小和重要性选择合适的 UWAF 版本。
+If you are a corporate user with certain requirements for disaster recovery and traffic, we recommend you choose the enterprise version of UWAF service. If the business traffic exceeds 100Mbps, it is recommended to choose the appropriate UWAF version based on the size and importance of your business.
 
-体验版、高级版下线，历史用户配置保留，可以继续使用。对购买时间超出 3 个月的体验版用户，会**限制配置编辑**，即无法新增和修改配置，不影响已经生效的用户配置。
+The trial version and advanced version are offline, but the configurations of historical users are retained and can still be used. For trial version users who have purchased for more than 3 months, **configuration editing will be restricted**, i.e., adding and modifying configurations will not be possible, but this will not affect the configurations that have already taken effect.
 
-## 版本对比
+## Version Comparison
 
-!> 注意：  
-× 表示该版本不支持该功能  
-ULB 代表该项取决于 ULB 的配置
+!> Note:  
+× indicates that this version does not support this feature  
+ULB indicates that this item depends on the configuration of ULB""".
 
-### 功能说明
+### Function Description
 
-| 产品参数     | 描述                                          | 企业版 | 旗舰版 | 专属定制版 | ULB 专区版 |
-| ------------ | --------------------------------------------- | :----: | :----: | :--------: | :--------: |
-| HTTP         | HTTP(80)端口安全防护                          |  支持  |  支持  |    支持    |    ULB     |
-| HTTPS        | HTTPS(443)端口安全防护                        |  支持  |  支持  |    支持    |    ULB     |
-| HTTP2.0      | HTTP2.0 业务的转发与安全防护                  |  支持  |  支持  |    支持    |    ULB     |
-| 非标端口     | 80，443 端口以外的业务端口安全防护            |  支持  |  支持  |    支持    |    ULB     |
-| 云外源站     | 用户应用/源站部署在 UCloud 云外               |  支持  |  支持  |    支持    |     ×      |
-| 基础防护     | XSS、SQL 注入、命令执行等常见的 Web 攻击      |  支持  |  支持  |    支持    |    支持    |
-| 泛域名       | 添加泛域名进行防护                            |  支持  |  支持  |    支持    |    支持    |
-| TLS 配置     | 可以配置全局（所有域名）的 TLS 版本与加密套件 |  支持  |  支持  |    支持    |    ULB     |
-| 带宽扩展     | 在版本限额外通过扩展包增加带宽                |  支持  |  支持  |    支持    |    ULB     |
-| 域名扩展     | 在版本限额外通过扩展包以添加更多的域名        |  支持  |  支持  |    支持    |    支持    |
-| 额外独享 IP  | 在版本限额外通过扩展包增加额外独享 IP 点数    |  支持  |  支持  |    支持    |     ×      |
-| 日志扩展包   | 通过扩展包保留日志 180 天，符合等保要求       |  支持  |  支持  |    支持    |    支持    |
-| 自定义防护   | 配置多种条件的自定义防护规则                  |  支持  |  支持  |    支持    |    支持    |
-| 0Day 防护    | 快速防护最新 Web 漏洞                         |  支持  |  支持  |    支持    |    支持    |
-| CC 防护      | CC 攻击的防护，默认或自定义防护策略           |  支持  |  支持  |    支持    |    支持    |
-| CC 封堵 IP   | 查看或解封被 CC 规则封堵的 IP                 |  支持  |  支持  |    支持    |     ×      |
-| 恶意 IP 封禁 | 对多次触发防护规则的 IP 进行封禁              |  支持  |  支持  |    支持    |    支持    |
-| 区域 IP 封禁 | 根据规则实现特定区域的访问控制                |  支持  |  支持  |    支持    |    支持    |
-| 信息安全防护 | 根据规则对响应内容进行对应的防护过滤          |  支持  |  支持  |    支持    |    支持    |
-| IP 查询      | 查询 IP 对域名的访问、攻击等情况              |  支持  |  支持  |    支持    |    支持    |
-| 黑白名单     | 添加 IP，IP 段以阻断特定 IP 的访问            |  支持  |  支持  |    支持    |    支持    |
-| 日志服务     | 实时日志的搜索查询与下载                      |  支持  |  支持  |    支持    |    支持    |
-| 证书管理     | SSL 证书的添加、删除、绑定                    |  支持  |  支持  |    支持    |    ULB     |
-| 拦截页面     | 自定义触发规则后的告警或阻断页面              |   ×    |  支持  |    支持    |     ×      |
-| 网页防篡改   | 一定程度上防止网页被篡改                      |  支持  |  支持  |    支持    |     ×      |
-| 安全告警     | 通过短信或邮件发送安全风险或业务异常告警      |  支持  |  支持  |    支持    |    支持    |
+| Product Parameter         | Description                                                  | Enterprise Edition | Flagship Edition | Custom Edition | ULB Special Edition |
+| ------------------------- | ------------------------------------------------------------ | :----------------: | :--------------: | :------------: | :-----------------: |
+| HTTP                      | HTTP(80) port security protection                            |     Supported      |    Supported     |   Supported    |         ULB         |
+| HTTPS                     | HTTPS(443) port security protection                          |     Supported      |    Supported     |   Supported    |         ULB         |
+| HTTP2.0                   | HTTP2.0 business forwarding and security protection          |     Supported      |    Supported     |   Supported    |         ULB         |
+| Non-standard Ports        | Security protection for business ports other than 80, 443    |     Supported      |    Supported     |   Supported    |         ULB         |
+| Off-cloud Source Stations | User applications/source stations deployed outside UCloud    |     Supported      |    Supported     |   Supported    |    Not Supported    |
+| Basic Protection          | Common Web attacks such as XSS, SQL injection, command execution, etc. |     Supported      |    Supported     |   Supported    |      Supported      |
+| Wildcard Domain           | Add wildcard domain for protection                           |     Supported      |    Supported     |   Supported    |      Supported      |
+| TLS Configuration         | Can configure global (all domain) TLS version and encryption suite |     Supported      |    Supported     |   Supported    |         ULB         |
+| Bandwidth Expansion       | Increase bandwidth beyond the version limit through expansion packs |     Supported      |    Supported     |   Supported    |         ULB         |
+| Domain Expansion          | Add more domains beyond the version limit through expansion packs |     Supported      |    Supported     |   Supported    |      Supported      |
+| Extra Exclusive IP        | Increase extra exclusive IP points beyond the version limit through expansion packs |     Supported      |    Supported     |   Supported    |    Not Supported    |
+| Log Expansion Pack        | Retain logs for 180 days through expansion packs, in compliance with equal protection requirements |     Supported      |    Supported     |   Supported    |      Supported      |
+| Custom Protection         | Configure custom protection rules with various conditions    |     Supported      |    Supported     |   Supported    |      Supported      |
+| 0Day Protection    | Rapid protection against the latest Web vulnerabilities                    | Supported | Supported | Supported | Supported |
+| CC Protection      | Protection against CC attacks, default or custom protection strategies      | Supported | Supported | Supported | Supported |
+| CC Block IP   | View or unblock IPs blocked by CC rules            | Supported | Supported | Supported | Not Supported   |
+| Malicious IP Blocking | Block IPs that trigger protection rules multiple times         | Supported | Supported | Supported | Supported |
+| Regional IP Blocking | Implement access control for specific regions based on rules           | Supported | Supported | Supported | Supported |
+| Information Security Protection | Apply protection filters to response content based on rules     | Supported | Supported | Supported | Supported |
+| IP Query      | Query IP access, attacks, etc. on domain names         | Supported | Supported | Supported | Supported |
+| Blacklist/Whitelist     | Add IPs or IP ranges to block specific IP access       | Supported | Supported | Supported | Supported |
+| Log Service     | Real-time log search queries and downloads                 | Supported | Supported | Supported | Supported |
+| Certificate Management     | Addition, deletion, and binding of SSL certificates               | Supported | Supported | Supported | ULB  |
+| Interception Page     | Custom warning or blocking page after triggering rules         | Not Supported   | Supported | Supported | Not Supported   |
+| Web Page Tampering Protection   | Prevent web pages from being tampered to a certain extent                 | Supported | Supported | Supported | Not Supported   |
+| Security Alert     | Send security risks or business anomaly alerts via SMS or email | Supported | Supported | Supported | Supported |
 
 <!--
 Line 26
-| IPv6 | 通过购买IPv6扩展包以实现IPv6访问 | 支持 | 支持 | 支持 | ULB |
+| IPv6 | Achieve IPv6 access by purchasing IPv6 extension pack | Support | Support | Support | ULB |
 -->
 
-?> 说明：  
-ULB 专区版目前支持的可用区参见[价格说明](/uewaf/steer/price?id=ULB版UWAF)。  
-非标端口除 80 以下的端口不支持外，其他端口均支持。
+?> Note:  
+The available zones currently supported by the ULB special edition can be found at [Price Explanation](/uewaf/steer/price?id=ULB版UWAF).  
+Apart from ports below 80, all other ports are supported for non-standard ports.
 
 <!--
-IPv6仅支持443端口，请务必开启【HTTPS跳转】。
-旗舰版与专属定制版赠送日志扩展包。
+IPv6 only supports port 443, please be sure to enable [HTTPS redirection].
+The flagship version and the exclusive custom version come with a log extension pack.
 -->
 
-<div id="性能对比"></div>
+<div id="Performance Comparison"></div>
 
-### 性能及配额对比
+### Performance and Quota Comparison
 
-| 产品参数                  | 企业版             | 旗舰版             | 专属定制版          | ULB 专区版\* |
-| ------------------------- | ------------------ | ------------------ | ------------------- | ------------ |
-| 带宽<br>(云外/云内)       | 40Mbps/<br>120Mbps | 60Mbps/<br>200Mbps | 100Mbps/<br>300Mbps | ULB          |
-| 总域名数\*（个）          | 20                 | 50                 | 70                  | 20           |
-| 泛域名数\*（个）          | 2                  | 5                  | 7                   | 2            |
-| 独享 IP 点数（个）        | 3                  | 5                  | 10                  | ×            |
-| 域名部署地域（个）        | 1                  | 2                  | 3                   | ULB 所在地域 |
-| QPS                       | 3000               | 5000               | 10000               | ULB          |
-| 系统规则（域名/条）       | 20                 | 40                 | 50                  | 20           |
-| CC 规则（域名/条）        | 10                 | 20                 | 30                  | 10           |
-| CC 防护峰值\*（QPS）        | 50000              | 100000             | 300000              | ULB          |
-| 恶意 IP 封禁\*（域名/条） | 5                  | 5                  | 5                   | 5            |
-| 区域 IP 封禁（域名/条）   | 10                 | 10                 | 10                  | 10           |
-| 信息安全防护（域名/条）   | 10                 | 20                 | 30                  | 10           |
-| IP 查询（条/天）          | 30                 | 30                 | 30                  | 30           |
-| 黑/白名单（域名/条）      | 500                | 1000               | 3000                | 500          |
-| 全局黑/白名单  | 10                 | 10                 | 10                  | 10           |
-| 日志查询与下载            | 支持               | 支持               | 支持                | 支持         |
-| 日志 180 天存储           | ×                  | 支持               | 支持                | ×            |
-| 网页防篡改（域名/条）     | 20                 | 20                 | 20                  | ×            |
-| 泛域名                    | 支持               | 支持               | 支持                | ×            |
-| 拦截页面                  | ×                  | 支持               | 支持                | ×            |
-| 定制化需求                | ×                  | 支持               | 支持                | 支持         |
+| Product Parameters                            | Enterprise Edition | Flagship Edition   | Customized Edition  | ULB Zone Edition* |
+| --------------------------------------------- | ------------------ | ------------------ | ------------------- | ----------------- |
+| Bandwidth<br>(Cloud External/Cloud Internal)  | 40Mbps/<br>120Mbps | 60Mbps/<br>200Mbps | 100Mbps/<br>300Mbps | ULB               |
+| Total Domain Number*                          | 20                 | 50                 | 70                  | 20                |
+| Pan-Domain Number*                            | 2                  | 5                  | 7                   | 2                 |
+| Exclusive IP Points                           | 3                  | 5                  | 10                  | ×                 |
+| Domain Deployment Regions                     | 1                  | 2                  | 3                   | ULB Location      |
+| QPS                                           | 3000               | 5000               | 10000               | ULB               |
+| System Rules (Domain/Item)                    | 20                 | 40                 | 50                  | 20                |
+| CC Rules (Domain/Item)                        | 10                 | 20                 | 30                  | 10                |
+| CC Protection Peak* (QPS)                     | 50000              | 100000             | 300000              | ULB               |
+| Malicious IP Blocking* (Domain/Item)          | 5                  | 5                  | 5                   | 5                 |
+| Regional IP Blocking (Domain/Item)            | 10                 | 10                 | 10                  | 10                |
+| Information Security Protection (Domain/Item) | 10                 | 20                 | 30                  | 10                |
+| IP Query (Item/Day)                           | 30                 | 30                 | 30                  | 30                |
+| Black/White List (Domain/Item)                | 500                | 1000               | 3000                | 500               |
+| Global Black/White List                       | 10                 | 10                 | 10                  | 10                |
+| Log Query and Download                        | Supported          | Supported          | Supported           | Supported         |
+| 180-day Log Storage                           | ×                  | Supported          | Supported           | ×                 |
+| Web Page Tampering Protection (Domain/Item)   | 20                 | 20                 | 20                  | ×                 |
+| Pan-Domain                                    | Supported          | Supported          | Supported           | ×                 |
+| Interception Page                             | ×                  | Supported          | Supported           | ×                 |
+| Customized Requirements                       | ×                  | Supported          | Supported           | Supported         |
 
-?> 说明：  
-ULB 专区版：ULB 专区版 WAF 至少需要绑定 1 个 ULB，绑定多个 ULB 采取累积计费，版本配额也会累积。  
-例如绑定 2 个 ULB，则需 7300 元/月，共支持 40 个域名，其他配额也会翻倍。  
-总域名数/泛域名数：每 10 个域名配额可添加 1 个泛域名，即一般情况下企业版只可添加 2 个泛域名，其他版本以此类推。  
-CC 防护峰值\*：表中 CC 防护峰值 为**实验环境**测试得到的值，实际防护峰值与网络环境、新建连接数等有关。  
-恶意 IP 封禁\*：若规则的攻击类型为“全部”，则只能设置一条，且不能再添加其他攻击类型的规则。若有具体的攻击类型的规则，则不能再添加攻击类型为“全部”的规则。
+?> Note:  
+ULB Zone Edition: The ULB Zone Edition WAF needs to bind at least 1 ULB. If multiple ULBs are bound, they will be billed cumulatively, and the version quota will also accumulate.  
+For example, if 2 ULBs are bound, it will cost 7300 yuan/month, and support 40 domain names, other quotas will also double.  
+Total number of domain names/Wildcard domain names: For every 10 domain name quotas, 1 wildcard domain name can be added, that is, under normal circumstances, only 2 wildcard domain names can be added to the enterprise edition, and other versions follow this rule.  
+CC Protection Peak\*: The CC Protection Peak in the table is a value obtained from **experimental environment** testing. The actual protection peak is related to the network environment, the number of new connections, etc.  
+Malicious IP Blocking\*: If the attack type of the rule is "all", only one can be set, and no other rules of attack types can be added. If there are rules for specific attack types, you cannot add rules with the attack type "all".
 
-若版本配额不能满足您的需求，可以购买扩展包，详情点击：[扩展包功能](/uewaf/steer/price?id=扩展包功能)
+If the version quota cannot meet your needs, you can purchase an expansion pack. For details, click: [Expansion Pack Function](/uewaf/steer/price?id=Expansion Pack Function)
 
-#### 参数说明
+#### Parameter Description
 
-| 参数                | 说明                                                                                                                                                                                                                                       |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 带宽<br>(云外/云内) | 源站/应用部署在 UCloud 云内（如 UHost 主机）**且与 UWAF 实际部署为同一区域**，享受云内带宽，采用云内带宽阈值限制，其余情况则为走公网回源，采用云外带宽阈值限制。如果用户业务带宽超出版本限制，则有可能产生请求延迟增大，业务链接断开的风险 |
-| 域名数              | 版本可添加的最大域名数，每 10 个域名配额可添加 1 个泛域名，可通过购买扩展包提升域名配额                                                                                                                                                    |
-| 独享 IP 点数        | 一个独享 IP 点数可以为域名独立绑定一个 WAF 防护 IP 。跟共享 EIP 的域名相比，使用独享 IP 的域名在遭受流量攻击时不会影响到其他域名。可通过购买扩展包获得更多的点数                                                                           |
-| 域名部署地域        | 域名配置生成的工作区域，建议选择与源站相近的地域以减少访问延时                                                                                                                                                                             |
-| QPS                 | 版本的支持的回源 QPS 最大值，QPS 即每秒的响应请求数，可代表最大吞吐能力。如超过该限制，可能出现请求延迟增大，业务链接断开的风险                                                                                                            |
-| 系统规则            | 根据 IP、User-Agent、Referer、请求方法、请求内容等字段组合定制规则，每种字段可选择包含、大于、正则、多行匹配等逻辑条件                                                                                                                     |
-| CC 规则             | 根据来源 IP 的对某文件或路径的请求频率，阻断或者弹出验证码限制请求频率过高的 IP                                                                                                                                                            |
-| CC 防护峰值       | 当前版本最大并发链接数，如超过该限制，可能出现请求延迟增大，业务链接断开的风险                                                                                                                                                             |
-| 恶意 IP 封禁        | 对多次触发防护规则的 IP 进行封禁，触发恶意 IP 封禁规则的 IP 将被添加到黑名单                                                                                                                                                               |
-| 区域 IP 封禁        | 根据请求**来源 IP 的归属地**判断是封禁还是放行该请求                                                                                                                                                                                       |
-| 信息安全防护        | 将敏感信息如手机号、身份证脱敏，防止泄漏，同时也可以根据响应内容进行阻断，响应内容的格式需为 text/html 或 text/plain。也可以根据源站的响应码伪装响应内容，或者改响应阻断                                                                   |
-| IP 查询             | IP 查询功能可以查询指定 IP 的基本信息，以及该 IP 指定时段内访问 WAF 的请求统计信息                                                                                                                                                         |
-| 黑白名单            | 黑名单中的 IP 或 IP 段的请求将被阻断，白名单中的 IP 或 IP 段的请求将被放行，不做安全检查                                                                                                                                                   |
-| 日志查询下载        | 默认可以查询 3 天内，最近 1 万条的攻击与访问日志，也可以下载 7 天内的请求日志与攻击日志。如需更长时间的日志存储与下载服务，请购买开启日志扩展包服务（旗舰版以上用户免费提供 180 天日志存储）                                               |
-| 日志 180 天存储     | 攻击日志及访问日志均存储 180 天，用户可以在控制台下载最近 180 天的攻击或访问日志                                                                                                                                                           |
-| 网页防篡改          | 添加 html/htm **静态页面**防止该页面被黑客恶意篡改                                                                                                                                                                                         |
-| 泛域名              | 添加泛域名进行防护                                                                                                                                                                                                                         |
-| 拦截页面            | 自定义触发规则的告警拦截页面内容，支持 html 和 txt 格式                                                                                                                                                                                    |
-| 定制化需求          | 如部分功能无法在控制台调整，请咨询技术支持                                                                                                                                                                                                 |
-
+| Parameter                                    | Description                                                  |
+| -------------------------------------------- | ------------------------------------------------------------ |
+| Bandwidth<br>(Cloud External/Cloud Internal) | If the source/application is deployed in UCloud (such as UHost) **and is in the same region as the actual deployment of UWAF**, it enjoys internal cloud bandwidth and uses internal cloud bandwidth threshold restrictions. In other cases, it is back to the public network and uses external cloud bandwidth threshold restrictions. If the user's business bandwidth exceeds the version limit, there may be a risk of increased request delay and business link disconnection |
+| Number of Domains                            | The maximum number of domains that can be added in the version, every 10 domain quotas can add 1 wildcard domain, the domain quota can be increased by purchasing an expansion pack |
+| Exclusive IP Points                          | An exclusive IP point can bind a WAF protection IP to a domain independently. Compared with domains sharing EIP, domains using exclusive IP will not affect other domains when they are under traffic attack. More points can be obtained by purchasing an expansion pack |
+| Domain Deployment Region                     | The workspace generated by domain configuration, it is recommended to choose a region close to the source to reduce access latency |
+| QPS                                          | The maximum value of the back-to-source QPS supported by the version, QPS is the number of response requests per second, which can represent the maximum throughput. If this limit is exceeded, there may be a risk of increased request delay and business link disconnection |
+| System Rules                                 | Customize rules based on fields such as IP, User-Agent, Referer, request method, request content, etc. Each type of field can choose to include, greater than, regular, multi-line matching and other logical conditions |
+| CC Rules                                     | Based on the request frequency of the source IP to a certain file or path, block or pop up a captcha to limit the IP with high request frequency |
+| CC Protection Peak                           | The maximum number of concurrent links in the current version, if this limit is exceeded, there may be a risk of increased request delay and business link disconnection |
+| Malicious IP Blocking                        | Block IPs that trigger protection rules multiple times, IPs that trigger malicious IP blocking rules will be added to the blacklist |
+| Regional IP Blocking                         | Judge whether to block or allow the request based on the **origin of the source IP** |
+| Information Security Protection              | Desensitize sensitive information such as mobile phone numbers and ID cards to prevent leakage, and can also block based on response content, the format of the response content should be text/html or text/plain. You can also disguise the response content based on the response code of the source station, or change the response to block |
+| IP Query                                     | The IP query function can query the basic information of the specified IP, as well as the request statistics of the IP visiting WAF during the specified period |
+| Blacklist and Whitelist                      | Requests from IPs or IP segments in the blacklist will be blocked, requests from IPs or IP segments in the whitelist will be allowed, and no security check will be performed |
+| Log Query Download                           | By default, you can query the latest 10,000 attack and access logs within 3 days, and you can also download request logs and attack logs within 7 days. If you need longer log storage and download services, please purchase and open the log extension package service (Flagship users are provided with 180 days of log storage for free) |
+| 180 Days Log Storage                         | Both attack logs and access logs are stored for 180 days, and users can download the latest 180 days of attack or access logs from the console |
+| Web Page Anti-Tampering                      | Add html/htm **static pages** to prevent the page from being maliciously tampered with by hackers |
+| Wildcard Domain                              | Add wildcard domains for protection                          |
+| Interception Page                            | Customize the warning interception page content triggered by the rule, support html and txt formats |
+| Customized Requirements                      | If some functions cannot be adjusted in the console, please consult technical support |

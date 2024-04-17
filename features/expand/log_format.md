@@ -1,75 +1,75 @@
-# UWAF 日志格式
+# UWAF Log Format
 
-UWAF 的访问日志与攻击日志均为 JSON 格式。攻击日志下载后可以指定字段提取相应的信息进行日志分析或接入专用的日志服务。
+The access logs and attack logs of UWAF are both in JSON format. After downloading the attack logs, you can specify fields to extract relevant information for log analysis or access to dedicated log services.
 
-## 访问日志字段说明
+## Access Log Field Description
 
-| 字段                     | 说明                                         |
-| ------------------------ | -------------------------------------------- |
-| @timestamp               | 请求的时间，UTC 时间                         |
-| bytes_sent               | 响应内容的大小，单位：字节                   |
-| content_type             | 响应内容的类型                               |
-| cookies                  | 请求的 Cookie 字段                           |
-| forward                  | 请求的 X-Forwared-For 字段                   |
-| host                     | 请求的 Host 字段，即域名                     |
-| hostname                 | UWAF 主机名                                  |
-| organization_id          | 项目 ID                                      |
-| referer                  | 请求的 Referer 字段                          |
-| region                   | UWAF 部署地域                                |
-| remote_addr              | 来源 IP                                      |
-| remote_port              | 来源端口                                     |
-| request_id               | 请求唯一的 ID                                |
-| request_length           | 请求内容的大小，单位：字节                   |
-| request_method           | 请求方法                                     |
-| request_time             | 响应时间，单位：秒                           |
-| request_uri              | 请求的 URI                                   |
-| scheme                   | 请求的协议                                   |
-| server_addr              | 防护域名的 IP 地址                           |
-| server_name              | 防护域名                                     |
-| server_port              | 防护域名的端口                               |
-| server_protocol          | 请求的 HTTP 协议版本                         |
-| status                   | 响应状态码                                   |
-| time_local               | 请求的时间，本地时间                         |
-| top_organization_id      | 客户 ID                                      |
-| upstream_addr            | 源站服务器地址                               |
-| upstream_bytes_received  | 从源站接送的内容大小，类型：数组，单位：字节 |
-| upstream_bytes_sent      | 传输给源站的内容大小，类型：数组，单位：字节 |
-| upstream_response_length | 源站响应的内容大小，类型：数组，单位：字节   |
-| upstream_response_time   | 源站响应的时间，类型：数组，单位：秒         |
-| upstream_status          | 源站的响应状态码                             |
-| uri                      | 请求实际被处理的 URI                         |
-| user_agent               | 请求的 User-Agent 字段                       |
-| x_real_ip                | 请求的 X-Real-IP 字段                        |
+| Field                    | Description                                                 |
+| ------------------------ | ----------------------------------------------------------- |
+| @timestamp               | Request time, UTC time                                      |
+| bytes_sent               | Size of response content, in bytes                          |
+| content_type             | Type of response content                                    |
+| cookies                  | Request's Cookie field                                      |
+| forward                  | Request's X-Forwared-For field                              |
+| host                     | Request's Host field, i.e., domain name                     |
+| hostname                 | UWAF hostname                                               |
+| organization_id          | Project ID                                                  |
+| referer                  | Request's Referer field                                     |
+| region                   | UWAF deployment region                                      |
+| remote_addr              | Source IP                                                   |
+| remote_port              | Source port                                                 |
+| request_id               | Unique ID of the request                                    |
+| request_length           | Size of request content, in bytes                           |
+| request_method           | Request method                                              |
+| request_time             | Response time, in seconds                                   |
+| request_uri              | Request's URI                                               |
+| scheme                   | Request's protocol                                          |
+| server_addr              | IP address of the protected domain                          |
+| server_name              | Protected domain                                            |
+| server_port              | Port of the protected domain                                |
+| server_protocol          | Version of the request's HTTP protocol                      |
+| status                   | Response status code                                        |
+| time_local               | Request time, local time                                    |
+| top_organization_id      | Customer ID                                                 |
+| upstream_addr            | Source server address                                       |
+| upstream_bytes_received  | Size of content received from source, type: array, in bytes |
+| upstream_bytes_sent      | Size of content sent to source, type: array, in bytes       |
+| upstream_response_length | Size of source response content, type: array, in bytes      |
+| upstream_response_time   | Time of source response, type: array, in seconds            |
+| upstream_status          | Response status code of the source                          |
+| uri                      | URI that the request actually processed                     |
+| user_agent               | Request's User-Agent field                                  |
+| x_real_ip                | Request's X-Real-IP field                                   |
 
-## 攻击日志字段说明
+## Attack Log Field Description
 
-| 字段           | 说明                                     |
-| -------------- | ---------------------------------------- |
-| AccessId       | 攻击日志唯一的 ID                        |
-| Action         | 规则的匹配动作，并非实际动作             |
-| Alerts         | 触发的规则信息，类型：键值对数组         |
-| Args           | 请求的 URI 中参数部分                    |
-| Attack         | 攻击类型                                 |
-| Client         | 来源 IP                                  |
-| ClientIPinfo   | 来源 IP 的地理信息，类型：对象           |
-| ClientPort     | 来源端口                                 |
-| Count          | 攻击次数                                 |
-| DestIp         | 防护域名的 IP 地址                       |
-| FalsePositive  | 是否误报                                 |
-| Host           | 攻击请求的 Host 字段，即域名             |
-| Id             | 攻击日志唯一的 ID                        |
-| Method         | 攻击请求的请求方法                       |
-| mode           | UWAF 防护模式                            |
-| Port           | 防护域名的端口                           |
-| Protocol       | 攻击请求的 HTTP 版本                     |
-| Referer        | 攻击请求的 Referer 字段                  |
-| Region         | UWAF 部署区域                            |
-| RequestBody    | 攻击请求的 Body 内容，截取 512 字节      |
-| RequestHeaders | 攻击请求的所有请求字段，类型：键值对数组 |
-| RequestID      | 请求唯一的 ID                            |
-| RiskRank       | 风险等级                                 |
-| ServerName     | 防护域名                                 |
-| TimeStamp      | 攻击发生的时间，秒级时间戳               |
-| TopId          | 客户 ID                                  |
-| UA             | 攻击请求的 User-Agent 字段               |
-| Uri            | 攻击请求的 URI                           |
+| Field          | Description                                                  |
+| -------------- | ------------------------------------------------------------ |
+| AccessId       | Unique ID of the attack log                                  |
+| Action         | Matching action of the rule, not the actual action           |
+| Alerts         | Triggered rule information, type: key-value pair array       |
+| Args           | Parameter part in the request's URI                          |
+| Attack         | Attack type                                                  |
+| Client         | Source IP                                                    |
+| ClientIPinfo   | Geographical information of the source IP, type: object      |
+| ClientPort     | Source port                                                  |
+| Count          | Number of attacks                                            |
+| DestIp         | IP address of the protected domain                           |
+| FalsePositive  | Whether it is a false positive                               |
+| Host           | Host field of the attack request, i.e., domain name          |
+| Id             | Unique ID of the attack log                                  |
+| Method         | Request method of the attack request                         |
+| mode           | UWAF protection mode                                         |
+| Port           | Port of the protected domain                                 |
+| Protocol       | HTTP version of the attack request                           |
+| Referer        | Referer field of the attack request                          |
+| Region         | UWAF deployment region                                       |
+| RequestBody    | Body content of the attack request, cut off at 512 bytes     |
+| RequestHeaders | All request fields of the attack request, type: key-value pair array |
+| RequestID      | Unique ID of the request                                     |
+| RiskRank       | Risk level                                                   |
+| ServerName     | Protected domain                                             |
+| TimeStamp      | Time of the attack, second-level timestamp                   |
+| TopId          | Customer ID                                                  |
+| UA             | User-Agent field of the attack request                       |
+| Uri            | URI of the attack request                                    |

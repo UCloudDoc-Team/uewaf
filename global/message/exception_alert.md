@@ -1,16 +1,17 @@
-# 异常状态码监控
-UWAF对请求流量做监控（QPS平均值需要大于10以上，低于该平均值则不会触发该告警）。如整体请求，499以上的状态码比例大于30%，则会向对应的消息订阅组用户发送告警邮件或者短信。频率为5分钟一次。
+# Abnormal Status Code Monitoring
 
-异常状态码告警一般是源站返回了大量的499以上的状态码而触发的告警，在源站长时间未响应时，UWAF会返回502状态码。此告警表明UWAF和源站之间的网络连接是通的，但可能是源站没法及时处理UWAF的回源请求，此时需要检查源站的情况。
+UWAF monitors request traffic (the average QPS needs to be greater than 10, if it is lower than this average, this alert will not be triggered). If the proportion of status codes above 499 in the overall requests exceeds 30%, an alert email or SMS will be sent to the corresponding message subscription group users. The frequency is once every 5 minutes.
 
-## 异常状态码告警情况处理
+Abnormal status code alerts are generally triggered by the origin server returning a large number of status codes above 499. When the origin server does not respond for a long time, UWAF will return a 502 status code. This alert indicates that the network connection between UWAF and the origin server is open, but the origin server may not be able to process UWAF's back-to-source request in time. At this time, the situation of the origin server needs to be checked.
 
-当收到异常状态码告警的邮件或短信时，请遵循以下步骤进行检查：
+## Handling Abnormal Status Code Alerts
 
-1. 在【安全报表】的【系统概览】查看域名访问情况，看访问量是否突增导致源站压力过大
+When you receive an email or SMS about an abnormal status code alert, please follow the steps below to check:
 
-2. 检查源站服务器是否正常工作，主要是CPU使用率及带宽使用率是否过高
+1. View the domain access situation in the "System Overview" of the "Security Report" to see if the access volume has surged, causing excessive pressure on the origin server.
 
-3. 检查源站IP是否暴露，可查看源站日志，看是否有大量请求绕过WAF直接访问到了源站
+2. Check whether the origin server is working normally, mainly whether the CPU usage rate and bandwidth usage rate are too high.
 
-如您确认源站正常但是触发了告警或认为告警为误告警，请咨询技术支持获取帮助。
+3. Check whether the origin server's IP is exposed. You can view the origin server logs to see if a large number of requests bypass WAF and directly access the origin server.
+
+If you confirm that the origin server is normal but an alert is triggered, or if you think the alert is a false alarm, please consult technical support for help.

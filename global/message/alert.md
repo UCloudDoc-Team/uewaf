@@ -1,21 +1,21 @@
-# 告警设置
+# Alert Settings
 
-告警设置包含了全局的通知对象设置及开关等，共四种类型：安全报告、攻击告警监控、源站状态监控、异常状态码监控。
+Alert settings include global notification object settings and switches, with four types: Security Reports, Attack Alert Monitoring, Origin Server Status Monitoring, and Abnormal Status Code Monitoring.
 
 ![](/images/alert-get_status.png)
 
-## 安全报告
+## Security Reports
 
-统计用户全部域名在固定时间周期内的安全攻击报告，通过勾选的通知方式对应通知对象。**没有攻击则不会生成安全报告**。
+Statistics of all user domain security attack reports within a fixed time period, notifying corresponding objects through the selected notification methods. **No security report will be generated if there is no attack**.
 
-## 攻击告警监控/源站状态监控/异常状态码监控
+## Attack Alert Monitoring/Origin Server Status Monitoring/Abnormal Status Code Monitoring
 
-详情说明请点击对应的链接：
+For detailed descriptions, please click the corresponding links:
 
-- [攻击告警监控](/uewaf/features/domain/monitor_set?id=攻击告警监控)
-- [源站状态监控](/uewaf/features/domain/monitor_set?id=攻击告警监控)
-- [异常状态码监控](/uewaf/features/domain/monitor_set?id=异常状态码监控)
+- [Attack Alert Monitoring](/uewaf/features/domain/monitor_set?id=Attack Alert Monitoring)
+- [Origin Server Status Monitoring](/uewaf/features/domain/monitor_set?id=Attack Alert Monitoring)
+- [Abnormal Status Code Monitoring](/uewaf/features/domain/monitor_set?id=Abnormal Status Code Monitoring)
 
-## 关闭告警
+## Turning Off Alerts
 
-将最后一列的开启状态置为 OFF 即可关闭对应类型的全局告警。域名级别的关闭需在【[域名管理](/uewaf/features/domain/domain_set)】中找到指定的域名条目，点击【更多】后再点击【[监控设置](/uewaf/features/domain/monitor_set?id=监控设置)】，在弹出的界面中选择开启或关闭对应域名的相关告警功能。
+To turn off global alerts of a certain type, set the status in the last column to OFF. To turn off domain-level alerts, go to [Domain Management](/uewaf/features/domain/domain_set), find the specific domain entry, click [More] and then click [Monitoring Settings](/uewaf/features/domain/monitor_set?id=Monitoring Settings). In the pop-up interface, choose to turn on or off the relevant alert functions for the corresponding domain.

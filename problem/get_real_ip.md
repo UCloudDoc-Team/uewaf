@@ -1,45 +1,45 @@
-# 客户端真实 IP 及端口
+# Client's Real IP and Port
 
-## UWAF 获取通过 CDN 等代理服务器访问的客户端真实 IP
+## UWAF Obtains the Real IP of Clients Accessing through Proxy Servers such as CDN
 
-一般 CDN 会通过 XFF(X-Forwarded-For) 或 X-Real-IP 来传递来访用户的真实 IP，但是不排除用户构造该字段伪造请求 IP 的情况出现。
+Normally, CDN will pass the real IP of the visiting user through XFF (X-Forwarded-For) or X-Real-IP. However, it does not rule out the situation where users construct this field to forge the request IP.
 
-以 UCDN 举例，如果想在 WAF 端获取到来访用户的真实的 IP，需要做如下操作
+Taking UCDN as an example, if you want to get the real IP of the visiting user at the WAF end, you need to do the following:
 
-1. 打开 WEB 应用防火墙控制台的【域名管理】，选中需要设置的域名，点击【编辑】
-2. 打开后，开启【WAF 前是否具有代理】选项，并在【真实 IP 字段设置】处填入 X-Real-IP 字段（该字段为 UCDN 传递用户真实 IP 的字段，如选择其他第三方代理，请与供应商确认真实 IP 字段）
+1. Open the 'Domain Management' of the WEB application firewall console, select the domain name to be set, and click 'Edit'.
+2. After opening, turn on the 'Is there a proxy before WAF' option, and fill in the X-Real-IP field in the 'Real IP Field Setting' (this field is the field where UCDN passes the user's real IP, if you choose other third-party proxies, please confirm the real IP field with the supplier).
 
 ![](/images/get_real_ip-set_xff.png)
 
-3. 配置完成后，点击【确定】，即可让 UWAF 获取到客户到客户端真实 IP。
+3. After the configuration is completed, click 'OK' to let UWAF get the real IP of the client.
 
-## 源站获取客户端真实 IP
+## Obtaining the Real IP of the Client from the Source Station
 
-UWAF 会在回源请求头中添加 X-Real-IP 和 X-Forwarded-For 两个字段来传递来访用户的真实 IP，在源站服务器中可进行相应的[配置](#示例配置)以便获取这两个字段的值。
+UWAF will add two fields, X-Real-IP and X-Forwarded-For, to the request header when returning to the source to transmit the real IP of the visiting user. The source server can make the corresponding [configuration](#Sample Configuration) to obtain the values of these two fields.
 
-#### X-Real-IP 与 X-Forwarded-For 的区别
+#### The Difference Between X-Real-IP and X-Forwarded-For
 
-代理服务器（比如 UWAF）会把请求的来源 IP 写入 X-Real-IP 字段，然后发送给源站，这个字段只会有一个 IP 地址；而每经过一级代理，代理服务器会把来源追加到 X-Forwarded-For 中，在多次代理的情况下，则该字段会有多个 IP 地址（真实 IP, 代理服务器 1, 代理服务器 2, ...）。
+The proxy server (such as UWAF) will write the source IP of the request into the X-Real-IP field and then send it to the source station. This field will only have one IP address; however, with each level of proxy, the proxy server will append the source to X-Forwarded-For. In the case of multiple proxies, this field will have multiple IP addresses (real IP, proxy server 1, proxy server 2, ...).
 
-## 源站获取客户端真实端口
+## Obtaining the Real Port of the Client from the Source Station
 
-UWAF 会在回源请求头中添加 X-Real-Port 字段来传递来访用户的真实端口，源站可通过取这个头部字段的值获取用户客户端真实的端口。
+UWAF will add the X-Real-Port field to the request header when returning to the source to transmit the real port of the visiting user. The source station can obtain the real port of the user client by taking the value of this header field.
 
-## 示例配置
+## Sample Configuration
 
-对于常见的 HTTP 服务器或 Web 应用程序，可以通过下面的方法来获取客户端真实 IP：
+For common HTTP servers or web applications, the following methods can be used to obtain the real IP of the client:
 
 #### Nginx
 
-对于 Nginx 服务器，可以使用 `$http_x_real_ip` 取得 X-Real-IP 字段的值，使用 `$http_x_real_port` 取得 X-Real-Port 字段的值。利用 Nginx 的 `http_realip_module` 模块可以让 `$remote_addr` 显示为客户端的真实 IP，添加的配置如下：
+For Nginx servers, you can use `$http_x_real_ip` to get the value of the X-Real-IP field, and `$http_x_real_port` to get the value of the X-Real-Port field. Using the `http_realip_module` module of Nginx allows `$remote_addr` to display the real IP of the client. The added configuration is as follows:
 
 ```nginx
-set_real_ip_from 回源IP段; # 回源IP段可在控制台 概览 页的 基本信息 处查看，多个IP段需多条指令。
-real_ip_header X-Forwarded-For; # 也可以使用 X-Real-IP
-real_ip_recursive on; # 若WAF前有CDN等代理，需要此指令设为 on，否则不用。
+set_real_ip_from source IP segment; # The source IP segment can be viewed in the Basic Information section of the Overview page in the control panel. Multiple IP segments require multiple instructions.
+real_ip_header X-Forwarded-For; # X-Real-IP can also be used
+real_ip_recursive on; # If there are proxies like CDN in front of WAF, this instruction needs to be set to on, otherwise it is not needed.
 ```
 
-若源站的 Nginx 作为代理服务器，在前文配置的基础上还可在配置中添加以下内容使得后端应用也能通过 X-Real-IP 或 X-Forwarded-For 获取的客户端真实 IP：
+If the source Nginx acts as a proxy server, in addition to the previous configuration, you can add the following content to the configuration so that the backend application can also obtain the real IP of the client through X-Real-IP or X-Forwarded-For:
 
 ```nginx
 # ...
@@ -70,5 +70,5 @@ request.getHeader("X-Real-IP")
 $_SERVER["HTTP_X_FORWARDED_FOR"]
 ```
 
-?> 说明：  
-如果上层链路为 CDN 等第三方代理服务器，有可能无法获取真实 IP。此种情况需要参照前文[WAF 获取通过 CDN 等代理服务器访问的客户端真实 IP](#uwaf-获取通过-cdn-等代理服务器访问的客户端真实-ip)提前在域名设置中开启【WAF 前是否具有代理】选项并指定客户端真实 IP 字段。
+?> Note:  
+If the upper link is a third-party proxy server such as CDN, it may not be possible to obtain the real IP. In this case, you need to refer to the previous article [WAF obtains the real IP of the client accessed through the CDN and other proxy servers](#uwaf-obtains-the-real-ip-of-the-client-accessed-through-the-cdn-and-other-proxy-servers) to enable the [Does WAF have a proxy in front] option in the domain settings in advance and specify the real IP field of the client.

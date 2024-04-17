@@ -1,22 +1,22 @@
-# 产品概述
+# Product Overview
 
-UCloud Web 应用防火墙（UCloud Web Application Firewall，简称 UWAF）是基于云的一款分布式反向代理应用防火墙，利用拥有更多资源和更高吞吐量的云端对流量进行判别和过滤。在日益严峻的网络安全态势下，拥有高可用、高效拦截恶意流量、访问统计分析、应用健康状态监控等功能特性且能够通过控制台或 API 灵活管理的 UWAF 是各行业企业用户的 Web 安全的理想解决方案。
+UCloud Web Application Firewall (abbreviated as UWAF) is a cloud-based distributed reverse proxy application firewall, which uses the cloud with more resources and higher throughput to judge and filter traffic. In the increasingly severe network security situation, UWAF, which has high availability, efficient interception of malicious traffic, access statistical analysis, application health status monitoring and other functional features, and can be flexibly managed through the console or API, is the ideal solution for Web security for enterprise users in various industries.
 
-UWAF 可拦截大部分的 Web 攻击从而保护您的 Web 应用程序，这些攻击会降低应用程序的可用性、安全性或导致消耗利用率异常。不同于传统应用防火墙的地方在于您可以按需付费，随用随开，快速接入，便捷管理。您还可以将 UWAF 作为网络安全解决方案的一部分与高防服务等其他安全产品结合，获得更全面的安全防护。此外 UWAF 还可以满足等保合规要求。
+UWAF can intercept most Web attacks to protect your Web applications. These attacks can reduce the availability, security, or cause abnormal consumption of your applications. Unlike traditional application firewalls, you can pay as you go, use it as soon as you need it, quickly access, and manage conveniently. You can also combine UWAF with other security products such as DDoS protection services as part of a network security solution to obtain more comprehensive security protection. In addition, UWAF can also meet the requirements of equal protection compliance.
 
-## 适合用户
+## Suitable for Users
 
-所有需要 Web 应用防护的客户（应用或源站可以不部署在 UCloud）。
+All customers who need Web application protection (the application or source site can be deployed outside of UCloud).
 
-## 接入方式
+## Access Methods
 
-- [SaaS 版 UWAF](/uewaf/use/access_uwaf)：通过 CNAME 解析部署，域名通过 CNAME 解析将流量引入 UWAF 分配的 CNAME 防护域名 即可。
-- [ULB 版 UWAF](/uewaf/use/ulb_with_uwaf)：购买后在 ULB 侧添加转发规则，再在 UWAF 上添加域名，无需更改原有网络链路即可对流量进行 Web 安全检测。
+- [SaaS version UWAF](/uewaf/use/access_uwaf): Deployed through CNAME resolution, the domain can be introduced into the CNAME protection domain assigned by UWAF through CNAME resolution.
+- [ULB version UWAF](/uewaf/use/ulb_with_uwaf): After purchase, add forwarding rules on the ULB side, then add the domain name on UWAF, and you can perform Web security detection on the traffic without changing the original network link.
 
-## 产品基本功能
+## Basic Product Features
 
-- 常规 Web 攻击（SQL 注入、XSS 攻击等）的防护。
-- 主流 Web 漏洞检测和防护，最新高危漏洞防护、虚拟补丁。
-- CC（Challenge Collapsar）攻击检测和防护。
-- 灵活的自定义防护策略。
-- 多样的访问报表和攻击报表。
+- Protection against conventional Web attacks (such as SQL injection, XSS attacks, etc.).
+- Detection and protection of mainstream Web vulnerabilities, protection against the latest high-risk vulnerabilities, virtual patches.
+- Detection and protection against CC (Challenge Collapsar) attacks.
+- Flexible custom protection strategies.
+- Various access reports and attack reports.

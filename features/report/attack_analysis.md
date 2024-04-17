@@ -1,28 +1,28 @@
-# 攻击概览
+# Attack Overview
 
-选择相应的域名或全部域名与指定的时间范围，攻击概览中会根据选中的域名和时间范围显示对应的预设的攻击分析报表。
+Choose the corresponding domain name or all domain names and the specified time range. The attack overview will display the preset attack analysis report according to the selected domain name and time range.
 
 ![](/images/attack_analysis-get_report_1.jpg)
 ![](/images/attack_analysis-get_report_2.jpg)
 
-## 数据展示
+## Data Display
 
-|数据指标|说明|
-|-|-|
-|总请求次数|所选域名的全部请求数统计|
-|总攻击次数|所选域名的全部攻击数统计|
-|黑名单拦截次数|所选域名的黑名单拦截的请求数，即响应状态码记录的是 444 的请求数统计|
-|自定义规则触发次数|所选域名的触发自定义规则的请求数|
-|CC 规则拦截次数|所选域名的触发 CC 规则的次数，触发 CC 规则后，后续请求可能记录 444 状态码|
-|系统默认规则拦截次数|所选域名的触发 UWAF 默认规则的请求数|
+| Data Metrics                           | Description                                                  |
+| -------------------------------------- | ------------------------------------------------------------ |
+| Total Request Times                    | Total request count for the selected domain                  |
+| Total Attack Times                     | Total attack count for the selected domain                   |
+| Blacklist Interception Times           | The number of requests intercepted by the blacklist for the selected domain, i.e., the count of requests with a response status code of 444 |
+| Custom Rule Trigger Times              | The number of requests that trigger custom rules for the selected domain |
+| CC Rule Interception Times             | The number of times the CC rule is triggered for the selected domain. After the CC rule is triggered, subsequent requests may record a 444 status code |
+| System Default Rule Interception Times | The number of requests that trigger the default UWAF rules for the selected domain |
 
-## 图表信息展示
+## Chart Information Display
 
-- 攻击时间防护轴：统计一段时间内放行或拦截的攻击次数。如果选择的工作模式是“记录但不拦截”，则防护行为都是“放行”，如果选择的工作模式是“启用防护规则”，则防护行为是“拦截”。
-- 攻击分类攻击趋势：不通攻击类型的分类攻击趋势统计
-- 风险等级分布：统计发现的不同风险等级的攻击次数。
-- 攻击类型分布：统计不同攻击类型的攻击次数。
-- Top 10 攻击 IP：攻击次数最多的 IP 是哪 10 个（可排除特定 IP）
-- Top 10 攻击路径：受到攻击最多的路径是哪 10 个
-- Top 10 攻击来源地：发起攻击最多的 IP 来源归属地
-- Top 10 攻击请求 UA：发起攻击最多的请求 UA 特征
+- Attack Time Protection Axis: Count the number of attacks allowed or intercepted over a period of time. If the selected working mode is "Record but do not intercept", then the protection behavior is "Allow". If the selected working mode is "Enable protection rules", then the protection behavior is "Intercept".
+- Attack Classification Trend: Statistics of attack trends for different attack types
+- Risk Level Distribution: Count the number of attacks at different risk levels.
+- Attack Type Distribution: Count the number of attacks of different types.
+- Top 10 Attack IPs: Which are the top 10 IPs with the most attacks (specific IPs can be excluded)
+- Top 10 Attack Paths: What are the top 10 most attacked paths
+- Top 10 Attack Source Locations: Where are the top 10 IPs initiating the most attacks from
+- Top 10 Attack Request UAs: What are the top 10 request UA features initiating the most attacks

@@ -1,12 +1,12 @@
-# 拦截页面
+# Interception Page
 
-!> 注意：  
-此功能需要旗舰版及以上版本。
+!> Note:  
+This feature requires the flagship version or above.
 
-默认 UWAF 在判定一个请求为攻击请求后，会在 UWAF 处拦截该请求同时记录攻击日志，并返回响应状态码为 404 的默认拦截页面给客户端。通过自定义拦截页面功能可以自定义拦截页面的响应状态码和页面内容。
+By default, when UWAF determines a request as an attack request, it will intercept the request at UWAF while recording the attack log, and return a default interception page with a response status code of 404 to the client. The custom interception page feature allows you to customize the response status code and page content of the interception page.
 
 ![](/images/intercept_page-get_rule.png)
 
-拦截页面的响应状态码，默认设置为 0，即状态码为 200，也可以自定义为 200-599 之间的状态码。
+The response status code of the interception page is set to 0 by default, i.e., the status code is 200, but it can also be customized to a status code between 200-599.
 
-点击【编辑内容】，可以输入自定义的文本或 HTML 代码，这样当攻击请求被拦截时将显示自定义的拦截页面，若设置了页面内容，则默认为开启此功能，如果内容为空，则此功能为关闭状态。页面支持 HTML 代码与 TXT 纯文本两种格式文档的内容解析。
+Click on [Edit Content], you can enter custom text or HTML code, so when the attack request is intercepted, the custom interception page will be displayed. If the page content is set, this feature is enabled by default. If the content is empty, this feature is in the off state. The page supports content parsing of HTML code and TXT plain text document formats.

@@ -1,78 +1,77 @@
-# 接入 SaaS 版 UWAF
+# Accessing SaaS Version UWAF
 
-SaaS 版 UWAF 是部署在 Web 服务器前，通过转发代理的方式为业务提供保护的一款产品。通过对流量的内容检测，抵御包括 SQL 注入，XSS 攻击，漏洞攻击，恶意扫描等类型的攻击行为。为网站的正常工作保驾护航。
+The SaaS version of UWAF is a product that provides protection for business by being deployed in front of the Web server and forwarding proxies. By detecting the content of the traffic, it resists attacks such as SQL injection, XSS attacks, vulnerability attacks, and malicious scanning, ensuring the normal operation of the website.
 
-接入 UWAF 前：
+Before accessing UWAF:
 ![](/images/access_uwaf-show_before_arch.jpg)
 
-接入 UWAF 后：
+After accessing UWAF:
 ![](/images/access_uwaf-show_after_arch.jpg)
 
-## 购买 UWAF
+## Purchasing UWAF
 
-登陆 UCloud 控制台，从产品列表中选择 UWAF：【全部产品】 -> 【安全防护】 -> 【WEB 应用防火墙 UWAF】，再点击【开始使用】（如未开通请先开通该服务）。
+Log in to the UCloud control panel, select UWAF from the product list: [All Products] -> [Security Protection] -> [WEB Application Firewall UWAF], and then click [Start Using] (if the service is not activated, please activate it first).
 
-![](/images/purchase_waf-purchase_ui.png)
+![](/images/purchase_waf-purchase_ui.png)""".
 
-### 参数说明
+### Parameter Description
 
-| 参数                                                             | 说明                                                                                                    |
-| ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| 类型                                                             | UWAF 部署的区域类型，包含中国内地，港澳台，海外区域以及 ULB 专区                                        |
-| 地域                                                             | 域名配置生成的工作区域                                                                                  |
-| 版本类型                                                         | 不同版本 UWAF，详细的版本差异，功能、性能对比，请在[版本选择](/uewaf/steer/version_selection)查看       |
-| 扩展带宽                                                         | 当版本提供的带宽额度不满足业务需求时，可提供额外的带宽扩展                                              |
-| 域名扩展包                                                       | 当版本提供的域名数不满足业务需求时，可提供额外的域名扩展                                                |
-| [独享 IP](/uewaf/features/domain/domain_set?id=exclusive-ip)点数 | 该 IP 点数可为用户域名分配一个独享的 防护 IP ，在版本配额外可提供额外的点数                             |
-| 日志扩展包                                                       | 提供 180 天的日志存储与下载服务，满足等保要求，旗舰版及以上赠送日志扩展包                               |
-| 高级功能                                                         | 除基本 Web 防护功能外的高级功能，具体说明请在[功能说明](/uewaf/steer/version_selection?id=功能说明)查看 |
-| IPv6                                                       | IPV6扩展包，开启后，添加域名时可额外部署到IPv6区域以提供IPv6访问                               |
-| 定制化需求                                                       | 可以按需要调整部分无法在控制台调整的功能，详情请咨询技术支持                                            |
+| Parameter                                                    | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Type                                                         | The type of area where UWAF is deployed, including mainland China, Hong Kong, Macao and Taiwan, overseas areas and ULB special zones |
+| Region                                                       | The working area where the domain configuration is generated |
+| Version Type                                                 | Different versions of UWAF, for detailed version differences, function and performance comparison, please check [Version Selection](/uewaf/steer/version_selection) |
+| Extended Bandwidth                                           | When the bandwidth quota provided by the version does not meet the business needs, additional bandwidth expansion can be provided |
+| Domain Extension Package                                     | When the number of domains provided by the version does not meet the business needs, additional domain extensions can be provided |
+| [Exclusive IP](/uewaf/features/domain/domain_set?id=exclusive-ip) Points | This IP points can allocate an exclusive protection IP for the user's domain, and additional points can be provided in addition to the version quota |
+| Log Extension Package                                        | Provides 180 days of log storage and download services, meets the requirements of equal protection, and the flagship version and above give away log extension packages |
+| Advanced Features                                            | Advanced features beyond basic Web protection functions, for specific instructions, please check [Feature Description](/uewaf/steer/version_selection?id=Feature Description) |
+| IPv6                                                         | IPV6 extension package, after opening, when adding a domain name, it can be additionally deployed to the IPv6 area to provide IPv6 access |
+| Customized Requirements                                      | Some functions that cannot be adjusted on the console can be adjusted as needed, please consult technical support for details |
 
+After purchasing the appropriate UWAF, you can follow the steps below to connect your business to UWAF.
 
-购买好合适的 UWAF 后，可按下述步骤将业务接入 UWAF。
+## Add Domain
 
-## 添加域名
-
-1. 点击【域名管理】->【添加域名】
-2. 在弹窗中填写域名和对应域名源站地址，域名可以是泛域名或者完整的子域名。点击【确定】后，在界面上获取生成的 CNAME 信息，域名添加后，可以在【域名管理】对应的域名后点击【编辑】对域名进行更改  
+1. Click on [Domain Management] -> [Add Domain]
+2. Fill in the domain and corresponding domain source address in the pop-up window. The domain can be a wildcard domain or a complete subdomain. After clicking [Confirm], get the generated CNAME information on the interface. After adding the domain, you can click [Edit] behind the corresponding domain in [Domain Management] to change the domain  
    ![](/images/domain_set-add_domain.png)
 
-3. 域名信息展示  
+3. Domain Information Display  
    ![](/images/domain_set-get_domain.png)
 
-4. HTTPS 站点，需要上传站点的 SSL 证书。若是从[USSL](/ussl/operate/buy)购买的证书或者证书托管在[USSL](/ussl/operate/upload)，则在添加 HTTPS 站点时会自动拉取相应域名的证书。  
+4. For HTTPS sites, you need to upload the site's SSL certificate. If the certificate is purchased from [USSL](/ussl/operate/buy) or the certificate is hosted on [USSL](/ussl/operate/upload), the certificate of the corresponding domain will be automatically pulled when adding an HTTPS site.  
    ![](/images/access_uwaf-set_https.png)
 
-域名各配置的[说明](/uewaf/features/domian/domain_set.md?id=parameter-1)。
+Explanation of each domain configuration can be found [here](/uewaf/features/domian/domain_set.md?id=parameter-1).
 
-!> 注意：  
-域名必须是已经备案的，未备案的域名将无法添加。港澳台及海外地区不受备案限制。
+!> Note:  
+The domain must be already filed, unfiled domains cannot be added. Hong Kong, Macao, Taiwan and overseas regions are not subject to filing restrictions.
 
-## 本地测试
+## Local Testing
 
-1. 使用 ping 命令获取 CNAME 防护域名 对应的 IP 地址
-2. 打开 hosts 文件，修改客户端的 hosts 记录，将站点域名指向第 1)步中所得到的 IP 地址  
+1. Use the ping command to get the IP address corresponding to the CNAME protection domain
+2. Open the hosts file, modify the client's hosts record, and point the site domain to the IP address obtained in step 1)  
    ![](/images/access_uwaf-ping_cname.jpeg)
 
-?> 说明：  
-Windows 系统 hosts 文件路径：`c:\windows\system32\drivers\etc\hosts`  
-macOS 系统 hosts 文件路径：`/private/etc/hosts`  
-Linux 系统 hosts 文件路径：`/etc/hosts`
+?> Explanation:  
+Windows system hosts file path: `c:\windows\system32\drivers\etc\hosts`  
+macOS system hosts file path: `/private/etc/hosts`  
+Linux system hosts file path: `/etc/hosts`
 
-## 修改 DNS 记录
+## Modify DNS Records
 
-拿到对应域名的 CNAME 值后，需要到 DNS 服务商处添加 CNAME 记录，将站点的域名正确解析至 UWAF 提供的 CNAME 防护域名 ，如您使用 DNSPod 提供的解析服务，则可以到 DNSPod 控制台添加 CNAME 记录，如下图所示。
+After obtaining the CNAME value for the corresponding domain name, you need to add a CNAME record at the DNS service provider to correctly resolve the site's domain name to the CNAME protection domain name provided by UWAF. If you are using the resolution service provided by DNSPod, you can add a CNAME record to the DNSPod control panel, as shown in the figure below.
 ![](/images/access_uwaf-set_hosts.jpeg)
 
-### 测试配置是否正确
+### Test Whether the Configuration is Correct
 
-验证 CNAME 解析是否完成，步骤如下：
+To verify whether the CNAME resolution is complete, follow the steps below:
 
-1. 在 Windows 操作系统中，使用快捷键 `WIN + R`，在弹出框中输入 `cmd` 并回车；在 Linux 或 macOS 中打开任意终端
-2. 执行命令 `nslookup -querytype=cname xxxxxx.uewaf.com`
-3. 如果命令执行结果显示了配置的 CNAME 防护域名 或者由 CNAME 防护域名 解析得到的 IP，则表示配置成功
+1. In the Windows operating system, use the shortcut `WIN + R`, enter `cmd` in the pop-up box and press enter; open any terminal in Linux or macOS.
+2. Execute the command `nslookup -querytype=cname xxxxxx.uewaf.com`
+3. If the command execution result shows the configured CNAME protection domain name or the IP obtained by resolving the CNAME protection domain name, it means the configuration is successful.
 
-## 模式选择
+## Mode Selection
 
-当用户配置完 DNS 解析后，需要注意查看是否域名已经是阻断模式，如果不是，则需在【防护设置】里选择域名的工作模式为阻断模式。开启 UWAF 的防护功能。
+After the user has configured the DNS resolution, it is necessary to check whether the domain name is already in blocking mode. If not, you need to select the working mode of the domain name as blocking mode in [Protection Settings]. Start the protection function of UWAF.

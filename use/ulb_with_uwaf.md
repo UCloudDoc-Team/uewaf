@@ -1,76 +1,76 @@
-# 接入 ULB 版 UWAF
+# Accessing ULB Version UWAF
 
-用户在使用[ULB（请求代理型）](https://docs.ucloud.cn/ulb/intro/architecture?id=%e5%a4%96%e7%bd%91ulb7)服务后，在提高了业务可用性和资源利用率的同时还可以直接绑定 Web 应用防火墙（UWAF）得到七层 HTTP/HTTPS 业务的安全防护。
+After using the [ULB (Request Proxy Type)](https://docs.ucloud.cn/ulb/intro/architecture?id=%e5%a4%96%e7%bd%91ulb7) service, users can directly bind the Web Application Firewall (UWAF) to achieve secure protection of layer 7 HTTP/HTTPS services, while improving business availability and resource utilization.
 
-ULB 版 UWAF 在 ULB 提供的七层转发能力上提供 Web 安全防护能力，与非 ULB 版的 UWAF 相比没有**云外源站、查看 CC 封堵 IP、拦截页面、网页防篡改**功能，其他功能可参照 UWAF 企业版，具体信息请参考[版本选择-功能对比](/uewaf/steer/version_selection?id=功能说明)。
+The ULB version of UWAF provides web security protection capabilities on the layer 7 forwarding ability provided by ULB. Compared to the non-ULB version of UWAF, it does not have **external source station, view CC blocking IP, interception page, web page anti-tampering** functions. Other functions can refer to the UWAF Enterprise Edition, for specific information please refer to [Version Selection - Function Comparison](/uewaf/steer/version_selection?id=功能说明).
 
-可以在[购买 UWAF 时绑定 ULB 资源](/uewaf/use/ulb_with_uwaf?id=购买UWAF时绑定ULB资源)，至少需要绑定 1 个 ULB，绑定多个 ULB 采取累积计费，版本配额也会累积。例如绑定 2 个 ULB，则需 7300 元/月，共支持 40 个域名，其他配额也会翻倍。
+You can [bind ULB resources when purchasing UWAF](/uewaf/use/ulb_with_uwaf?id=购买UWAF时绑定ULB资源), and at least 1 ULB needs to be bound. If multiple ULBs are bound, cumulative billing is adopted, and the version quota will also accumulate. For example, if 2 ULBs are bound, it will cost 7300 yuan/month, supporting a total of 40 domains, and other quotas will also double.
 
-购买成功并把域名接入 UWAF 后，日常使用与非 ULB 版 WAF 大体一致，但转发面功能如带宽、端口等需到基础网络 UNet 控制台或负载均衡 ULB 控制台进行调整。
+After successful purchase and domain name access to UWAF, daily use is largely consistent with the non-ULB version of WAF, but forwarding functions such as bandwidth and ports need to be adjusted in the Basic Network UNet console or Load Balancing ULB console.
 
-若**ULB 已存在且已接入业务**，即为已有的请求代理型负载均衡增加 WAF 防护能力，[可从此步开始](/uewaf/use/ulb_with_uwaf?id=anchor)。
+If the **ULB already exists and has been accessed by the business**, that is, to add WAF protection capabilities to the existing request proxy type load balancing, [you can start from this step](/uewaf/use/ulb_with_uwaf?id=anchor).
 
-### 注意事项
+### Precautions
 
-1. ULB 专区版目前支持的可用区参见[价格说明](/uewaf/steer/price?id=ULB版UWAF)。
-2. ULB 版 UWAF 的域名、源站、带宽、端口、SSL 证书、HTTP2.0、IPv6 配置在 UWAF 控制台无法调整，如需调整，带宽和 IPv6 配置请到基础网络 UNet 控制台，其他配置请到负载均衡 ULB 控制台。
-3. ULB 版 UWAF 的 QPS 指标参见 ULB 的[性能指标](https://docs.ucloud.cn/ulb/intro/performance)。
+1. The available zones currently supported by the ULB Special Edition can be found in the [Pricing Description](/uewaf/steer/price?id=ULB版UWAF).
+2. The domain name, origin server, bandwidth, port, SSL certificate, HTTP2.0, and IPv6 configuration of the ULB version of UWAF cannot be adjusted in the UWAF console. If adjustments are needed, please go to the UNet console for bandwidth and IPv6 configuration, and to the ULB console for other configurations.
+3. The QPS metrics of the ULB version of UWAF can be found in the [Performance Metrics](https://docs.ucloud.cn/ulb/intro/performance) of ULB.
 
-## 购买 ULB 版 WAF
+## Purchasing ULB Version WAF
 
-### 购买 UWAF 时绑定 ULB 资源
+### Binding ULB Resources When Purchasing UWAF
 
-用户可以在【全部产品】选择【Web 应用防火墙 UWAF】，点击【开始使用】，在 UWAF 的购买界面，选择【ULB 专区版】进行购买。
+Users can select [Web Application Firewall UWAF] in [All Products], click [Start Using], and choose [ULB Special Edition] to purchase on the UWAF purchase interface.
 
-**请先购买 1 个 ULB 资源，否则无法成功购买 ULB 版 WAF**。如果您已购买了 ULB 服务，可以在 **绑定 ULB 资源** 一栏下拉看到已配置好的 ULB 服务，选择需要添加的 ULB 资源，即可绑定该资源，再根据业务需要选择域名或日志扩展包后点击【立即购买】即可。
+**Please purchase 1 ULB resource first, otherwise, you will not be able to successfully purchase the ULB version of WAF**. If you have already purchased ULB services, you can see the configured ULB services in the drop-down menu under **Bind ULB Resources**, select the ULB resource you need to add, bind this resource, and then choose the domain name or log expansion package according to business needs and click [Buy Now].
 
 ![](/images/ulb_with_uwaf-purchase_waf.png)
 
-ULB 专区版 UWAF 默认提供 20 个域名配额，一个域名扩展包可以增加 10 个域名配置；日志服务默认提供 7 天内的日志存储与下载，日志扩展包服务则支持最多 180 天的日志存储与下载。扩展包均是按月计费。
+The ULB Special Edition UWAF provides a default quota of 20 domain names. One domain name expansion package can add 10 domain name configurations; the log service provides log storage and download within 7 days by default, and the log expansion package service supports up to 180 days of log storage and download. Expansion packages are billed monthly.
 
-## 接入 ULB 版 UWAF
+## Connect to ULB Version UWAF
 
-### 负载均衡配置
+### Load Balancing Configuration
 
-在 ULB 控制台的【负载均衡管理】界面选择已绑定 UWAF 的 ULB 资源，在操作一栏点击【详情】进行操作，共有三步：
+In the ULB console's [Load Balancing Management] interface, select the ULB resource that has bound UWAF, click [Details] in the operation column to operate, there are three steps:
 
-1. 选择【VServer 管理】，并点击【添加 VServer】，填写 VServer 名称 以及 协议和端口，点击【确定】即可，详细说明参见 ULB 文档：[添加 VServer](https://docs.ucloud.cn/ulb/guide/vserver/createvserver)
+1. Select [VServer Management], and click [Add VServer], fill in the VServer name and protocol and port, click [OK] to confirm, for detailed instructions, please refer to the ULB document: [Add VServer](https://docs.ucloud.cn/ulb/guide/vserver/createvserver)
    ![](/images/ulb_with_uwaf-add_verser_1.png)
    ![](/images/ulb_with_uwaf-add_verser_2.png)
-2. 在【VServer 管理】页面选择【服务节点】，点击【添加节点】，将左侧可选资源列出的主机根据业务需要添加到右侧，点击【确定】既可，详细说明参见 ULB 文档：[添加服务节点](https://docs.ucloud.cn/ulb/guide/realserver/addrealserver)
+2. In the [VServer Management] page, select [Service Node], click [Add Node], add the hosts listed in the optional resources on the left to the right as needed, click [OK] to confirm, for detailed instructions, please refer to the ULB document: [Add Service Node](https://docs.ucloud.cn/ulb/guide/realserver/addrealserver)
    ![](/images/ulb_with_uwaf-add_verser_3.png)
    ![](/images/ulb_with_uwaf-add_verser_4.png)
 
 <div id='anchor'></div>
 
-3. 在【VServer 管理】页面选择【内容转发】，点击【添加规则】，转发规则选择【域名】，并从右侧下拉框中选择【泛解析】，再填写需要防护的域名（**UWAF 不支持 PCRE 正则表达式，请务必选择【泛解析】**），将左侧列出的可选节点中的资源根据业务需要添加到右侧的转发节点中，点击【确定】既可，详细说明参见 ULB 文档：[添加内容转发规则](https://docs.ucloud.cn/ulb/guide/forwardpolicy/addrule)
+3. In the [VServer Management] page, select [Content Forwarding], click [Add Rule], choose [Domain] for forwarding rules, and select [Wildcard Resolution] from the drop-down box on the right, then fill in the domain to be protected (**UWAF does not support PCRE regular expressions, please be sure to select [Wildcard Resolution]**), add the resources listed in the optional nodes on the left to the forwarding nodes on the right as needed, click [OK] to confirm, for detailed instructions, please refer to the ULB document: [Add Content Forwarding Rule](https://docs.ucloud.cn/ulb/guide/forwardpolicy/addrule)
    ![](/images/ulb_with_uwaf-add_context_forward_1.png)
    ![](/images/ulb_with_uwaf-add_context_forward_2.png)
 
-!> 注意：  
-因 ULB 没有防恶意解析，默认所有请求都会转发到源站，可能会对您的正常业务产生影响，同时考虑到您的 Web 应用安全，我们强烈建议您参考以下步骤关闭 ULB 的默认全部转发功能。  
-(1) 在【VServer】界面选择【内容转发】，再选择【Default】转发规则，点击【管理】  
-(2) 选择右侧的转发节点，点击中间的向左按钮删除该节点  
-(3) 重复(2)直到删除所有节点，再点击【确定】即可关闭 ULB 的默认全部转发功能  
-关闭后若用户通过 ULB 访问转发规则里没有的域名时则返回 502 错误状态码。  
+!> Note:  
+Because ULB does not have malicious resolution protection, all requests will be forwarded to the source station by default, which may affect your normal business. Considering your Web application security, we strongly recommend that you follow the steps below to turn off the default full forwarding function of ULB.  
+(1) In the [VServer] interface, select [Content Forwarding], then select the [Default] forwarding rule, click [Manage]  
+(2) Select the forwarding node on the right, click the left button in the middle to delete this node  
+(3) Repeat (2) until all nodes are deleted, then click [OK] to turn off the default full forwarding function of ULB  
+After closing, if the user accesses a domain name not in the forwarding rule through ULB, a 502 error status code will be returned.  
 ![](/images/ulb_with_uwaf-unset_default_forward_1.png)
 ![](/images/ulb_with_uwaf-unset_default_forward_2.png)
 
-### UWAF 配置
+### UWAF Configuration
 
-在 UWAF 控制台的【域名管理】界面点击【添加域名】，在弹出的配置界面可以看到已绑定的 ULB 资源，下拉域名选择需要添加防护的域名，如 ULB 前有代理服务器如 CDN，高防等，需要开启【WAF 前是否具有代理】选项并配置正确的代理头，再点击【确定】即可添加域名，之后通过 ULB 访问该域名将得到安全防护能力。安全防护配置可参考非 ULB 版 UWAF。
+In the UWAF console, click on 'Add Domain' in the 'Domain Management' interface. In the pop-up configuration interface, you can see the bound ULB resources. Drop down the domain and select the domain that needs to be added for protection. If there are proxy servers such as CDN, high defense, etc., in front of the ULB, you need to enable the 'Does WAF have a proxy in front' option and configure the correct proxy header. Then click 'OK' to add the domain. After that, accessing this domain through ULB will get security protection capabilities. For security protection configuration, please refer to the non-ULB version of UWAF.
 
 ![](/images/ulb_with_uwaf-add_domain_1.png)
 ![](/images/ulb_with_uwaf-add_domain_2.png)
 
-### 修改 DNS 解析
+### Modify DNS Resolution
 
-如果您的业务已解析到 ULB 上的话，则不需要修改 DNS 解析记录。
+If your business has been resolved to the ULB, you do not need to modify the DNS resolution record.
 
-如果您的业务还未解析到 ULB 上，您需要到域名的 DNS 服务商处添加对应域名的 A 记录，记录值填写 ULB 所绑定的基础网络的 IP 地址。
+If your business has not yet been resolved to the ULB, you need to add the corresponding domain's A record at the DNS service provider of the domain. The record value should be the IP address of the basic network bound to the ULB.
 
-## 解绑和删除
+## Unbinding and Deletion
 
-若您想让 ULB 解绑 UWAF，只需在 ULB 控制台的【负载均衡管理】页面选择对应的 ULB 资源，点击【详情】后选择【外网防火墙】，解绑对应的 Web 应用防火墙。
+If you want to unbind the UWAF from the ULB, just select the corresponding ULB resource on the 'Load Balancing Management' page of the ULB console, click on 'Details' and then select 'External Firewall' to unbind the corresponding Web Application Firewall.
 
-ULB 版 UWAF 的删除需要在 UWAF 控制台的【域名管理】页面删除所有域名，再在【概览】页面点击【关闭 UWAF】即可删除 UWAF，在扣除已使用时间的折算费用后，剩余费用将在 1 小时内自动返还。
+To delete the ULB version of UWAF, you need to delete all domains on the 'Domain Management' page of the UWAF console, and then click 'Close UWAF' on the 'Overview' page to delete UWAF. After deducting the prorated cost of the used time, the remaining cost will be automatically returned within 1 hour.

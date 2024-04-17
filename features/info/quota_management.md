@@ -1,13 +1,13 @@
-# 配额管理
+# Quota Management
 
-通过配额管理可以购买各种类型的扩展包，价格见[扩展包功能与价格](/uewaf/steer/price?id=扩展包功能与价格)。
+Through quota management, you can purchase various types of expansion packs, the prices of which can be found at [Expansion Pack Features and Prices](/uewaf/steer/price?id=Expansion Pack Features and Prices).
 
 ![](/images/quota_management-get_price.png)
 
-当今提供以下几种类型的扩展包：
+We currently offer the following types of expansion packs:
 
-- 扩展带宽：购买额外的带宽
-- 域名扩展包：购买额外的域名数，一个域名扩展包包含 10 个域名配置（包含一个泛域名配置）
-- [独享 IP](/uewaf/features/domain/domain_set?id=exclusive-ip)点数：购买额外的独享 IP 点数
-<!--- IPv6：提供用户IPV6访问服务支持-->
-- 日志扩展包：访问和攻击日志存在 180 天，满足等保需求（旗舰版及以上版本默认开通日志扩展包，无需单独购买）
+- Bandwidth Expansion: Purchase additional bandwidth
+- Domain Expansion Pack: Purchase additional domain numbers, a domain expansion pack includes 10 domain configurations (including a wildcard domain configuration)
+- [Exclusive IP](/uewaf/features/domain/domain_set?id=exclusive-ip) Points: Purchase additional exclusive IP points
+  <!--- IPv6: Provide user IPV6 access service support-->
+- Log Expansion Pack: Access and attack logs are kept for 180 days, meeting the requirements of equal protection (The flagship version and above come with the log expansion pack by default, no separate purchase is required)

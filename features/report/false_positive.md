@@ -1,13 +1,13 @@
-# 误报详情
+# False Positive Details
 
-误报详情可以查看当前域名所有已被标记为误报的攻击日志，也可查询该攻击日志的详情或取消误报。
+False positive details allow you to view all attack logs that have been marked as false positives for the current domain. You can also query the details of the attack log or cancel the false positive.
 
-误报功能是为了适应多样的 Web 业务情况，让 UWAF 的默认规则不影响正常的业务。被标记为误报的日志，实际上是取消了该日志对应的攻击请求所触发的规则，而不是针对 URL 或其他的 HTTP 协议内容加白。标记为误报后，该规则后续不进行规则判断。
+The false positive feature is designed to adapt to a variety of Web business situations, allowing UWAF's default rules to not affect normal business. Logs marked as false positives actually cancel the rules triggered by the attack request corresponding to the log, rather than whitelisting the URL or other HTTP protocol content. After being marked as a false positive, the rule will not be judged subsequently.
 
 ![](/images/false_positive-get_attack.png)
 
-## 针对业务标记误报
+## Marking False Positives for Business
 
-在业务接入 UWAF 后，建议优先开启告警模式，观察有无攻击日志产生。一段时间后，若业务流量过 UWAF 后无攻击日志或只有少量攻击日志且为真实攻击而非正常业务，则可以开启阻断模式。
+After the business is connected to UWAF, it is recommended to first enable the alert mode and observe whether there are any attack logs generated. After a period of time, if there are no attack logs or only a small number of attack logs that are real attacks rather than normal business after the business traffic passes through UWAF, you can enable blocking mode.
 
-若有大量攻击日志且大部分为正常业务触发的，则可以优先针对攻击日志中相同的 URL 标记误报，相同 URL 标记一次即可，等五分钟，在把时间段选择为最近的五分钟，观察新产生的攻击日志。重复上述过程，直到没有攻击日志产生或攻击日志都为真实攻击。
+If there are a large number of attack logs and most of them are triggered by normal business, you can first mark the same URL in the attack logs as false positives. The same URL can be marked once, wait for five minutes, then select the most recent five minutes as the time period and observe the newly generated attack logs. Repeat the above process until there are no attack logs generated or all attack logs are real attacks.

@@ -1,27 +1,27 @@
-# 区域 IP 封禁
+# Regional IP Blocking
 
-区域 IP 封禁可以指定当前域名对来源请求 IP 地址的地域归属或者 IDC、ISP 信息，选择放行或者拦截。放行适用于封禁大范围时放行其中某一小范围区域的访问请求。  
-区域 IP 封禁受黑白名单状态控制，仅当黑白名单状态为开启时生效。
+Regional IP Blocking allows you to specify the domain name for the source request IP address's regional attribution or IDC, ISP information, and choose to allow or block. Allowing is applicable when unblocking a small range of access requests within a large range of blocks.
+Regional IP Blocking is controlled by the blacklist and whitelist status and only takes effect when the blacklist and whitelist status is enabled.
 
 ![](/images/region_ip-get_rule.png)
 
-> 各类规则的优先级参见[规则优先级](/uewaf/features/rule/mode?id=规则优先级)。
+> For the priority of various rules, see [Rule Priority](/uewaf/features/rule/mode?id=Rule Priority).
 
-!> 注意：  
-区域 IP 封禁依赖于 IP 地理信息数据库的精确度，部分地理信息存在误差是正常现象，我们会努力提高精度。
+!> Note:  
+Regional IP Blocking depends on the accuracy of the IP geographic information database. It is normal for some geographic information to have errors, and we will strive to improve accuracy.
 
-## 添加规则
+## Add Rule
 
-海内或海内的规则最多支持选择 20 个区域，当选择区域为单一省份的时候，用户可以选择更多的市级区域，但当用户多选省级区域的时候，不可选择市级区域。区域为 IP 信息的规则是关键字匹配，会针对请求的来源 IP 的属性信息（如 IDC、ISP）进行判断，如果命中了规则设置的关键字，则会根据规则放行或拒绝连接。**若规则的动作为放行，只是在区域 IP 封禁判定阶段不拒绝该区域的 IP 的请求，但请求会进行后续的规则（CC 规则、UWAF 规则）判断。**
+Rules for domestic or overseas regions support up to 20 regions. When the selected region is a single province, users can choose more municipal regions, but when multiple provincial regions are selected, municipal regions cannot be chosen. The rule for the region's IP information is keyword matching, which will judge the source IP's attribute information (such as IDC, ISP) of the request. If it hits the keyword set by the rule, it will allow or reject the connection according to the rule. **If the action of the rule is to allow, it only means that the request of the IP in this region is not rejected at the stage of Regional IP Blocking judgment, but the request will be judged by the subsequent rules (CC rules, UWAF rules).**
 
 ![](/images/region_ip-add_rule.png)
 
-### 规则参数说明
+### Rule Parameter Description
 
-| 参数     | 说明                                                  |
-| -------- | ----------------------------------------------------- |
-| 规则名称 | 自定义规则的名称，可以为任意中英文字符                |
-| 区域     | 海内（包含香港特区、澳门特区及台湾省）、海外、IP 信息 |
-| 详情     | 区域为海内或海外时，选择的具体区域                    |
-| 关键字   | 区域为 IP 信息，自定义的关键字信息                    |
-| 动作     | 拒绝或放行命中规则的 IP 的连接                        |
+| Parameter | Description                                                  |
+| --------- | ------------------------------------------------------------ |
+| Rule Name | Custom rule name, can be any Chinese or English characters   |
+| Region    | Domestic (including Hong Kong SAR, Macao SAR and Taiwan Province), Overseas, IP Information |
+| Details   | When the region is domestic or overseas, the specific region selected |
+| Keyword   | For IP Information region, custom keyword information        |
+| Action    | Reject or allow the connection of the IP that hits the rule  |

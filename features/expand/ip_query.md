@@ -1,40 +1,44 @@
-# IP 查询
+# IP Query
 
-IP 查询功能可以查询指定 IP 的基本信息，以及该 IP 指定时段内访问 WAF 的请求统计信息。
+The IP query function can query the basic information of a specified IP, as well as the request statistics of this IP visiting WAF during a specified period.
 
-## 功能说明
+## Function Description
 
-功能如下图所示分为四个部分：
+The function is divided into four parts as shown in the figure below:
 
-- 查询条件（①，②）
-- IP 信息（③，④，⑤）
-- IP 操作（⑥）
-- IP 访问趋势（⑦）
+- Query conditions (①, ②)
+- IP information (③, ④, ⑤)
+- IP operation (⑥)
+- IP access trend (⑦)
 
 ![](/images/ip_query-get_data.png)
 
-## 查询条件
+## Query Conditions
 
-在 ① 处选择时间范围，支持最近 1 小时，24 小时和自定义时间（3 天内）作为时间查询条件，在 ② 处输入单个 IP，点击【查询】即可查询该 IP 的基本信息和指定时段内访问当前域名的请求统计信息。若想不区分域名进行查询，请勾选【全局搜索】，勾选此项可以查询该 IP 访问所有域名的请求统计信息。
+Choose the time range at ①, supporting the last 1 hour, 24 hours, and custom time (within 3 days) as time query conditions. Enter a single IP at ②, click on [Query] to query the basic information of this IP and the request statistics of visiting the current domain name during a specified period. If you want to query without distinguishing the domain name, please check [Global Search]. Checking this option can query the request statistics of this IP visiting all domain names.
 
-## IP 信息
+## Query Conditions
 
-IP 信息部分显示了 IP 的基本信息（③），IP 的当前状态（④）以及 IP 的行为概览（⑤）。
+At ①, select the time range. It supports the last 1 hour, 24 hours, and custom time (within 3 days) as time query conditions. At ②, enter a single IP, and click [Query] to query the basic information of this IP and the request statistics of visiting the current domain during the specified period. If you want to query without distinguishing the domain name, please check [Global Search]. Checking this option can query the request statistics of this IP visiting all domain names.
 
-IP 基本信息包含归属地、定位信息、以及运营商信息。
+## IP Information
 
-IP 当前状态说明了该 IP 是否可正常访问当前域名，表明 IP 是否被黑名单或 CC 规则拦截亦或是被白名单放行。
+The IP information section displays the basic information of the IP (③), the current status of the IP (④), and an overview of the IP's behavior (⑤).
 
-IP 行为概览统计出该 IP 在所查询的时段内共发起了多少次请求、攻击次数以及被拦截了多少次。
+The basic information of the IP includes the location, positioning information, and operator information.
 
-## IP 操作
+The current status of the IP explains whether this IP can normally access the current domain name, indicating whether the IP is blocked by the blacklist or CC rules or is allowed by the whitelist.
 
-IP 操作部分（⑥）可以根据 IP 当前状态以及行为概览给出适当的操作按钮。
+The IP behavior overview counts how many requests this IP has initiated during the queried period, the number of attacks, and how many times it has been intercepted.
 
-若该 IP 被 CC 规则拦截，则可以解封该 IP；若存在攻击行为，则可以将其加入黑名单；若需要放行访问请求，则可以将其加入白名单；快速方便操作所查询的 IP。
+## IP Operation
 
-## IP 访问趋势
+The IP operation section (⑥) can provide appropriate operation buttons based on the current status of the IP and the behavior overview.
 
-IP 访问趋势（⑦）共有两部分，分别为 IP 响应码请求数和 IP 攻击分类请求数。
+If this IP is blocked by CC rules, you can unblock this IP; if there is an attack behavior, you can add it to the blacklist; if you need to allow access requests, you can add it to the whitelist; quickly and conveniently operate the queried IP.
 
-第一部分 IP 响应码请求数统计了所查询的 IP 指定时段内的响应状态码信息，可以根据图表了解 IP 的具体请求情况；第二部分 IP 攻击分类请求数则是该 IP 的访问所包含的攻击请求的统计信息，通过图表可直观反映 IP 的攻击手法及趋势。勾选图表上方的图例还能准确选择想要的趋势信息。
+## IP Access Trend
+
+The IP access trend (⑦) has two parts, namely the number of IP response code requests and the number of IP attack category requests.
+
+The first part, the number of IP response code requests, counts the response status code information of the queried IP during the specified period. You can understand the specific request situation of the IP according to the chart; the second part, the number of IP attack category requests, is the statistical information of the attack requests contained in the access of this IP. The chart can intuitively reflect the attack methods and trends of the IP. Checking the legend above the chart can accurately select the desired trend information.

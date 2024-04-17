@@ -1,76 +1,78 @@
-# CC 规则
+# CC Rules
 
-CC 规则可以对请求进行限流，防止出现大量请求直接回源到源站造成源站网络拥堵或 CPU 使用率飙升的情况。
+CC rules can limit the rate of requests to prevent a large number of requests from directly reaching the origin server, causing network congestion or a surge in CPU usage at the origin server.
 
-> 各类规则的优先级参见[规则优先级](/uewaf/features/rule/mode?id=规则优先级)。
+> For the priority of various rules, please refer to [Rule Priority](/uewaf/features/rule/mode?id=Rule Priority).
 
-## CC 防护模式和状态
+## CC Protection Modes and Status
 
-CC 防护模式包括正常模式和紧急模式：
+CC protection modes include normal mode and emergency mode:
 
-- **正常**：仅自定义规则生效（无自定义规则的话则只有默认规则生效）。
-- **紧急**：不仅自定义规则会生效，并且 UWAF 将根据数据分析、人工智能识别等技术对异常频率的请求进行拦截，但可能存在误杀。紧急模式下 UWAF 将根据攻击特点进行自动拦截，并且会对请求加入 cookie 参数进行校验。如果网站存在 301 跳转，不建议开启紧急模式。
+- **Normal**: Only custom rules are effective (if there are no custom rules, only the default rule is effective).
+- **Emergency**: Not only will custom rules take effect, but UWAF will also intercept requests of abnormal frequency based on data analysis, artificial intelligence recognition, and other technologies, but there may be false positives. In emergency mode, UWAF will automatically intercept based on attack characteristics, and will add a cookie parameter to the request for verification. If the website has a 301 redirect, it is not recommended to enable emergency mode.
 
-CC 状态默认是开启，此时如果用户没有配置 CC 规则，则会有一条默认规则生效，默认规则为：单个 IP 在 1 分钟内的请求数超过 500 次则拦截该 IP 的请求 10 分钟。**此默认规则在用户没有添加自定义 CC 规则的情况下强制开启**。如果用户添加任意一条自定义 CC 规则，则默认规则不生效。**若 CC 状态为关闭，UWAF 将不提供 CC 防护能力，请谨慎选择**。
+The default status of CC is enabled. At this time, if the user has not configured CC rules, a default rule will take effect. The default rule is: if the number of requests from a single IP exceeds 500 times in 1 minute, the request from this IP will be intercepted for 10 minutes. **This default rule is forcibly enabled when the user has not added a custom CC rule**. If the user adds any custom CC rule, the default rule will not take effect. **If the CC status is closed, UWAF will not provide CC protection capability, please choose carefully**.
 
-对于所有的 CC 规则，CC 防护引擎会统计任何一个请求，但当触发规则后**不会拦截**常见静态类型的文件的访问，具体的文件类型有 `css, ico, png, jpg, js, gif` ，如需开启此类文件的拦截，请咨询技术支持。
+For all CC rules, the CC protection engine will count any request, but when a rule is triggered, it will **not intercept** the access of common static types of files, the specific file types are `css, ico, png, jpg, js, gif`. If you need to enable the interception of such files, please consult technical support.
 
-## 自定义 CC 规则列表
+## Custom CC Rule List
 
-CC 规则列表展示了用户添加的自定义规则。在针对某个文件或子目录添加了自定义规则后，出于安全考虑，我们建议您再增加一条兜底的规则，即设置一条单 IP 在 一段时间内（如 60 秒）访问 根目录（/）超过 1000 次（此值需根据自身业务情况进行设置）的规则，这样可以有效应对攻击者改变攻击路径进行 CC 攻击的情况。
+The CC rule list displays the custom rules added by the user. After adding a custom rule for a certain file or subdirectory, for security reasons, we recommend that you add another catch-all rule, that is, set a rule that a single IP accesses the root directory (/) more than 1000 times in a certain period of time (such as 60 seconds). This can effectively deal with the situation where the attacker changes the attack path to carry out a CC attack.
 
-![](/images/cc_rule-get_rule.png)
+![](/images/cc_rule-get_rule.png)           
 
-## 添加规则
+## Add Rules
 
 ![](/images/cc_rule-add_rule.png)
 
-### 规则参数说明
+​                                                       
 
-| 参数     | 说明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 规则名称 | 自定义规则的名称，可以为任意中英文字符                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| 限制频率 | 单 IP 在统计周期内的访问次数阈值                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| 限制特征 | 请求路径为必选项，且其限制逻辑为完全匹配（等于）或目录匹配（包含）。其他限制字段参照[匹配条件说明](/uewaf/features/rule/uwaf_rule?id=匹配条件说明)。多个限制特征之间的逻辑为且                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| 限制方式 | 对超过限制频率且满足限制特征的 IP 采取的限制措施，包含以下方式：<br>● 封禁该 IP：4 层封禁；如前面有 CDN 等代理，则会封禁建链 IP 地址，即 CDN 等代理节点的 IP，**导致大面积无法正常访问，请谨慎使用**，默认限制时间 2 小时，此时间不可更改<br>● 拦截此类请求：7 层封禁，UWAF 会拒绝封禁的 IP 的请求并记录 HTTP 444 状态码；如前面有 CDN 等代理，需正确配置【真实 IP 字段设置】，若 CDN 等代理未正确传递该字段可能存在误封<br>● 启用验证码：重定向到验证码页面，如果用户验证通过，则会把该 IP 放白 10 分钟（不进行 CC 规则判断，其他规则判断不受影响）<br>● 限制请求频率：根据规则的限制频率限制请求频率，即会判断请求到达时之前的统计周期这个时间段内的请求数是否超过访问限制数，未超过则不进行限制，超过了就响应 HTTP 429 状态码。此种方式的限制时间无效，不记录攻击日志，可通过 429 状态码过滤访问日志以查询触发规则的 IP<br>● 只记录日志：仅记录一条 CC 攻击日志，不采取实质性的限制措施 |
-| 限制时间 | 规则的生效时间，超过后会对 IP 重新进行 CC 规则判断                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+### Explanation of Rule Parameters
 
-## CC 封堵 IP
+| Parameter     | Explanation                                                  |
+| ------------- | ------------------------------------------------------------ |
+| Rule Name     | The name of the custom rule, can be any Chinese or English character |
+| Limit Rate    | The access threshold for a single IP within the statistical period |
+| Limit Feature | The request path is a required item, and its limit logic is either exact match (equals) or directory match (contains). Other limit fields refer to [Matching Condition Explanation](/uewaf/features/rule/uwaf_rule?id=Matching Condition Explanation). The logic between multiple limit features is 'and' |
+| Limit Method  | The restriction measures taken for IPs that exceed the limit rate and meet the limit features, including the following methods:<br>● Block this IP: 4-layer block; if there are proxies such as CDN in front, the IP address of the link will be blocked, that is, the IP of the CDN and other proxy nodes, **causing a large area to be unable to access normally, please use with caution**, the default restriction time is 2 hours, this time cannot be changed<br>● Intercept such requests: 7-layer block, UWAF will reject the requests of the blocked IP and record the HTTP 444 status code; if there are proxies such as CDN in front, you need to correctly configure [Real IP Field Settings], if the CDN and other proxies do not correctly pass this field, there may be false positives<br>● Enable captcha: Redirect to the captcha page, if the user passes the verification, this IP will be whitelisted for 10 minutes (CC rule judgment is not performed, other rule judgments are not affected)<br>● Limit request rate: Limit the request rate according to the rule's limit rate, that is, it will judge whether the number of requests in the statistical period before the request arrives exceeds the access limit number. If it does not exceed, it will not be restricted. If it exceeds, it will respond with HTTP 429 status code. The restriction time of this method is invalid, no attack log is recorded, and the access log can be filtered by the 429 status code to query the IP that triggers the rule<br>● Only record logs: Only record a CC attack log, do not take substantial restriction measures |
+| Limit Time    | The effective time of the rule, after which the IP will be re-judged for CC rules |
 
-此处可以看到触发了 CC 规则的 IP 列表，包含封禁或者触发验证码的 IP。【刷新 CC 黑名单】会将所有 IP 取消封禁或验证码验证，而操作一栏的【解封该 IP】可以将单个 IP 取消封禁或验证码验证。刷新黑名单或解封 IP 操作可能存在延迟，具体以实际生效时间为准。
+## CC Blocked IP
+
+Here you can see the list of IPs that triggered the CC rules, including blocked or captcha-triggered IPs. [Refresh CC Blacklist] will cancel all IP bans or captcha verifications, and the [Unblock this IP] operation in the operation column can cancel the ban or captcha verification of a single IP. The refresh blacklist or unblock IP operation may be delayed, and the actual effective time shall prevail.
 
 ![](/images/cc_rule-get_blocked_ip.png)
 
-## CC 规则示例
+## CC Rule Examples
 
-1. 若某业务域名访问情况一直很稳定，单 IP 在 1 分钟内不会超过 100 次，想使用 UWAF 抵御潜在的 CC 攻击。  
-   规则示例：
+1. If the access situation of a certain business domain name has always been stable, a single IP will not exceed 100 times in 1 minute, and you want to use UWAF to resist potential CC attacks.  
+   Rule example:
 
-   - 规则名称：防 CC 规则
-   - 限制频率：单 IP 在 60 秒访问 100 次
-   - 限制特征：请求路径目录匹配 / （目录匹配加根目录即全站）
-   - 限制方式：拦截此类请求
-   - 限制时间：1440 分钟
+   - Rule Name: Anti-CC Rule
+   - Limit Rate: Single IP accesses 100 times in 60 seconds
+   - Limit Feature: Request path directory matches / (directory match plus root directory equals the whole site)
+   - Limit Method: Intercept such requests
+   - Limit Time: 1440 minutes
 
-   情形：当某恶意客户端在 30 秒发送了 100 次请求，则会触发这条 CC 规则，则此恶意客户端的源 IP 地址会被封禁 24 小时，之后 24 小时内这个 IP 地址发往这个业务域名请求 UWAF 都会响应 HTTP 444 状态码。
+   Situation: When a malicious client sends 100 requests in 30 seconds, this CC rule will be triggered, and the source IP address of this malicious client will be blocked for 24 hours. After that, all requests from this IP address to this business domain name will respond with HTTP 444 status code.
 
-2. 若某在线商城域名将举行一个商品秒杀活动，在预定时段内预计会有大量客户访问，从而引起访问量突增，想使用 UWAF 进行访问限流。
+2. If an online mall domain name is going to hold a product seckill event, it is expected that there will be a large number of customers visiting during the scheduled period, causing a surge in traffic, and you want to use UWAF for access throttling.
 
-- 规则示例(1)：
+- Rule example (1):
 
-  - 规则名称：限流规则 1
-  - 限制频率：单 IP 在 60 秒访问 20 次
-  - 限制特征：请求路径 目录匹配 A 路径（秒杀商品所属的路径）
-  - 限制方式：启用验证码
-  - 限制时间：3 分钟
+  - Rule Name: Throttling Rule 1
+  - Limit Rate: Single IP accesses 20 times in 60 seconds
+  - Limit Feature: Request path directory matches A path (the path where the seckill product belongs)
+  - Limit Method: Enable captcha
+  - Limit Time: 3 minutes
 
-- 规则示例(2)：
+- Rule example (2):
 
-  - 规则名称：限流规则 2
-  - 限制频率：单 IP 在 60 秒访问 20 次
-  - 限制特征：请求路径 目录匹配 A 路径（秒杀商品所属的路径）
-  - 限制方式：限制请求速率
-  - 限制时间：120 分钟
+  - Rule Name: Throttling Rule 2
+  - Limit Rate: Single IP accesses 20 times in 60 seconds
+  - Limit Feature: Request path directory matches A path (the path where the seckill product belongs)
+  - Limit Method: Limit request rate
+  - Limit Time: 120 minutes
 
-  情形(1)：对于规则示例(1)，当某客户端在 30 秒发送了 20 次请求，则会触发这条 CC 规则，则该客户端的源 IP 地址发起的第 21 次请求，UWAF 会将这次请求重定向到验证码界面。若验证通过，之后 10 分钟内该 IP 地址的请求不会进行 CC 规则判断；若验证不通过，则 UWAF 在限制时间内对于该 IP 地址发送到这个在线商城的域名的请求会一直重定向到验证码界面。  
-  情形(2)：对于规则示例(2)，当某客户端在 30 秒发送了 20 次请求，则会触发这条 CC 规则，则该客户端的源 IP 地址发起的第 21 次请求时，UWAF 发现这个 IP 地址在这 60 秒内已发送了 20 条请求，于是响应这次请求 HTTP 429 状态码。若 60 秒内，UWAF 没有收到这个 IP 地址的请求，此时该客户端可以继续请求这个在线商城，但在 60 秒内的请求数不能超过 20 次。
+  Situation (1): For rule example (1), when a client sends 20 requests in 30 seconds, this CC rule will be triggered, and the source IP address of this client will initiate the 21st request, UWAF will redirect this request to the captcha page. If the verification is passed, the requests from this IP address will not be judged by the CC rules within the next 10 minutes; if the verification is not passed, then UWAF will continue to redirect the requests from this IP address to this online mall's domain name to the captcha page within the limit time.  
+  Situation (2): For rule example (2), when a client sends 20 requests in 30 seconds, this CC rule will be triggered, and the source IP address of this client will initiate the 21st request, UWAF finds that this IP address has sent 20 requests in these 60 seconds, so it responds to this request with HTTP 429 status code. If UWAF does not receive a request from this IP address within 60 seconds, this client can continue to request this online mall, but the number of requests within 60 seconds cannot exceed 20 times.

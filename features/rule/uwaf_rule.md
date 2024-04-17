@@ -1,109 +1,109 @@
-# UWAF 规则
+# UWAF Rules
 
-UWAF 本身包含多种类型（协议违规、注入攻击、跨站脚本、漏洞攻击、命令执行等）的默认防护规则，除了这些类型中已有的规则，您还可以自定义添加防护规则已实现对攻击的精准拦截和放行某些请求。
+UWAF itself includes various types of default protection rules (protocol violations, injection attacks, cross-site scripts, vulnerability attacks, command execution, etc.). In addition to the rules already in these types, you can also customize and add protection rules to precisely intercept attacks and allow certain requests.
 
-> 各类规则的优先级参见[规则优先级](/uewaf/features/rule/mode?id=规则优先级)。
+> For the priority of various rules, please refer to [Rule Priority](/uewaf/features/rule/mode?id=Rule Priority).
 
-## 规则列表
+## Rule List
 
-规则有不同的优先级，默认规则处于最低优先级，无法调整优先级，但可以自行选择开启或关闭某一类型的规则判断。自定义规则的优先级可以调整，位于规则列表最上面的规则具有最高优先级，往下规则优先级依次降低。
+Rules have different priorities. The default rules are at the lowest priority and cannot adjust their priority, but you can choose to turn on or off the rule judgment of a certain type. The priority of custom rules can be adjusted. The rule at the top of the rule list has the highest priority, and the priority of the rules below decreases in turn.
 
-- 可以上调或降低规则的优先级，列表上面的规则优先级高于下面的规则；
-- 优先级高的规则如果与优先级低的规则冲突，则以优先级高的为准；
-- 系统的默认规则优先级是最低的，且无法进行调整。
+- You can increase or decrease the priority of the rules. The priority of the rules above the list is higher than the rules below;
+- If a rule with a higher priority conflicts with a rule with a lower priority, the rule with a higher priority will prevail;
+- The priority of the system's default rules is the lowest and cannot be adjusted.
 
 ![](/images/uwaf_rule-get_rule.png)
 
-## 添加规则
+## Add Rules
 
-规则由规则名称、匹配动作、风险等级、风险类型、匹配条件组成。阻断模式和告警模式下，若规则的匹配动作为拦截，请求命中某条自定义规则则会记录一条攻击日志，日志详情可以在[攻击详情](/uewaf/features/report/attack_details)中查看；若规则的匹配动作为放行，请求命中此规则的话不会产生攻击日志。**告警模式下拦截请求仅会记录攻击日志，但不会拦截请求**。
+The rule consists of rule name, matching action, risk level, risk type, and matching conditions. In the blocking mode and alarm mode, if the matching action of the rule is to intercept, a request hitting a custom rule will record an attack log. The log details can be viewed in [Attack Details](/uewaf/features/report/attack_details); if the matching action of the rule is to allow, a request hitting this rule will not generate an attack log. **In the alarm mode, intercepting requests will only record attack logs, but will not block requests**.
 
 ![](/images/uwaf_rule-add_rule.png)
 
-### 规则参数说明
+### Rule Parameter Description
 
-| 参数     | 说明                                                                                                                                                                               |
-| -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 规则名称 | 自定义规则的名称，可以为任意中英文字符                                                                                                                                             |
-| 匹配动作 | 拦截或者放行。拦截会记录攻击日志，放行不会记录攻击日志                                                                                                                             |
-| 风险等级 | 高风险、中风险或者低风险，用于标识规则的风险级别                                                                                                                                   |
-| 风险类型 | 标识规则的类型，可选值：恶意扫描、协议畸形、越权访问、信息泄漏、WebShell、漏洞攻击、跨站脚本、CC 攻击、注入攻击、命令执行、其他攻击                                                |
-| 匹配条件 | 由匹配字段、逻辑符、匹配内容和参数解码组成，多个条件之间的逻辑为且，即条件都满足时，才能命中规则。详细说明见文档下方[匹配条件说明](/uewaf/features/rule/uwaf_rule?id=匹配条件说明) |
+| Parameter           | Description                                                  |
+| ------------------- | ------------------------------------------------------------ |
+| Rule Name           | The name of the custom rule, which can be any Chinese or English character |
+| Matching Action     | Intercept or allow. Intercepting will record attack logs, and allowing will not record attack logs |
+| Risk Level          | High risk, medium risk or low risk, used to identify the risk level of the rule |
+| Risk Type           | Identifies the type of rule. Optional values: Malicious Scanning, Protocol Deformity, Unauthorized Access, Information Leakage, WebShell, Vulnerability Attack, Cross-Site Scripting, CC Attack, Injection Attack, Command Execution, Other Attacks |
+| Matching Conditions | Composed of matching fields, logical symbols, matching content and parameter decoding. The logic between multiple conditions is and, that is, when all conditions are met, the rule can be hit. For detailed explanation, see [Matching Condition Description](/uewaf/features/rule/uwaf_rule?id=Matching Condition Description) at the bottom of the document |
 
-### 匹配条件说明
+### Matching Condition Description
 
-匹配字段说明及其与逻辑符的对应关系如下：
+The description of the matching fields and their corresponding logical operators are as follows:
 
-| 匹配字段       | 说明                                                                           | 逻辑符                                                                     |
-| -------------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------- |
-| 来源 IP        | 请求客户端的源 IP，若开启了【WAF 前是否具有代理】，则取指定字段的 IP 作为源 IP | 属于、不属于（CIDR 格式）；等于、不等于                                    |
-| Referer        | 在不同网页跳转时，会附带源页面的链接地址，告诉服务器是从哪个页面链接过来的     | 包含、不包含；等于、不等于；长度大于、小于；不存在；正则；多行、非多行匹配 |
-| 请求 UA        | 用于标识请求客户端的字符串，即 HTTP 请求的 User-Agent 字段                     | 包含、不包含；等于、不等于；长度大于、小于；正则；多行、非多行匹配         |
-| 请求路径       | 客户端提交请求路以访问服务端的指定资源，例如首页的请求路径为 `/`               | 包含、不包含；等于、不等于；长度大于、小于；正则；多行、非多行匹配         |
-| 请求方法       | 请求的方法，如 `GET`, `POST`                                                   | 包含、不包含；等于、不等于；长度大于、小于；正则；多行、非多行匹配         |
-| 请求内容       | 请求的 Body 部分的内容                                                         | 包含、不包含；等于、不等于；长度大于、小于；正则；多行、非多行匹配         |
-| URL 查询参数\* | URL 中的参数，例如 `?a=1&b=2` ，则 URL 查询参数为 `a, b` ，参数值为 `1, 2`     | 包含、不包含；等于、不等于；长度大于、小于；不存在；正则；多行、非多行匹配 |
-| 请求 Cookie\*  | 客户端请求的 Cookie，Cookie 用于记录某些网页配置或向服务器标识身份             | 包含、不包含；等于、不等于；长度大于、小于；不存在；正则；多行、非多行匹配 |
-| 请求参数\*     | 包含 URL、Cookie 和 Body 中的参数                                              | 包含、不包含；等于、不等于；长度大于、小于；不存在；正则；多行、非多行匹配 |
-| 自定义请求头\* | 客户端请求中除 Referer、User-Agent、Cookie 外的其他字段，也可以是自定义的字段  | 包含、不包含；等于、不等于；长度大于、小于；不存在；正则；多行、非多行匹配 |
+| Matching Field         | Description                                                  | Logical Operator                                             |
+| ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Source IP              | The source IP of the request client. If the [WAF has a proxy in front] is enabled, the IP of the specified field is taken as the source IP | Belongs to, does not belong to (CIDR format); equal to, not equal to |
+| Referer                | When jumping between different web pages, the link address of the source page will be attached to tell the server which page it was linked from | Contains, does not contain; equal to, not equal to; length greater than, less than; does not exist; regex; multi-line, non-multi-line match |
+| Request UA             | A string used to identify the request client, that is, the User-Agent field of the HTTP request | Contains, does not contain; equal to, not equal to; length greater than, less than; regex; multi-line, non-multi-line match |
+| Request Path           | The client submits a request path to access the specified resource on the server, for example, the request path for the homepage is `/` | Contains, does not contain; equal to, not equal to; length greater than, less than; regex; multi-line, non-multi-line match |
+| Request Method         | The method of the request, such as `GET`, `POST`             | Contains, does not contain; equal to, not equal to; length greater than, less than; regex; multi-line, non-multi-line match |
+| Request Content        | The content of the Body part of the request                  | Contains, does not contain; equal to, not equal to; length greater than, less than; regex; multi-line, non-multi-line match |
+| URL Query Parameter*   | Parameters in the URL, for example `?a=1&b=2`, then the URL query parameters are `a, b`, and the parameter values are `1, 2` | Contains, does not contain; equal to, not equal to; length greater than, less than; does not exist; regex; multi-line, non-multi-line match |
+| Request Cookie*        | The Cookie of the client request, Cookie is used to record some web page configurations or to identify the identity to the server | Contains, does not contain; equal to, not equal to; length greater than, less than; does not exist; regex; multi-line, non-multi-line match |
+| Request Parameter*     | Includes parameters in the URL, Cookie, and Body             | Contains, does not contain; equal to, not equal to; length greater than, less than; does not exist; regex; multi-line, non-multi-line match |
+| Custom Request Header* | Other fields in the client request except Referer, User-Agent, Cookie, can also be custom fields | Contains, does not contain; equal to, not equal to; length greater than, less than; does not exist; regex; multi-line, non-multi-line match |
 
-带 \* 的匹配字段标识其为键值结构，这些字段的匹配内容可以接收一个 JSON 字符串以针对单个键的值、键名、值名或全部键、值名进行匹配。**若输入普通字符串或不符合 JSON 格式的字符串，则默认对全部键名、值进行匹配**。若键值结构匹配字段对应的操作符为长度大于/小于，在没有指定**特定键的值**的情况下则比较的是键/值总个数。
+Fields marked with * indicate that they are key-value structures. The matching content of these fields can accept a JSON string to match the value, key name, value name or all keys, value names of a single key. **If you enter a normal string or a string that does not conform to the JSON format, it will match all key names and values by default**. If the operator corresponding to the key-value structure matching field is greater than/less than in length, and no **specific key value** is specified, the comparison is the total number of keys/values.
 
-| 匹配内容类型 | 示例用法                                            | 说明                                                                                                                                                                                                              |
-| ------------ | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 特定键的值   | `{"pattern": "string", "specific": "specific-key"}` | 匹配键值结构中的某一特定键 `specific-key` 的值。例如：对于 自定义请求头，则检测请求中的 `specific-key` 字段的值是否匹配 `string` ；对于 URL 查询参数，若其为 `?specific-key=xxx` ，则检测 `xxx` 是否匹配 `string` |
-| 全部键名     | `{"pattern": "string", "keys": true}`               | 遍历匹配键值结构的全部键名。例如：URL 查询参数为 `?a=1&b=2` ，会分别检测键 `a` 和 `b` 是否匹配 `string`，任意一个键匹配就触发规则                                                                                 |
-| 全部值       | `{"pattern": "string", "values": true}`             | 遍历匹配键值结构的全部值。例如：URL 查询参数为 `?a=1&b=2` ，会分别检测值 `1` 和 `2` 是否匹配 `string`，任意一个值匹配就触发规则                                                                                   |
-| 全部键名、值 | `{"pattern": "string", "all": true}`                | 遍历匹配键值结构的全部值名和值。例如：URL 查询参数，若其为 `?a=1&b=2` ，会分别检测键值 `a`, `b`, `1` 和 `2` 是否匹配 `string`，任意一个键/值匹配就触发规则                                                        |
-| 全部键名、值 | `string`                                            | 会被当成 `{"pattern": "string", "all": true}` 解析                                                                                                                                                                |
+| Matching Content Type | Example Usage                                       | Description                                                  |
+| --------------------- | --------------------------------------------------- | ------------------------------------------------------------ |
+| Specific Key Value    | `{"pattern": "string", "specific": "specific-key"}` | Matches the value of a specific key `specific-key` in the key-value structure. For example: for custom request headers, check whether the value of the `specific-key` field in the request matches `string`; for URL query parameters, if it is `?specific-key=xxx`, check whether `xxx` matches `string` |
+| All Key Names         | `{"pattern": "string", "keys": true}`               | Traverse and match all key names in the key-value structure. For example: the URL query parameter is `?a=1&b=2`, it will check whether the keys `a` and `b` match `string`, and any key match will trigger the rule |
+| All Values            | `{"pattern": "string", "values": true}`             | Traverse and match all values in the key-value structure. For example: the URL query parameter is `?a=1&b=2`, it will check whether the values `1` and `2` match `string`, and any value match will trigger the rule |
+| All Key Names, Values | `{"pattern": "string", "all": true}`                | Traverse and match all key names and values in the key-value structure. For example: for URL query parameters, if it is `?a=1&b=2`, it will check whether the key values `a`, `b`, `1` and `2` match `string`, and any key/value match will trigger the rule |
+| All Key Names, Values | `string`                                            | Will be parsed as `{"pattern": "string", "all": true}`       |
 
-### 参数解码说明
+### Parameter Decoding Explanation
 
-可对匹配内容进行解码，支持多选，包含：
+Decoding can be performed on matched content, supporting multiple selections, including:
 
-- URL 解码
-- HTML 解码
-- BASE64 解码
-- 去除注释  
-  去除匹配内容中的 `/*` 和 `*/` 以及它们之间的字符
-- 空格压缩  
-  将多个空白字符（包括空格）压缩成单个空格字符
+- URL decoding
+- HTML decoding
+- BASE64 decoding
+- Remove comments  
+  Remove `/*` and `*/` and the characters between them in the matched content
+- Space compression  
+  Compress multiple whitespace characters (including spaces) into a single space character
 
-来源 IP 不能进行参数解码，若选择了则会被忽略。
+The source IP cannot be parameter decoded, if selected it will be ignored.
 
-## 规则示例
+## Rule Examples
 
-1. 若业务域名 `example.com` 域名有 2 条 UWAF 规则：
+1. If the business domain `example.com` has 2 UWAF rules:
 
-- 规则 1：请求路径 包含 `.php` ，则拦截
-- 规则 2：来源 IP 包含 `192.168.1.1` ，则放行
-  规则 1 的优先级高于规则 2（顺序排列）。
+- Rule 1: If the request path contains `.php`, then intercept
+- Rule 2: If the source IP contains `192.168.1.1`, then allow
+  Rule 1 has a higher priority than Rule 2 (ordered).
 
-情形(1)：当客户端的 IP 地址为 192.168.1.1 时，若其发送一条 URL 为 `http://example.com/123.php` 的请求，则会触发规则 1 的而被拦截。  
- 情形(2)：当客户端的 IP 地址为 192.168.1.1 时，若其发送一条 URL 为 `http://example.com/?i=<script>alert(/1/)</script>` 的请求，则会触发规则 2 而被放行。
+Scenario (1): When the client's IP address is 192.168.1.1, if it sends a request with the URL `http://example.com/123.php`, it will trigger Rule 1 and be intercepted.  
+Scenario (2): When the client's IP address is 192.168.1.1, if it sends a request with the URL `http://example.com/?i=<script>alert(/1/)</script>`, it will trigger Rule 2 and be allowed.
 
-2. 若业务域名 `example.com` 有一后台管理登录入口 `/admin.php`，需要使用 UWAF 配置源 IP 地址访问限制，且同时不能完全放开对这些源 IP 地址的规则检测。
-   规则示例：
+2. If the business domain `example.com` has a backend management login entrance `/admin.php`, it needs to use UWAF to configure source IP address access restrictions, and cannot completely open the rule detection for these source IP addresses.
+   Rule example:
 
-   - 规则名称：后台界面访问限制
-   - 匹配动作：拦截
-   - 风险等级：高风险
-   - 风险类型：越权访问
-   - 匹配条件：
-     - 来源 IP 不属于 `12.34.5.0/24` （允许访问的 IP 或 IP 网段）
-     - 请求路径 包含 `/admin.php` （后台管理入口）
+   - Rule name: Backend interface access restriction
+   - Matching action: Intercept
+   - Risk level: High risk
+   - Risk type: Unauthorized access
+   - Matching conditions:
+     - Source IP does not belong to `12.34.5.0/24` (Allowed access IP or IP range)
+     - Request path contains `/admin.php` (Backend management entrance)
 
-   情形(1)：当客户端的 IP 地址为 12.34.5.6 时，访问 `http://example.com/admin.php` 则不会触发这条规则，但会进行其他后续规则的检测。  
-    情形(2)：当客户端的 IP 地址为 65.43.2.1 时，访问 `http://example.com/admin.php` 则会触发这条规则而被拦截。
+   Scenario (1): When the client's IP address is 12.34.5.6, accessing `http://example.com/admin.php` will not trigger this rule, but will check for other subsequent rules.  
+   Scenario (2): When the client's IP address is 65.43.2.1, accessing `http://example.com/admin.php` will trigger this rule and be intercepted.
 
-3. 若某业务域名所采用的技术栈的某个组件爆出了漏洞，只要请求的 Cookie 中 `jam` 名称的值的长度大于 9 即可利用该漏洞（例如 `jam=0123456789`，值的长度为 10），在相关补丁没有发布前，需要使用 UWAF 防护此漏洞。
-   规则示例：
+3. If a certain business domain's technology stack has a component that has exposed a vulnerability, as long as the length of the value of the `jam` name in the request's Cookie is greater than 9, this vulnerability can be exploited (for example `jam=0123456789`, the length of the value is 10). Before the related patch is released, UWAF needs to be used to protect this vulnerability.
+   Rule example:
 
-   - 规则名称：防护 cookie-jam 漏洞
-   - 匹配动作：拦截
-   - 风险等级：高风险
-   - 风险类型：漏洞攻击
-   - 匹配条件：请求 Cookies 长度大于 `{"specific": "jam", "pattern": "9"}`
+   - Rule name: Protect cookie-jam vulnerability
+   - Matching action: Intercept
+   - Risk level: High risk
+   - Risk type: Vulnerability attack
+   - Matching condition: Request Cookies length greater than `{"specific": "jam", "pattern": "9"}`
 
-   情形(1)：当某正常客户端发送的请求的 Cookie 字段的值为 `username=Alice;jam=true` 时则不会触发这条规则，但会进行其他后续规则的检测。  
-    情形(2)：当某恶意客户端发送的请求的 Cookie 字段的值为 `username=Mallory;jam=overflowattack` 时则会触发这条规则而被拦截。
+   Scenario (1): When a normal client sends a request with the Cookie field value of `username=Alice;jam=true`, it will not trigger this rule, but will check for other subsequent rules.  
+   Scenario (2): When a malicious client sends a request with the Cookie field value of `username=Mallory;jam=overflowattack`, it will trigger this rule and be intercepted.

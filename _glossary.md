@@ -1,14 +1,13 @@
-# 名词解释
+# Glossary
 
-## CNAME 防护域名
+## CNAME Protection Domain
 
-添加域名后，UWAF分配给客户的CNAME域名，一级域名为uewaf.com，子域名为随机的8个字符。
+After adding a domain, the CNAME domain that UWAF assigns to customers, with the primary domain being uewaf.com and the subdomain being a random 8 characters.
 
-## 防护 IP
+## Protection IP
 
-UWAF分配给域名的CNAME防护域名在没有开启业务回源的情况下直接解析到的IP，默认情况下相同一级域名及其子域名共享一个IP。
+The IP that the CNAME protection domain assigned by UWAF to the domain directly resolves to when business back-to-source is not enabled. By default, the same primary domain and its subdomains share one IP.
 
-## 独享 IP
+## Exclusive IP
 
-单独为某域名分配一个防护IP，相比于共享防护IP的域名，该域名能在共享防护IP的域名被DDoS攻击时不受影响，同时拥有更好的并发性能。
-
+An exclusive protection IP is assigned to a specific domain. Compared to domains with shared protection IPs, this domain will not be affected when domains with shared protection IPs are under DDoS attack, and it also has better concurrent performance.

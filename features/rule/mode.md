@@ -1,24 +1,24 @@
-# 防护设置
+# Protection Settings
 
-## 工作模式
+## Working Mode
 
-UWAF 规则的工作模式有 3 种，分别为阻断模式，告警模式和放行模式：
+There are 3 working modes for UWAF rules, namely blocking mode, alert mode, and pass-through mode:
 
-- **阻断模式**：则将根据防护规则进行拦截和放行
-- **告警模式**：将根据防护规则生成攻击日志，但不会拦截攻击请求
-- **放行模式**：不会产生任何攻击日志，所有的访问请求都将被放行
+- **Blocking Mode**: Will intercept or allow according to the protection rules
+- **Alert Mode**: Will generate attack logs according to the protection rules, but will not intercept attack requests
+- **Pass-through Mode**: Will not generate any attack logs, all access requests will be allowed
 
-可以在 UWAF 规则、信息安全防护规则标签页的上方更改工作模式，也可以在[域名管理](/uewaf/features/domain/domain_set)界面的对应域名后点击【编辑】，在弹窗中修改工作模式。
+You can change the working mode at the top of the UWAF rules, information security protection rules tab, or you can click [Edit] after the corresponding domain name in the [Domain Management](/uewaf/features/domain/domain_set) interface, and modify the working mode in the pop-up window.
 
 ![](/images/mode-get_mode.png)
 
-!> 注意：  
-CC 攻击防护和黑白名单功能在**阻断模式**和**告警模式**下由各自的独立开关控制，放行模式下 UWAF 规则、CC 规则、黑白名单等功能均失效。
+!> Note:  
+The CC attack protection and blacklist/whitelist functions are controlled by their independent switches under the **Blocking Mode** and **Alert Mode**, and the UWAF rules, CC rules, blacklist/whitelist, etc. are all invalid in the pass-through mode.
 
-## 规则优先级
+## Rule Priority
 
-黑白名单、CC 规则、UWAF 规则之间的优先级为（从左到右优先级依次降低）：
+The priority between the blacklist/whitelist, CC rules, and UWAF rules is (from left to right, the priority decreases in order):
 
-**全局白名单 > 域名白名单 > 全局黑名单 > 域名黑名单 > 区域 IP 封禁（拦截） > CC 规则 > 自定义 UWAF 规则 > 默认 UWAF 规则 > 信息安全防护规则**
+**Global Whitelist > Domain Whitelist > Global Blacklist > Domain Blacklist > Regional IP Ban (Interception) > CC Rules > Custom UWAF Rules > Default UWAF Rules > Information Security Protection Rules**
 
-UWAF 规则之间有独立的优先级，可以自由调整，但默认 UWAF 规则优先级始终低于自定义规则，无法调整。
+UWAF rules have independent priorities and can be freely adjusted, but the priority of the default UWAF rules is always lower than that of the custom rules and cannot be adjusted.

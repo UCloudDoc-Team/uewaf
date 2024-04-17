@@ -1,34 +1,34 @@
-# HTTPS/证书相关问题
+# HTTPS/Certificate Related Issues
 
-## 开启 HTTPS 访问
+## Enabling HTTPS Access
 
-有两种方式：
+There are two ways:
 
-1. 添加支持 HTTPS 协议的源站并上传对应域名的 SSL 证书。如需将 HTTP 请求重定向为 HTTPS 请求，请开启【HTTPS 跳转】选项，仅支持 80 端口重定向到 443 端口。
-2. 添加端口为 443 的 HTTPS 协议源站后，开启【HTTP 回源】选项，仅支持 443 端口回源到 80 端口，源站需开放 80 端口。
+1. Add a source station that supports the HTTPS protocol and upload the SSL certificate for the corresponding domain. If you need to redirect HTTP requests to HTTPS requests, please enable the [HTTPS Redirect] option, which only supports redirection from port 80 to port 443.
+2. After adding a source station with port 443 for the HTTPS protocol, enable the [HTTP Back to Source] option, which only supports back to source from port 443 to port 80, and the source station needs to open port 80.
 
-## 移动设备 HTTPS 访问异常
+## Mobile Device HTTPS Access Abnormal
 
-通常该问题出现在移动端浏览器（例如安卓系统预装浏览器、微信小程序）访问 HTTPS 网站时出现，原因是部分移动端浏览器会校验网站的 SSL 证书以及中间证书，如果缺少中间证书，则无法访问网站，而 UWAF 上查询不到此类访问的日志。
+This problem usually occurs when mobile browsers (such as pre-installed browsers on Android systems, WeChat mini-programs) access HTTPS websites. The reason is that some mobile browsers will verify the website's SSL certificate and intermediate certificate. If the intermediate certificate is missing, the website cannot be accessed, and this type of access log cannot be found on UWAF.
 
-### 解决方案
+### Solution
 
-1. 可以在证书颁发机构下载中间证书，使用文本编辑器或 `cat` 命令将中间证书内容追加在公钥文件内容之后，将包含了中间证书的公钥文件上传。
-2. 通过第三方工具（推荐使用 `https://myssl.com/chain_download.html` ）补齐中间证书并下载包含完整证书链的证书，然后上传。
-3. 联系 UCloud 技术支持，后台添加中间证书。
+1. You can download the intermediate certificate from the certificate issuing authority, use a text editor or the `cat` command to append the content of the intermediate certificate after the content of the public key file, and upload the public key file that contains the intermediate certificate.
+2. Complete the intermediate certificate through third-party tools (recommended to use `https://myssl.com/chain_download.html`) and download the certificate that contains the complete certificate chain, and then upload it.
+3. Contact UCloud technical support to add the intermediate certificate in the background.
 
-## SSL 证书格式
+## SSL Certificate Format
 
-UWAF 支持 PEM 格式的证书（可通过 UCloud USSL 证书购买，下载 PEM 格式证书文件），通常 PEM 格式的证书包含两个文件，文件后缀为 pem 的是公钥文件，选择公钥文件后点击【上传公钥】按钮上传，文件后缀为 key（也有可能文件后缀也是 pem，可通过文件名区分公私钥）的是私钥文件，选择私钥文件后点击【上传私钥】按钮上传。
+UWAF supports PEM format certificates (which can be purchased through UCloud USSL and download the PEM format certificate file). Typically, PEM format certificates include two files. The file with a pem suffix is the public key file. After selecting the public key file, click the "Upload Public Key" button to upload. The file with a key suffix (the file suffix may also be pem, which can be distinguished by the file name) is the private key file. After selecting the private key file, click the "Upload Private Key" button to upload.
 
-文件上传后，UWAF 会检验证书的正确性，如果检验不通过将返回错误且无法应用该证书，请按如下步骤进行排查后重新上传：
+After the file is uploaded, UWAF will check the correctness of the certificate. If the check fails, an error will be returned and the certificate cannot be applied. Please troubleshoot according to the following steps and re-upload:
 
-1. 公钥文件和私钥文件是否正确。
-2. 上传的文件是否重复。
-3. 可以通过第三方工具验证证书是否正确（推荐使用 `https://myssl.com/match_key.html`）。
+1. Whether the public key file and private key file are correct.
+2. Whether the uploaded files are duplicated.
+3. The certificate can be verified for correctness through third-party tools (recommended to use `https://myssl.com/match_key.html`).
 
-如果 SSL 证书是从[USSL](/ussl/operate/buy)购买或托管在[USSL](/ussl/operate/upload)，UWAF 支持自动同步此类证书。
+If the SSL certificate is purchased from [USSL](/ussl/operate/buy) or hosted on [USSL](/ussl/operate/upload), UWAF supports automatic synchronization of such certificates.
 
-## SSL 客户端验证
+## SSL Client Verification
 
-UWAF 支持 HTTPS 域名配置客户端验证，如果您有这方面需求，请联系 UCloud 技术支持。并请准备好验证根证书，CRT 证书。
+UWAF supports HTTPS domain configuration client verification. If you have this requirement, please contact UCloud technical support. And please prepare the verification root certificate, CRT certificate.

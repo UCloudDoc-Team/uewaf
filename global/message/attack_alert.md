@@ -1,17 +1,17 @@
-# 攻击告警监控
+# Attack Alert Monitoring
 
-UWAF 对用户域名做攻击监控，默认为 1 分钟之内，触发超过 500 次的危险攻击行为（系统规则加用户自定义规则），则会向对应的消息订阅组用户发送告警邮件或者短信。
+UWAF monitors user domain for attacks. By default, if dangerous attack behaviors (system rules plus user-defined rules) are triggered more than 500 times within 1 minute, an alert email or text message will be sent to the corresponding message subscription group user.
 
-## 攻击告警情况处理
+## Handling Attack Alerts
 
-当您收到攻击告警邮件或短信后，请登陆 UWAF 控制台，选择【安全报表】的【攻击概览】，域名选择触发告警的域名，查询时间范围设置触发告警的时段，可以看到该域名该段时间内的受攻击情况。
+When you receive an attack alert email or text message, please log in to the UWAF console, select "Attack Overview" under "Security Report", select the domain that triggered the alert, set the query time range to the alert triggering period, and you can see the attack situation of this domain during this period.
 
-选择【攻击详情】，展开搜索设置，如下图所示选择触发告警的攻击类型，查看攻击告警的具体情况：
+Select "Attack Details", expand search settings, as shown in the figure below, select the attack type that triggered the alert, and view the specific situation of the attack alert:
 
 ![](/images/attack_alert-query_attack.png)
 
-对攻击次数非常多的 IP 可使用【功能设置】的【IP 查询】功能查询这些 IP 相应时段内的访问情况，如果发现该 IP 在该时段内发起了大量攻击，可如下图所示点击红框中的【加入黑名单】把该 IP 添加到黑名单中。
+For IPs with a very large number of attacks, you can use the "IP Query" function under "Function Settings" to query the access situation of these IPs during the corresponding period. If you find that this IP has launched a large number of attacks during this period, you can click "Add to Blacklist" in the red box in the figure below to add this IP to the blacklist.
 
 ![](/images/attack_alert-query_ip.png)
 
-若攻击来源 IP 很多，可以使用【防护设置】的【恶意 IP 封禁】功能，添加恶意 IP 封禁规则，对攻击频率过高的 IP 实施惩罚（加入黑名单）。
+If there are many attack source IPs, you can use the "Malicious IP Blocking" function under "Protection Settings" to add malicious IP blocking rules and punish IPs with high attack frequency (add to blacklist).
