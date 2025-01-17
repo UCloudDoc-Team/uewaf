@@ -44,7 +44,7 @@ SaaS 版 UWAF 是部署在 Web 服务器前，通过转发代理的方式为业�
 4. HTTPS 站点，需要上传站点的 SSL 证书。若是从[USSL](/ussl/operate/buy)购买的证书或者证书托管在[USSL](/ussl/operate/upload)，则在添加 HTTPS 站点时会自动拉取相应域名的证书。  
    ![](/images/access_uwaf-set_https.png)
 
-域名各配置的[说明](/uewaf/features/domian/domain_set.md)。
+域名各配置的[说明](/uewaf/features/domain/domain_set?id=参数说明)。
 
 !> 注意：  
 域名必须是已经备案的，未备案的域名将无法添加。港澳台及海外地区不受备案限制。
