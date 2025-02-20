@@ -34,6 +34,8 @@
     - [区域 IP 封禁](/uewaf/features/rule/regional_ban)
     - [信息安全防护](/uewaf/features/rule/information_security)
     - [规则同步](/uewaf/features/rule/rule_sync)
+    - [API安全](/uewaf/features/api-security/illustrate)
+      - []
   - 功能设置
     - IP 管理
       - [IP 查询](/uewaf/features/expand/ip_query)
