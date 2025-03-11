@@ -56,6 +56,11 @@ UWAF 可拦截大部分的 Web 攻击从而保护您的 Web 应用程序，这�
       - [源站状态监控](/uewaf/global/message/status_alert)
       - [异常状态码监控](/uewaf/global/message/exception_alert)
     - [证书管理](/uewaf/global/certificate_management)
+  - API安全
+    - [概览](/uewaf/features/api-security/info)
+    - [资产管理](/uewaf/features/api-security/asset)
+    - [风险事件](/uewaf/features/api-security/events)
+    - [策略管理](/uewaf/features/api-security/policy)
 - [名词解释](/uewaf/_glossary)
 - 常见问题
   - [注意事项&FAQ](/uewaf/problem/faq)

@@ -35,7 +35,10 @@
     - [信息安全防护](/uewaf/features/rule/information_security)
     - [规则同步](/uewaf/features/rule/rule_sync)
     - [API安全](/uewaf/features/api-security/illustrate)
-      - []
+      - [概览](/uewaf/features/api-security/info)
+      - [资产管理](/uewaf/features/api-security/asset)
+      - [风险事件](/uewaf/features/api-security/events)
+      - [策略管理](/uewaf/features/api-security/policy)
   - 功能设置
     - IP 管理
       - [IP 查询](/uewaf/features/expand/ip_query)
