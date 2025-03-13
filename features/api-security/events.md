@@ -10,7 +10,8 @@
 
 ![](/images/api-security/apistatus.png)
 
-[^忽略]: 选择忽略后，后续该API不会再统计该风险
+> <p style="color: red;">忽略:选择忽略后，后续该API不会再更新该风险</p>
+>
 
 **日志查询**
 
