@@ -58,6 +58,6 @@ API安全模块基于内置检测机制和客户自定义检测策略，针对�
 
 ![](/images/api-security/ext-apsec.png)
 
-> ULB版本waf不支持API 安全功能。
+> ULB版本WAF不支持API 安全功能。
 >
 > 一个API安全域名包支持对十个域名开启API安全功能。
