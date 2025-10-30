@@ -3,7 +3,7 @@
 选择相应的域名或全部域名与指定的时间范围，攻击概览中会根据选中的域名和时间范围显示对应的预设的攻击分析报表。
 
 ![](/images/attack_analysis-get_report_1.jpg)
-![](/images/attack_analysis-get_report_2.jpg)
+![](/images/attack_analysis-get_report_2.png)
 
 ## 数据展示
 
